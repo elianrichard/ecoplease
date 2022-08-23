@@ -31,13 +31,13 @@ const LandingHero = () => {
           </p>
           <a
             href="#"
-            className="bg-ecoRed mb-5 text-skinCream font-bold text-3xl py-2 px-5 relative clip-path-right-triangle pr-10"
+            className="bg-ecoRed mb-5 text-skinCream font-bold text-3xl py-2 px-5 relative clip-path-right-triangle pr-10 hover:text-white transition-all ease-out duration-200 hover:pl-16"
           >
             OUR CATALOG
           </a>
           <a
             href="#"
-            className="bg-ecoRed mb-5 text-skinCream font-bold text-3xl py-2 px-5"
+            className="bg-ecoRed mb-5 text-skinCream font-bold text-3xl py-2 px-5 relative clip-path-right-triangle pr-10 hover:text-white transition-all ease-out duration-200 hover:pl-16"
           >
             COSTUMIZE PRODUCT
           </a>
