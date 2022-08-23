@@ -8,7 +8,7 @@ import backgroundImg from "../../../asset/pictures/home/home-background-1.png";
 const PerksComparison = () => {
   return (
     <div
-      className="py-20 bg-darkRed flex justify-center mb-1 before:w-full before:h-full before:bg-black/20 before:absolute relative before:top-0 before:left-0 z-0"
+      className="relative z-0 mb-1 flex justify-center bg-darkRed py-20 before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-black/20"
       style={{
         backgroundImage: `url(${backgroundImg.src})`,
         backgroundBlendMode: "multiply",
@@ -16,7 +16,7 @@ const PerksComparison = () => {
         backgroundPosition: "center center",
       }}
     >
-      <div className="flex justify-center items-center flex-col w-4/5 gap-20 z-10">
+      <div className="z-10 flex w-full flex-col items-center justify-center gap-20 px-5 lg:w-4/5 lg:px-0">
         <Perks />
         <Comparison />
       </div>
