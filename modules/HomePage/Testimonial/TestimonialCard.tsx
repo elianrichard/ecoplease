@@ -1,47 +1,50 @@
-import React from 'react'
+import React from "react";
 import Image, { StaticImageData } from "next/image";
 
 import StarSVG from "../../../asset/svgs/icons/StarIcon";
 
-interface Props{
-  name: String,
-  tag: String,
-  location: String,
-  pic: StaticImageData,
-  description: String,
-  rating: number
+interface Props {
+  name: String;
+  tag: String;
+  location: String;
+  pic: StaticImageData;
+  description: String;
+  rating: number;
 }
 
-const TestimonialCard = ({name, tag, location, pic, description, rating}: Props) => {
+const TestimonialCard = ({
+  name,
+  tag,
+  location,
+  pic,
+  description,
+  rating,
+}: Props) => {
   return (
-    <div className="h-64 min-w-[24rem] before:bg-darkGreen before:rounded-3xl before:rounded-br-none relative before:absolute before:top-2 before:left-2 before:h-full before:w-full">
-          <div className="h-full w-full bg-skinCream rounded-3xl rounded-br-none p-7 flex flex-col gap-3 absolute top-0 left-0 border-darkGreen border-[6px]">
-            <div className="w-full flex justify-between">
-              <div className="flex flex-col">
-                <p className="font-bold text-lg">{name} | {tag}</p>
-                <p>{location}</p>
-              </div>
-              <div className="rounded-full h-full aspect-square overflow-hidden relative">
-                <Image
-                  src={pic}
-                  layout="fill"
-                  alt="image of a person"
-                />
-              </div>
-            </div>
-            <div className="w-full flex">
-              {[...Array(rating)].map((el) => (
-                <StarSVG key={el} />
-              ))}
-            </div>
-            <div>
-              <p>
-                {description}
-              </p>
-            </div>
+    <div className="relative h-56 min-w-[24rem] before:absolute before:top-2 before:left-2 before:h-full before:w-full before:rounded-3xl before:rounded-br-none before:bg-darkGreen xs:h-64">
+      <div className="absolute top-0 left-0 flex h-full w-full flex-col gap-2 xs:gap-3 rounded-3xl rounded-br-none border-[6px] border-darkGreen bg-skinCream py-3 px-5 xs:p-7">
+        <div className="flex w-full justify-between">
+          <div className="flex flex-col">
+            <p className="text-md font-bold xs:text-lg">
+              {name} | {tag}
+            </p>
+            <p className="text-sm xs:text-base">{location}</p>
+          </div>
+          <div className="relative aspect-square h-full overflow-hidden rounded-full">
+            <Image src={pic} layout="fill" alt="image of a person" />
           </div>
         </div>
-  )
-}
+        <div className="flex w-full">
+          {[...Array(rating)].map((el) => (
+            <StarSVG key={el} />
+          ))}
+        </div>
+        <div className="h-full w-full overflow-hidden">
+          <p className="text-sm xs:text-base">{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default TestimonialCard
+export default TestimonialCard;
