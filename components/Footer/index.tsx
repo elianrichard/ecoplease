@@ -23,24 +23,56 @@ const Footer = () => {
             <span className="bg-skinCream max-w-content px-3 py-1 font-black text-lg text-black mb-2">
               QUICK LINKS
             </span>
-            <Link href={"/"}>Product Catalog</Link>
-            <Link href={"/"}>Our Materials</Link>
-            <Link href={"/"}>Become a Partner</Link>
+            <Link href={"/"}>
+              <a className="hover:text-paleGreen transition-all ease-out duration-200">
+                Product Catalog
+              </a>
+            </Link>
+            <Link href={"/"}>
+              <a className="hover:text-paleGreen transition-all ease-out duration-200">
+                Our Materials
+              </a>
+            </Link>
+            <Link href={"/"}>
+              <a className="hover:text-paleGreen transition-all ease-out duration-200">
+                Become a Partner
+              </a>
+            </Link>
           </div>
           <div className="flex flex-col gap-2 ">
             <p className="bg-skinCream inline-block px-3 py-1 font-black text-lg text-black mb-2">
               MARKETPLACE
             </p>
-            <Link href={"/"}>Tokopedia</Link>
-            <Link href={"/"}>Shopee</Link>
+            <Link href={"/"}>
+              <a className="hover:text-paleGreen transition-all ease-out duration-200">
+                Tokopedia
+              </a>
+            </Link>
+            <Link href={"/"}>
+              <a className="hover:text-paleGreen transition-all ease-out duration-200">
+                Shopee
+              </a>
+            </Link>
           </div>
           <div className="flex flex-col gap-2">
             <p className="bg-skinCream inline-block px-3 py-1 font-black text-lg text-black mb-2">
               ABOUT
             </p>
-            <Link href={"/"}>Our Journey</Link>
-            <Link href={"/"}>Blog</Link>
-            <Link href={"/"}>FAQs</Link>
+            <Link href={"/"}>
+              <a className="hover:text-paleGreen transition-all ease-out duration-200">
+                Our Journey
+              </a>
+            </Link>
+            <Link href={"/"}>
+              <a className="hover:text-paleGreen transition-all ease-out duration-200">
+                Blog
+              </a>
+            </Link>
+            <Link href={"/"}>
+              <a className="hover:text-paleGreen transition-all ease-out duration-200">
+                FAQs
+              </a>
+            </Link>
           </div>
         </div>
       </div>
