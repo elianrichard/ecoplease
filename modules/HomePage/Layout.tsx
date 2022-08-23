@@ -13,7 +13,7 @@ const Layout = () => {
   const [isShowVideoModal, setIsShowVideoModal] = useState<boolean>(false);
 
   return (
-    <div className="overflow-x-hidden pt-16 relative">
+    <div className="relative overflow-x-hidden pt-16">
       <LandingHero />
       <VideoCounter setVideoModal={setIsShowVideoModal} />
       <PerksComparison />
@@ -27,9 +27,9 @@ const Layout = () => {
           additionalClass="flex justify-center items-center"
           setModal={setIsShowVideoModal}
         >
-          <div className="bg-white w-1/2 aspect-video">
+          <div className="aspect-video w-1/2 bg-white">
             <iframe
-              className="w-full h-full"
+              className="h-full w-full"
               src="https://www.youtube.com/embed/1fueZCTYkpA"
               title="YouTube video player"
               frameBorder="0"

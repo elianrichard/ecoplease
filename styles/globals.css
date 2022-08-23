@@ -62,16 +62,35 @@
 
   /* Handle */
   .scrollbar-custom::-webkit-scrollbar-thumb {
-    background: #E1C172;
+    background: #e1c172;
     border-radius: 5px;
   }
 
   /* Handle on hover */
   .scrollbar-custom::-webkit-scrollbar-thumb:hover {
-    background: #E5D2B6;
+    background: #e5d2b6;
   }
 
-  .clip-path-right-triangle {
-    clip-path: polygon(calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 0 0);
+  .clip-path-triangle {
+    clip-path: polygon(
+      calc(100% - 20px) 0,
+      100% 50%,
+      calc(100% - 20px) 100%,
+      20px 100%,
+      0 50%,
+      20px 0
+    );
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .clip-path-triangle {
+      clip-path: polygon(
+        calc(100% - 20px) 0,
+        100% 50%,
+        calc(100% - 20px) 100%,
+        0 100%,
+        0 0
+      );
+    }
   }
 }
