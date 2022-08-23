@@ -11,19 +11,19 @@ import TuvIndustrial from "../../asset/pictures/certifications/tuv-industrial.pn
 const Certification = () => {
   const imageArray = [Bpi, Compostable, Fda, Sgs, TuvHome, TuvIndustrial];
   return (
-    <div className="flex flex-col items-center w-4/5 gap-14">
-      <p className="text-darkRed font-black text-5xl text-center w-full relative before:content-['CERTIFICATION'] before:absolute before:top-1 before:translate-x-1 text-outline z-0 before:-z-10">
+    <div className="flex h-fit w-full flex-col items-center gap-14">
+      <p className="text-outline relative z-0 w-full text-center text-4xl font-black text-darkRed before:absolute before:top-1 before:-z-10 before:translate-x-1 before:content-['CERTIFICATION'] xs:text-5xl">
         CERTIFICATION
       </p>
-      <div className="flex gap-10 h-20">
+      <div className="flex h-full flex-wrap justify-center gap-10">
         {imageArray.map((el, i) => {
           return (
-            <div className="w-32 h-full relative" key={i}>
+            <div className="relative h-20 w-16 xs:w-32" key={i}>
               <Image
                 src={el}
                 layout="fill"
                 objectFit="contain"
-                alt={el.src.replace(/^.*[\\\/]/, '')}
+                alt={el.src.replace(/^.*[\\\/]/, "")}
               />
             </div>
           );
