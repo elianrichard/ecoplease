@@ -18,10 +18,12 @@ module.exports = {
         darkGreen: "#3F703B",
       },
       dropShadow: {
-        perks:
-          "0px 5px 50px 15px rgba(0, 0, 0, 0.5)",
+        perks: "0px 5px 50px 15px rgba(0, 0, 0, 0.5)",
+      },
+      screens: {
+        xs: "480px",
       },
     },
   },
-  plugins: [require('prettier-plugin-tailwindcss')],
+  plugins: [require("prettier-plugin-tailwindcss")],
 };
