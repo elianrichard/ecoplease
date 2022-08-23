@@ -10,7 +10,7 @@ import Certification from "./Certification";
 
 const Layout = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden pt-16">
       <LandingHero />
       <VideoCounter />
       <PerksComparison />

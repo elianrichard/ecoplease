@@ -7,7 +7,7 @@ import LogoTextLight from "../../asset/svgs/icons/LogoTextLight2";
 const Header = () => {
   return (
     <nav
-      className="w-screen bg-darkRed flex justify-between items-center px-20 py-5 text-white fixed z-50"
+      className="w-screen bg-darkRed flex justify-between items-center px-20 h-16 text-white fixed z-50 shadow-[0px_0px_20px_0px_rgba(0,0,0,0.8)]"
       style={{
         backgroundImage: `url(${TextureImg.src})`,
         backgroundBlendMode: "multiply",
