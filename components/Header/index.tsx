@@ -15,18 +15,46 @@ const Header = () => {
       }}
     >
       <div className="flex gap-12">
-        <Link href={"/"}>Home</Link>
-        <Link href={"/"}>About Us</Link>
-        <Link href={"/"}>Products</Link>
-        <Link href={"/"}>Eco News</Link>
+        <Link href={"/"}>
+          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
+            Home
+          </a>
+        </Link>
+        <Link href={"/"}>
+          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
+            About Us
+          </a>
+        </Link>
+        <Link href={"/"}>
+          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
+            Products
+          </a>
+        </Link>
+        <Link href={"/"}>
+          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
+            Eco News
+          </a>
+        </Link>
       </div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <LogoTextLight width="13rem" />
       </div>
       <div className="flex gap-12">
-        <Link href={"/"}>Blog</Link>
-        <Link href={"/"}>FAQs</Link>
-        <Link href={"/"}>Contact Us</Link>
+        <Link href={"/"}>
+          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
+            Blog
+          </a>
+        </Link>
+        <Link href={"/"}>
+          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
+            FAQs
+          </a>
+        </Link>
+        <Link href={"/"}>
+          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
+            Contact Us
+          </a>
+        </Link>
       </div>
     </nav>
   );

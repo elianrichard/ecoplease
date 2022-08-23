@@ -1,9 +1,13 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 import paperTextureImg from "../../asset/pictures/paper-texture-2.jpg";
 import VideoRipped from "../../asset/svgs/ripped/VideoRipped";
 
-const VideoCounter = () => {
+interface Props {
+  setVideoModal: Dispatch<SetStateAction<boolean>>;
+}
+
+const VideoCounter = ({ setVideoModal }: Props) => {
   return (
     <div
       className="w-screen h-screen bg-skinCream flex justify-center mb-1"
@@ -16,7 +20,10 @@ const VideoCounter = () => {
     >
       <div className="w-4/5 flex justify-center gap-20">
         <div className="h-full w-full flex-1 flex justify-center items-center">
-          <div className="w-full aspect-video relative group cursor-pointer">
+          <div
+            className="w-full aspect-video relative group cursor-pointer"
+            onClick={() => setVideoModal(true)}
+          >
             <VideoRipped className="z-20 h-full w-full drop-shadow-[0px_0px_25px_rgba(0,0,0,0.9)]" />
             <div
               className="absolute bg-ecoRed w-20 aspect-square top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:bg-darkRed transition-all"
@@ -51,7 +58,7 @@ const VideoCounter = () => {
               <p className="text-3xl">XXXXXX</p>
             </div>
           </div>
-          <div className="h-1/6 w-full bg-green-900"></div>
+          {/* <div className="h-1/6 w-full bg-green-900"></div> */}
         </div>
       </div>
     </div>
