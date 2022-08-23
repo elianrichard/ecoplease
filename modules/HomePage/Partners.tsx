@@ -15,7 +15,7 @@ const Partners = () => {
         <KopiKenanganSVG />
         <KopiKenanganSVG />
       </div>
-      <a href="#" className="bg-darkRed text-white text-xl px-6 py-2 rounded-lg">
+      <a href="#" className="bg-darkRed text-white text-xl px-6 py-2 rounded-lg hover:bg-white hover:text-darkRed hover:scale-110 hover:shadow-[0px_0px_20px_0px_rgba(0,0,0,0.5)] transition-all duration-200 ease-out">
         Become Our Partner <span className="font-bold">NOW!</span>
       </a>
     </div>
