@@ -19,9 +19,9 @@ const Footer = () => {
           <LogoLightSVG className="w-32" />
         </div>
         <div className="flex flex-col gap-2">
-          <span className="max-w-content mb-2 bg-skinCream px-3 py-1 text-lg font-black text-black">
+          <p className="mb-2 bg-skinCream px-3 py-1 text-lg font-black text-black">
             QUICK LINKS
-          </span>
+          </p>
           <Link href={"/"}>
             <a className="transition-all duration-200 ease-out hover:text-paleGreen">
               Product Catalog
@@ -39,7 +39,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className="flex flex-col gap-2 ">
-          <p className="mb-2 inline-block bg-skinCream px-3 py-1 text-lg font-black text-black">
+          <p className="mb-2 bg-skinCream px-3 py-1 text-lg font-black text-black">
             MARKETPLACE
           </p>
           <Link href={"/"}>
