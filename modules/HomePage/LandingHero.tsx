@@ -31,13 +31,13 @@ const LandingHero = () => {
           </p>
           <a
             href="#"
-            className="clip-path-triangle relative mb-5 bg-skinCream py-2 px-10 text-center text-2xl font-bold text-darkRed transition-all duration-200 ease-out hover:px-16 lg:bg-ecoRed lg:text-3xl lg:text-skinCream lg:hover:pl-16 lg:hover:text-white"
+            className="clip-path-triangle relative mb-5 bg-skinCream py-2 px-10 text-center text-xl font-bold text-darkRed transition-all duration-200 ease-out hover:px-14 lg:bg-ecoRed lg:text-3xl lg:text-skinCream lg:hover:pl-16 lg:hover:text-white"
           >
             OUR CATALOG
           </a>
           <a
             href="#"
-            className="clip-path-triangle relative mb-5 bg-skinCream py-2 px-10 text-center text-2xl font-bold text-darkRed transition-all duration-200 ease-out hover:px-16 lg:bg-ecoRed lg:text-3xl lg:text-skinCream lg:hover:pl-16 lg:hover:text-white"
+            className="clip-path-triangle relative mb-5 bg-skinCream py-2 px-10 text-center text-xl font-bold text-darkRed transition-all duration-200 ease-out hover:px-14 lg:bg-ecoRed lg:text-3xl lg:text-skinCream lg:hover:pl-16 lg:hover:text-white"
           >
             COSTUMIZE PRODUCT
           </a>

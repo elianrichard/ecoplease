@@ -9,11 +9,11 @@ const WhatsappButton = () => {
       href={"#"}
       // target="_blank"
       // rel="noreferrer"
-      className="bg-white fixed w-16 h-16 bottom-10 right-10 z-50 rounded-full flex justify-center items-center shadow-[0px_0px_20px_5px_rgba(0,0,0,0.4)] cursor-pointer hover:bg-darkGreen transition-all group ease-out duration-200"
+      className="group fixed bottom-3 right-3 z-50 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0px_0px_20px_5px_rgba(0,0,0,0.4)] transition-all duration-200 ease-out hover:bg-darkGreen lg:bottom-10 lg:right-10"
     >
       <WhatsappIcon
         style={{ width: "50%" }}
-        className="group-hover:fill-white transition-all fill-darkGreen ease-out duration-200"
+        className="fill-darkGreen transition-all duration-200 ease-out group-hover:fill-white"
       />
     </a>
   );
