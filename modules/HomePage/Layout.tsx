@@ -27,7 +27,7 @@ const Layout = () => {
           additionalClass="flex justify-center items-center"
           setModal={setIsShowVideoModal}
         >
-          <div className="aspect-video w-1/2 bg-white">
+          <div className="aspect-video w-full xs:px-0 px-5 xs:w-2/3 lg:w-1/2">
             <iframe
               className="h-full w-full"
               src="https://www.youtube.com/embed/1fueZCTYkpA"
