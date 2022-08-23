@@ -1,5 +1,5 @@
 import React from "react";
-import landingHeroImg from "../pictures/landing/landing-hero.jpg";
+import landingHeroImg from "../../pictures/home/landing-hero.jpg";
 
 const VideoRipped = (props: any) => {
   return (

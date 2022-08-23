@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 
-import productLandingImg from "../../asset/pictures/landing/hero-product.png";
+import productLandingImg from "../../asset/pictures/home/hero-product.png";
 import paperTextureImg from "../../asset/pictures/paper-texture.jpg";
 
-import RippedSVG from "../../asset/svgs/ripped";
+import RippedSVG from "../../asset/svgs/ripped/RippedLanding";
 
 const LandingHero = () => {
   return (

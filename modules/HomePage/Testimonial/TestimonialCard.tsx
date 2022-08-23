@@ -1,8 +1,7 @@
 import React from 'react'
 import Image, { StaticImageData } from "next/image";
 
-import StarSVG from "../../../asset/svgs/star";
-import TestimonialPic from "../../../asset/pictures/testimonial1.jpg";
+import StarSVG from "../../../asset/svgs/icons/StarIcon";
 
 interface Props{
   name: String,

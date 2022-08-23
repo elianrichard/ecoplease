@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import LogoLightSVG from "../../asset/svgs/icons/LogoLight";
+import LogoLightSVG from "../../asset/svgs/logo/LogoLight";
 import TextureImg from "../../asset/pictures/paper-texture-3.png";
 
 const Footer = () => {

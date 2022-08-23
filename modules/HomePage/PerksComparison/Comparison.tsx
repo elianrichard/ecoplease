@@ -1,6 +1,6 @@
 import React from "react";
 
-import AtomSVG from "../../../asset/svgs/atom";
+import AtomSVG from "../../../asset/svgs/icons/AtomIcon";
 import ItemsCard from "./ItemsCard";
 
 const Perks = () => {

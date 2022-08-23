@@ -1,6 +1,6 @@
 import React from "react";
 
-import DeliverySVG from "../../../asset/svgs/Delivery";
+import DeliverySVG from "../../../asset/svgs/icons/DeliveryIcon";
 import ItemsCard from "./ItemsCard";
 
 const Perks = () => {

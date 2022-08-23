@@ -6,17 +6,19 @@ import SEO from "../next-seo.config";
 
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import WhatsappButton from "../components/WhatsappButton";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <DefaultSeo {...SEO} />
-      <div className="overflow-x-hidden">
+      <div className="overflow-x-hidden relative">
         <Header />
         <main>
           <Component {...pageProps} />
         </main>
         <Footer />
+        <WhatsappButton />
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import TextureImg from "../../asset/pictures/paper-texture-3.png";
-import LogoTextLight from "../../asset/svgs/icons/LogoTextLight2";
+import LogoTextLight from "../../asset/svgs/logo/LogoTextLight2";
 
 const Header = () => {
   return (

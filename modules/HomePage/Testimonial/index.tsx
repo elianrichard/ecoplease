@@ -2,9 +2,9 @@ import React from "react";
 
 import TestimonialCard from "./TestimonialCard";
 
-import TestimonialPic from "../../../asset/pictures/landing/testimonial1.jpg";
-import TestimonialBackgroundImg from "../../../asset/pictures/landing/home-background-2.jpg";
-import TestimonialRipped from "../../../asset/svgs/TestimonialRipped";
+import TestimonialPic from "../../../asset/pictures/home/testimonial1.jpg";
+import TestimonialBackgroundImg from "../../../asset/pictures/home/home-background-2.jpg";
+import TestimonialRipped from "../../../asset/svgs/ripped/TestimonialRipped";
 
 const Testimonial = () => {
   return (

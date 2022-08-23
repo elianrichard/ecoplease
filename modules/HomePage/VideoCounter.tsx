@@ -1,7 +1,7 @@
 import React from "react";
 
 import paperTextureImg from "../../asset/pictures/paper-texture-2.jpg";
-import VideoRipped from "../../asset/svgs/VideoRipped";
+import VideoRipped from "../../asset/svgs/ripped/VideoRipped";
 
 const VideoCounter = () => {
   return (
