@@ -55,7 +55,7 @@ const Header = () => {
           {leftMenu.map((el, i) => {
             if (typeof el[1] === "string")
               return <LinkButton text={el[0]} link={el[1]} key={i} />;
-            else return <NestedLinkButton text={el[0]} links={el[1]} />;
+            else return <NestedLinkButton text={el[0]} links={el[1]} key={i} />;
           })}
         </ul>
         <ul className="flex h-full w-full flex-col justify-end gap-10 lg:flex-row lg:gap-6 lg:py-0 xl:gap-12">

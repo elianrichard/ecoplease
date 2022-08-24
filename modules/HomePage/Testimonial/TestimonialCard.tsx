@@ -1,7 +1,8 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 
-import StarSVG from "../../../asset/svgs/icons/StarIcon";
+import { IconContext } from "react-icons";
+import { GrStar } from "react-icons/gr";
 
 interface Props {
   name: String;
@@ -35,9 +36,12 @@ const TestimonialCard = ({
           </div>
         </div>
         <div className="flex w-full">
-          {[...Array(rating)].map((el) => (
-            <StarSVG key={el} />
-          ))}
+          <IconContext.Provider value={{ className: "w-5 h-5 sm:w-6 sm:h-6" }}>
+            {[...Array(rating)].map((_el, i) => (
+              // <StarSVG key={i} />
+              <GrStar key={i} />
+            ))}
+          </IconContext.Provider>
         </div>
         <div className="h-full w-full overflow-hidden">
           <p className="text-sm xs:text-base">{description}</p>
