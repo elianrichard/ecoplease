@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import Link from "next/link";
 
 import TextureImg from "../../asset/pictures/paper-texture-3.png";
 import LogoTextLight from "../../asset/svgs/logo/LogoTextLight2";
 
-import { BiMenu, BiChevronDown } from "react-icons/bi";
+import { BiMenu } from "react-icons/bi";
 import { IconContext } from "react-icons";
 import LinkButton from "./LinkButton";
 import NestedLinkButton from "./NestedLinkButton";
@@ -48,7 +47,9 @@ const Header = () => {
       </div>
       <div
         className={`absolute top-[100%] left-0 flex w-screen flex-col items-center justify-between gap-10 bg-ecoRed py-10 shadow-[0px_10px_15px_-5px_rgba(0,0,0,0.5)] transition-opacity duration-200 ease-out lg:static lg:h-full lg:w-full lg:flex-row lg:bg-transparent lg:py-0 ${
-          isNavbarOpen ? "opacity-100" : "opacity-0"
+          isNavbarOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
         } lg:opacity-100`}
       >
         <ul className="flex h-full w-full flex-col gap-10 lg:flex-row lg:gap-6 lg:py-0 xl:gap-12">
