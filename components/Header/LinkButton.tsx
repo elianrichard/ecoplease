@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 interface Props {
   text: string | string[][];
   link: string;
-  setNavbar: Dispatch<SetStateAction<Boolean>>;
+  setNavbar: Dispatch<SetStateAction<boolean>>;
 }
 
 const LinkButton = ({ text, link, setNavbar }: Props) => {

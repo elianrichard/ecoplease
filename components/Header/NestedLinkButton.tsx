@@ -8,7 +8,7 @@ import { BiChevronDown } from "react-icons/bi";
 interface Props {
   text: string | string[][];
   links: string[][];
-  setNavbar: Dispatch<SetStateAction<Boolean>>;
+  setNavbar: Dispatch<SetStateAction<boolean>>;
 }
 
 const NestedLinkButton = ({ text, links, setNavbar }: Props) => {

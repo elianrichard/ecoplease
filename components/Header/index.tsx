@@ -9,7 +9,7 @@ import LinkButton from "./LinkButton";
 import NestedLinkButton from "./NestedLinkButton";
 
 const Header = () => {
-  const [isNavbarOpen, setIsNavbarOpen] = useState<Boolean>(false);
+  const [isNavbarOpen, setIsNavbarOpen] = useState<boolean>(false);
   const leftMenu = [
     ["Home", "/"],
     [
