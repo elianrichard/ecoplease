@@ -24,7 +24,6 @@ const Header = () => {
   const rightMenu = [
     ["Eco News", "/"],
     ["FAQs", "/"],
-    ["Contact Us", "/"],
   ];
   return (
     <nav
