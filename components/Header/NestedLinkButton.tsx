@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import { IconContext } from "react-icons";
 import { BiChevronDown } from "react-icons/bi";
@@ -10,14 +11,19 @@ interface Props {
 }
 
 const NestedLinkButton = ({ text, links }: Props) => {
+  const router = useRouter();
+  const linksUrl = links.map((el) => el[1]);
+
   return (
     <li className="group relative flex h-full flex-col items-center justify-center">
-      <p className="pointer-events-none flex ">
+      <p
+        className={`pointer-events-none flex ${
+          linksUrl.includes(router.pathname) ? "text-paleGreen" : "text-white"
+        }`}
+      >
         {text}
         <span>
-          <IconContext.Provider
-            value={{ className: "text-white h-full w-6 ml-1" }}
-          >
+          <IconContext.Provider value={{ className: "h-full w-6 ml-1" }}>
             <BiChevronDown />
           </IconContext.Provider>
         </span>
@@ -27,7 +33,11 @@ const NestedLinkButton = ({ text, links }: Props) => {
           return (
             <li className={`${!i && "mt-5"} lg:mt-0 lg:w-full`} key={i}>
               <Link href={el[1]}>
-                <a className="block w-fit bg-ecoRed transition-all duration-200 ease-out hover:text-paleGreen lg:w-full lg:py-3 lg:px-4 lg:hover:bg-darkRed">
+                <a
+                  className={`block w-fit bg-ecoRed transition-all duration-200 ease-out hover:text-paleGreen lg:w-full lg:py-3 lg:px-4 lg:hover:bg-darkRed ${
+                    router.pathname === el[1] ? "text-paleGreen" : "text-white"
+                  }`}
+                >
                   {el[0]}
                 </a>
               </Link>

@@ -13,7 +13,7 @@ const Layout = () => {
   const [isShowVideoModal, setIsShowVideoModal] = useState<boolean>(false);
 
   return (
-    <div className="relative overflow-x-hidden pt-16">
+    <div className="relative overflow-x-hidden">
       <LandingHero />
       <VideoCounter setVideoModal={setIsShowVideoModal} />
       <PerksComparison />

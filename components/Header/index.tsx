@@ -15,19 +15,19 @@ const Header = () => {
     [
       "About",
       [
-        ["Our Story", "/"],
-        ["Our Materials", "/"],
+        ["Our Story", "/about"],
+        ["Our Materials", "/materials"],
       ],
     ],
-    ["Products", "/"],
+    ["Products", "/products"],
   ];
   const rightMenu = [
-    ["Eco News", "/"],
-    ["FAQs", "/"],
+    ["Eco News", "/eco-news"],
+    ["FAQs", "/faqs"],
   ];
   return (
     <nav
-      className="fixed z-50 h-16 w-screen bg-darkRed px-7 text-white shadow-[0px_0px_20px_0px_rgba(0,0,0,0.8)] lg:px-10 xl:px-20"
+      className="fixed z-50 h-16 w-screen bg-darkRed px-7 shadow-[0px_0px_20px_0px_rgba(0,0,0,0.8)] lg:px-10 xl:px-20"
       style={{
         backgroundImage: `url(${TextureImg.src})`,
         backgroundBlendMode: "multiply",
@@ -45,7 +45,7 @@ const Header = () => {
         </IconContext.Provider>
       </div>
       <div
-        className={`absolute top-[100%] left-0 flex w-screen flex-col items-center justify-between gap-10 bg-ecoRed py-10 shadow-[0px_10px_15px_-5px_rgba(0,0,0,0.5)] transition-opacity duration-200 ease-out lg:static lg:h-full lg:w-full lg:flex-row lg:bg-transparent lg:py-0 ${
+        className={`absolute top-[100%] left-0 flex w-screen flex-col items-center justify-between gap-10 bg-ecoRed py-10 shadow-[0px_10px_15px_-5px_rgba(0,0,0,0.5)] transition-opacity duration-200 ease-out lg:pointer-events-auto lg:static lg:h-full lg:w-full lg:flex-row lg:bg-transparent lg:py-0 ${
           isNavbarOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"

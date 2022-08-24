@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <DefaultSeo {...SEO} />
       <div className="overflow-x-hidden relative">
         <Header />
-        <main>
+        <main className="pt-16">
           <Component {...pageProps} />
         </main>
         <Footer />
