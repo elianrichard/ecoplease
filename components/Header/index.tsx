@@ -1,69 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 import TextureImg from "../../asset/pictures/paper-texture-3.png";
 import LogoTextLight from "../../asset/svgs/logo/LogoTextLight2";
 
-import { BiMenu } from "react-icons/bi";
+import { BiMenu, BiChevronDown } from "react-icons/bi";
 import { IconContext } from "react-icons";
+import LinkButton from "./LinkButton";
+import NestedLinkButton from "./NestedLinkButton";
 
 const Header = () => {
+  const [isNavbarOpen, setIsNavbarOpen] = useState<boolean>(false);
+  const leftMenu = [
+    ["Home", "/"],
+    [
+      "About",
+      [
+        ["Our Story", "/"],
+        ["Our Materials", "/"],
+      ],
+    ],
+    ["Products", "/"],
+  ];
+  const rightMenu = [
+    ["Eco News", "/"],
+    ["FAQs", "/"],
+    ["Contact Us", "/"],
+  ];
   return (
     <nav
-      className="w-screen bg-darkRed flex justify-end lg:justify-between items-center xl:px-20 lg:px-10 px-7 h-16 text-white fixed z-50 shadow-[0px_0px_20px_0px_rgba(0,0,0,0.8)]"
+      className="fixed z-50 h-16 w-screen bg-darkRed px-7 text-white shadow-[0px_0px_20px_0px_rgba(0,0,0,0.8)] lg:px-10 xl:px-20"
       style={{
         backgroundImage: `url(${TextureImg.src})`,
         backgroundBlendMode: "multiply",
         backgroundSize: "100%",
       }}
     >
-      <div className="absolute top-1/2 left-8 lg:left-1/2 lg:-translate-x-1/2 -translate-y-1/2">
-        <LogoTextLight className="lg:w-52 w-40" />
+      <div className="absolute top-1/2 left-8 -translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2">
+        <LogoTextLight className="w-40 lg:w-52" />
       </div>
-      <div className="hidden lg:flex xl:gap-12 lg:gap-6">
-        <Link href={"/"}>
-          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
-            Home
-          </a>
-        </Link>
-        <Link href={"/"}>
-          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
-            About Us
-          </a>
-        </Link>
-        <Link href={"/"}>
-          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
-            Products
-          </a>
-        </Link>
-        <Link href={"/"}>
-          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
-            Eco News
-          </a>
-        </Link>
+      <div className="absolute right-8 flex h-full w-10 items-center lg:hidden">
+        <IconContext.Provider
+          value={{ className: "w-full h-full text-white cursor-pointer" }}
+        >
+          <BiMenu onClick={() => setIsNavbarOpen(!isNavbarOpen)} />
+        </IconContext.Provider>
       </div>
-      <div className="hidden lg:flex xl:gap-12 lg:gap-6">
-        <Link href={"/"}>
-          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
-            Blog
-          </a>
-        </Link>
-        <Link href={"/"}>
-          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
-            FAQs
-          </a>
-        </Link>
-        <Link href={"/"}>
-          <a className="hover:text-paleGreen transitioon-all duration-200 ease-out">
-            Contact Us
-          </a>
-        </Link>
+      <div
+        className={`absolute top-[100%] left-0 flex w-screen flex-col items-center justify-between gap-10 bg-ecoRed py-10 shadow-[0px_10px_15px_-5px_rgba(0,0,0,0.5)] transition-opacity duration-200 ease-out lg:static lg:h-full lg:w-full lg:flex-row lg:bg-transparent lg:py-0 ${
+          isNavbarOpen ? "opacity-100" : "opacity-0"
+        } lg:opacity-100`}
+      >
+        <ul className="flex h-full w-full flex-col gap-10 lg:flex-row lg:gap-6 lg:py-0 xl:gap-12">
+          {leftMenu.map((el, i) => {
+            if (typeof el[1] === "string")
+              return <LinkButton text={el[0]} link={el[1]} key={i} />;
+            else return <NestedLinkButton text={el[0]} links={el[1]} />;
+          })}
+        </ul>
+        <ul className="flex h-full w-full flex-col justify-end gap-10 lg:flex-row lg:gap-6 lg:py-0 xl:gap-12">
+          {rightMenu.map((el, i) => {
+            if (typeof el[1] === "string")
+              return <LinkButton text={el[0]} link={el[1]} key={i} />;
+            else return <NestedLinkButton text={el[0]} links={el[1]} />;
+          })}
+        </ul>
       </div>
-      <IconContext.Provider value={{ className: "w-full h-full text-white" }}>
-        <div className="w-10 h-10 lg:hidden block">
-          <BiMenu />
-        </div>
-      </IconContext.Provider>
     </nav>
   );
 };
