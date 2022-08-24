@@ -8,7 +8,7 @@ const JoinedContent = ({ children }: PropsWithChildren) => {
       className="mb-1 flex w-screen flex-col items-center gap-20 bg-skinCream/80 py-20"
       style={{
         backgroundImage: `url("${paperTextureImg.src}")`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundPosition: "top center",
         backgroundBlendMode: "multiply",
       }}

@@ -10,7 +10,7 @@ const Footer = () => {
       className="flex w-screen justify-center bg-darkRed py-16"
       style={{
         backgroundImage: `url(${TextureImg.src})`,
-        backgroundSize: "100%",
+        backgroundSize: "cover",
         backgroundBlendMode: "multiply",
       }}
     >
