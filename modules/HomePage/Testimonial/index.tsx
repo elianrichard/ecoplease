@@ -19,7 +19,7 @@ const Testimonial = () => {
           style={{
             clipPath: "url(#testimonialMask)",
             backgroundImage: `url(${TestimonialBackgroundImg.src})`,
-            backgroundSize: "fill",
+            backgroundSize: "cover",
             backgroundPosition: "center center",
             backgroundBlendMode: "multiply",
           }}
