@@ -9,7 +9,7 @@ import LinkButton from "./LinkButton";
 import NestedLinkButton from "./NestedLinkButton";
 
 const Header = () => {
-  const [isNavbarOpen, setIsNavbarOpen] = useState<boolean>(false);
+  const [isNavbarOpen, setIsNavbarOpen] = useState<Boolean>(false);
   const leftMenu = [
     ["Home", "/"],
     [
@@ -54,15 +54,45 @@ const Header = () => {
         <ul className="flex h-full w-full flex-col gap-10 lg:flex-row lg:gap-6 lg:py-0 xl:gap-12">
           {leftMenu.map((el, i) => {
             if (typeof el[1] === "string")
-              return <LinkButton text={el[0]} link={el[1]} key={i} />;
-            else return <NestedLinkButton text={el[0]} links={el[1]} key={i} />;
+              return (
+                <LinkButton
+                  text={el[0]}
+                  link={el[1]}
+                  setNavbar={setIsNavbarOpen}
+                  key={i}
+                />
+              );
+            else
+              return (
+                <NestedLinkButton
+                  text={el[0]}
+                  links={el[1]}
+                  setNavbar={setIsNavbarOpen}
+                  key={i}
+                />
+              );
           })}
         </ul>
         <ul className="flex h-full w-full flex-col justify-end gap-10 lg:flex-row lg:gap-6 lg:py-0 xl:gap-12">
           {rightMenu.map((el, i) => {
             if (typeof el[1] === "string")
-              return <LinkButton text={el[0]} link={el[1]} key={i} />;
-            else return <NestedLinkButton text={el[0]} links={el[1]} />;
+              return (
+                <LinkButton
+                  text={el[0]}
+                  link={el[1]}
+                  setNavbar={setIsNavbarOpen}
+                  key={i}
+                />
+              );
+            else
+              return (
+                <NestedLinkButton
+                  text={el[0]}
+                  links={el[1]}
+                  setNavbar={setIsNavbarOpen}
+                  key={i}
+                />
+              );
           })}
         </ul>
       </div>

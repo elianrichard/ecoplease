@@ -5,7 +5,7 @@ import { VscChromeClose } from "react-icons/vsc";
 
 interface Props {
   additionalClass?: string;
-  setModal: Dispatch<SetStateAction<boolean>>;
+  setModal: Dispatch<SetStateAction<Boolean>>;
 }
 
 const ModalContainer = ({

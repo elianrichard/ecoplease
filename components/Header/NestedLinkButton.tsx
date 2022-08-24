@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -8,9 +8,10 @@ import { BiChevronDown } from "react-icons/bi";
 interface Props {
   text: string | string[][];
   links: string[][];
+  setNavbar: Dispatch<SetStateAction<Boolean>>;
 }
 
-const NestedLinkButton = ({ text, links }: Props) => {
+const NestedLinkButton = ({ text, links, setNavbar }: Props) => {
   const router = useRouter();
   const linksUrl = links.map((el) => el[1]);
 
@@ -37,6 +38,7 @@ const NestedLinkButton = ({ text, links }: Props) => {
                   className={`block w-fit bg-ecoRed transition-all duration-200 ease-out hover:text-paleGreen lg:w-full lg:py-3 lg:px-4 lg:hover:bg-darkRed ${
                     router.pathname === el[1] ? "text-paleGreen" : "text-white"
                   }`}
+                  onClick={() => setNavbar(false)}
                 >
                   {el[0]}
                 </a>
