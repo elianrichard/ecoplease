@@ -71,6 +71,27 @@
     background: #e5d2b6;
   }
 
+  /* width */
+  .faq-textarea-scrollbar::-webkit-scrollbar {
+    width: 5px !important;
+  }
+
+  /* Track */
+  .faq-textarea-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  .faq-textarea-scrollbar::-webkit-scrollbar-thumb {
+    background: #AC151A;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  .faq-textarea-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #e5d2b6;
+  }
+
   .clip-path-triangle {
     clip-path: polygon(
       calc(100% - 20px) 0,
