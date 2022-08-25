@@ -16,7 +16,7 @@ const Footer = () => {
     >
       <div className="flex w-full flex-col justify-between gap-10 px-10 text-center text-white md:flex-row md:gap-0 lg:w-4/5 lg:px-0 xl:w-3/5">
         <div className="flex items-center justify-center">
-          <LogoLightSVG className="w-32" />
+          <LogoLightSVG className="w-32 fill-white" />
         </div>
         <div className="flex flex-col gap-2">
           <p className="mb-2 bg-skinCream px-3 py-1 text-lg font-black text-black">

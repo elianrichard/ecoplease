@@ -9,7 +9,7 @@ import RippedSVG from "../../asset/svgs/ripped/RippedLanding";
 const LandingHero = () => {
   return (
     <div
-      className={`relative mb-1 flex w-screen justify-center overflow-hidden bg-darkRed lg:h-screen`}
+      className={`relative mb-1 flex w-screen justify-center overflow-hidden bg-darkRed lg:h-[calc(100vh-64px)]`}
       style={{
         backgroundImage: `url("${paperTextureImg.src}")`,
         backgroundSize: "cover",
