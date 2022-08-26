@@ -29,7 +29,7 @@ const placeHolderFaqs = [
   {
     question: "Bahannya terbuat dari apa aja?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium.",
   },
 ];
 
@@ -51,7 +51,7 @@ const Layout = () => {
         className="relative min-h-screen w-full flex-[4] bg-skinCream"
         style={{
           backgroundImage: `url(${FaqBgImg.src})`,
-          backgroundSize: "cover",
+          backgroundSize: "100%",
           backgroundBlendMode: "multiply",
         }}
       >
@@ -74,7 +74,7 @@ const Layout = () => {
         className="min-h-screen w-full flex-[2] bg-skinCream/50"
         style={{
           backgroundImage: `url(${PaperTextureImg.src})`,
-          backgroundSize: "cover",
+          backgroundSize: "100% 100vh",
           backgroundBlendMode: "multiply",
         }}
       >
@@ -92,13 +92,21 @@ const Layout = () => {
               placeholder="Name"
               autoComplete="off"
               className="w-full border-b-2 border-black bg-transparent p-2 outline-none"
+              value={formInput.name}
+              onChange={(e) =>
+                setFormInput((prev) => ({ ...prev, name: e.target.value }))
+              }
             />
             <textarea
               name="question"
               autoComplete="off"
               placeholder="Your Question"
               className="faq-textarea-scrollbar w-full border-b-2 border-black bg-transparent p-2 outline-none"
-              rows={4}
+              rows={2}
+              value={formInput.question}
+              onChange={(e) =>
+                setFormInput((prev) => ({ ...prev, question: e.target.value }))
+              }
             />
             <button className="absolute bottom-0 translate-y-1/2 rounded-xl  bg-black px-5 py-2 text-3xl font-bold text-skinCream">
               SUMBIT
