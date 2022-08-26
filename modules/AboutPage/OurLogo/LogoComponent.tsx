@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 
 import classNames from "classnames";
-("classnames");
+import { motion } from "framer-motion";
 
 interface Props {
   title: string;
@@ -12,16 +12,17 @@ interface Props {
 
 const LogoComponent = ({ title, selected, setSelected, index }: Props) => {
   return (
-    <p
+    <motion.p
+      whileHover={{ scale: 1.1 }}
       className={classNames(
-        "before:title-outline-skinCream relative z-0 w-full cursor-pointer text-right font-black text-skinCream before:absolute before:top-1 before:-z-10 before:translate-x-1 before:transition-opacity before:duration-200 before:ease-out xs:text-5xl",
+        "before:title-outline-skinCream relative z-0 w-full origin-bottom-right cursor-pointer text-right font-bold text-skinCream before:absolute before:top-1 before:-z-10 before:translate-x-1 before:transition-opacity before:duration-200 before:ease-out hover:before:opacity-100 xs:text-5xl",
         {
-          ["before:content-['The_World.']"]:
-            selected === index && title === "The World.",
-          ["before:content-['Children.']"]:
-            selected === index && title === "Children.",
-          ["before:content-['Blood']"]:
-            selected === index && title === "Blood.",
+          "before:content-['The_World.']": title === "The World.",
+          "before:content-['Children.']": title === "Children.",
+          "before:content-['Blood']": title === "Blood.",
+        },
+        {
+          "before:opacity-0": index !== selected,
         }
       )}
       onClick={() => {
@@ -30,7 +31,7 @@ const LogoComponent = ({ title, selected, setSelected, index }: Props) => {
       }}
     >
       {title}
-    </p>
+    </motion.p>
   );
 };
 
