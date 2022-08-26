@@ -5,7 +5,7 @@ import KopiKenanganSVG from "../../asset/svgs/kopiKenangan";
 const Partners = () => {
   return (
     <div className="flex w-full flex-col items-center gap-20">
-      <p className="text-outline relative z-0 w-full text-center text-4xl font-black text-darkRed before:absolute before:top-1 before:-z-10 before:translate-x-1 before:content-['OUR_PARTNERS'] xs:text-5xl">
+      <p className="before:title-outline-red relative z-0 w-full text-center text-4xl font-black text-darkRed before:absolute before:top-1 before:-z-10 before:translate-x-1 before:content-['OUR_PARTNERS'] xs:text-5xl">
         OUR PARTNERS
       </p>
       <div className="flex flex-wrap justify-center gap-6 xs:gap-12">

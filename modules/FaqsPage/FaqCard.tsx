@@ -42,15 +42,11 @@ const FaqCard = ({ question, answer, index, selected, setSelected }: Props) => {
       <div
         className={`${
           selected === index
-            // ? `max-h-[${answerElement.current.scrollHeight}px]`
-            ? `max-h-32`
+            ? `max-h-[${answerElement.current.scrollHeight}px]`
             : "max-h-0"
         } transition-all duration-200 ease-out`}
       >
-        <p
-          className="pt-5 text-lg text-black"
-          ref={answerElement}
-        >
+        <p className="pt-5 text-lg text-black" ref={answerElement}>
           {answer}
         </p>
       </div>

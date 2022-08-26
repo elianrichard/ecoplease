@@ -12,7 +12,7 @@ const Certification = () => {
   const imageArray = [Bpi, Compostable, Fda, Sgs, TuvHome, TuvIndustrial];
   return (
     <div className="flex h-fit w-full flex-col items-center gap-14">
-      <p className="text-outline relative z-0 w-full text-center text-4xl font-black text-darkRed before:absolute before:top-1 before:-z-10 before:translate-x-1 before:content-['CERTIFICATION'] xs:text-5xl">
+      <p className="before:title-outline-red relative z-0 w-full text-center text-4xl font-black text-darkRed before:absolute before:top-1 before:-z-10 before:translate-x-1 before:content-['CERTIFICATION'] xs:text-5xl">
         CERTIFICATION
       </p>
       <div className="flex h-full flex-wrap justify-center gap-10">

@@ -44,10 +44,16 @@
     font-family: Gotham, system-ui, sans-serif;
   }
 
-  .text-outline::before {
+  .title-outline-red {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #cb3233;
+  }
+
+  .title-outline-skinCream {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #e5d2b6;
   }
 
   /* width */
@@ -83,7 +89,7 @@
 
   /* Handle */
   .faq-textarea-scrollbar::-webkit-scrollbar-thumb {
-    background: #AC151A;
+    background: #ac151a;
     border-radius: 5px;
   }
 
