@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import TextureImg from "../../../asset/pictures/paper-texture-3.png";
 import OurLogoBgImg from "../../../asset/pictures/about/our-logo-bg.jpg";
@@ -51,18 +52,32 @@ const OurLogo = () => {
           backgroundBlendMode: "multiply",
         }}
       >
-        <div className="flex h-full w-full flex-col items-start justify-center gap-5 px-20 text-white">
-          <p className="text-4xl font-bold">
-            {!Number.isNaN(selectedTitle)
-              ? logoTitleDesc[selectedTitle].name
-              : "Our Logo"}
-          </p>
-          <p className="text-lg">
-            {!Number.isNaN(selectedTitle)
-              ? logoTitleDesc[selectedTitle].desc
-              : "Click on one of the text on the left to see the description."}
-          </p>
-        </div>
+        <AnimatePresence>
+          <div className="relative flex h-full w-full flex-col items-start justify-center text-white">
+            <motion.div
+              className="absolute flex h-full w-full flex-col items-start justify-center gap-5 px-20"
+              key={
+                !Number.isNaN(selectedTitle)
+                  ? logoTitleDesc[selectedTitle].name
+                  : "Our Logo"
+              }
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 100 }}
+            >
+              <p className="text-4xl font-bold">
+                {!Number.isNaN(selectedTitle)
+                  ? logoTitleDesc[selectedTitle].name
+                  : "Our Logo"}
+              </p>
+              <p className="text-lg">
+                {!Number.isNaN(selectedTitle)
+                  ? logoTitleDesc[selectedTitle].desc
+                  : "Click on one of the text on the left to see the description."}
+              </p>
+            </motion.div>
+          </div>
+        </AnimatePresence>
       </div>
     </div>
   );
