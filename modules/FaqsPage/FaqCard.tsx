@@ -29,11 +29,11 @@ const FaqCard = ({ question, answer, index, selected, setSelected }: Props) => {
         else setSelected(NaN);
       }}
     >
-      <div className="flex w-full justify-between text-xl text-ecoRed">
+      <div className="flex w-full items-center justify-between gap-3 text-lg lg:text-xl text-ecoRed">
         <p>{question}</p>
         <IconContext.Provider
           value={{
-            className: `fill-ecoRed h-full w-7 transition-all duration-200 ease-out ${
+            className: `fill-ecoRed h-[30px] w-[30px] transition-all duration-200 ease-out ${
               selected === index && "-rotate-180"
             }`,
           }}
@@ -52,7 +52,7 @@ const FaqCard = ({ question, answer, index, selected, setSelected }: Props) => {
               collapsed: { opacity: 0, height: 0 },
             }}
           >
-            <p className="pt-5 text-lg text-black" ref={answerElement}>
+            <p className="pt-5 lg:text-lg text-black" ref={answerElement}>
               {answer}
             </p>
           </motion.div>

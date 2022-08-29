@@ -46,9 +46,9 @@ const Layout = () => {
   });
 
   return (
-    <div className="mb-1 flex min-h-screen w-screen">
+    <div className="mb-1 flex w-screen flex-col-reverse md:min-h-screen md:flex-row">
       <div
-        className="relative min-h-screen w-full flex-[4] bg-skinCream"
+        className="relative w-screen bg-skinCream md:min-h-screen md:w-3/5"
         style={{
           backgroundImage: `url(${FaqBgImg.src})`,
           backgroundSize: "100%",
@@ -56,7 +56,7 @@ const Layout = () => {
         }}
       >
         <div className="h-full w-full bg-darkRed/30">
-          <div className="flex h-full w-full flex-col items-center justify-start gap-5 p-20">
+          <div className="flex h-full w-full flex-col items-center justify-start gap-5 py-10 px-10 md:py-20 xl:px-20">
             {placeHolderFaqs.map((el, i) => (
               <FaqCard
                 question={el.question}
@@ -71,19 +71,19 @@ const Layout = () => {
         </div>
       </div>
       <div
-        className="min-h-screen w-full flex-[2] bg-skinCream/50"
+        className="w-screen bg-skinCream/50 md:min-h-screen md:w-2/5"
         style={{
           backgroundImage: `url(${PaperTextureImg.src})`,
           backgroundSize: "100% 100vh",
           backgroundBlendMode: "multiply",
         }}
       >
-        <div className="relative p-20">
-          <p className="mb-10 text-5xl font-bold uppercase leading-tight text-darkRed">
+        <div className="relative px-10 py-10 md:py-20 xl:px-20">
+          <p className="mb-10 text-5xl font-bold uppercase lg:leading-tight text-darkRed md:text-4xl xl:leading-tight xl:text-5xl">
             Frequently Asked Questions
           </p>
           <div className="relative flex w-full flex-col items-center gap-5 rounded-xl bg-white p-10 pb-14">
-            <p className="text-center text-3xl font-bold text-black">
+            <p className="text-center text-2xl font-bold text-black xl:text-3xl">
               Ask a Question!
             </p>
             <input
@@ -108,7 +108,7 @@ const Layout = () => {
                 setFormInput((prev) => ({ ...prev, question: e.target.value }))
               }
             />
-            <button className="absolute bottom-0 translate-y-1/2 rounded-xl  bg-black px-5 py-2 text-3xl font-bold text-skinCream">
+            <button className="absolute bottom-0 translate-y-1/2 rounded-xl  bg-black px-5 py-2 text-2xl font-bold text-skinCream xl:text-3xl">
               SUMBIT
             </button>
           </div>
