@@ -7,7 +7,7 @@ import OurVisionBgImg from "../../asset/pictures/about/our-vision-bg.png";
 const VisionMission = () => {
   return (
     <div className="mb-1 flex w-screen flex-col">
-      <div className="flex h-80 w-full">
+      <div className="mb-1 flex w-full flex-col sm:mb-0 sm:h-80 sm:flex-row">
         <div
           className="flex flex-[2] items-center bg-skinCream"
           style={{
@@ -16,14 +16,14 @@ const VisionMission = () => {
             backgroundBlendMode: "multiply",
           }}
         >
-          <p className="w-full text-center text-6xl font-bold uppercase leading-tight text-darkRed">
+          <p className="w-full py-10 text-center text-5xl font-bold uppercase leading-tight text-darkRed sm:py-0 lg:text-6xl">
             Our
             <br />
             Vision
           </p>
         </div>
         <div
-          className="flex flex-[3] items-center bg-darkRed"
+          className="flex flex-[3] items-center bg-darkRed py-20 sm:py-0"
           style={{
             backgroundImage: `url(${OurVisionBgImg.src})`,
             backgroundSize: "cover",
@@ -31,7 +31,7 @@ const VisionMission = () => {
             backgroundPosition: "center center",
           }}
         >
-          <p className="w-full px-20 text-xl text-white">
+          <p className="w-full px-16 text-lg text-white lg:px-20 lg:text-xl">
             Creating a world that embraces{" "}
             <span className="bg-white px-2 font-bold text-darkRed">
               eco-decisions
@@ -41,8 +41,7 @@ const VisionMission = () => {
           </p>
         </div>
       </div>
-      <div></div>
-      <div className="flex h-80 w-full flex-row-reverse">
+      <div className="flex w-full flex-col sm:h-80 sm:flex-row-reverse ">
         <div
           className="flex flex-[2] items-center bg-skinCream"
           style={{
@@ -51,14 +50,14 @@ const VisionMission = () => {
             backgroundBlendMode: "multiply",
           }}
         >
-          <p className="w-full text-center text-6xl font-bold uppercase leading-tight text-darkRed">
+          <p className="w-full py-10 text-center text-5xl font-bold uppercase leading-tight text-darkRed sm:py-0 lg:text-6xl">
             Our
             <br />
             Mission
           </p>
         </div>
         <div
-          className="flex flex-[3] items-center bg-darkRed"
+          className="flex flex-[3] items-center bg-darkRed py-20 sm:py-0"
           style={{
             backgroundImage: `url(${OurMissionBgImg.src})`,
             backgroundSize: "cover",
@@ -66,7 +65,7 @@ const VisionMission = () => {
             backgroundPosition: "center center",
           }}
         >
-          <p className="w-full px-20 text-right text-xl text-white">
+          <p className="w-full px-16 text-lg text-white sm:text-right lg:px-20 lg:text-xl">
             To provide a range of 100% Home Compostable products as an{" "}
             <span className="bg-white px-2 font-bold text-darkRed">
               alternatives
