@@ -15,7 +15,7 @@ const LogoComponent = ({ title, selected, setSelected, index }: Props) => {
     <motion.p
       whileHover={{ scale: 1.1 }}
       className={classNames(
-        "before:title-outline-skinCream relative z-0 w-full origin-bottom-right cursor-pointer text-right font-bold text-skinCream before:absolute before:top-1 before:-z-10 before:translate-x-1 before:transition-opacity before:duration-200 before:ease-out hover:before:opacity-100 xs:text-5xl",
+        "before:title-outline-skinCream relative z-0 w-full origin-bottom-right cursor-pointer text-center sm:text-right text-4xl font-bold text-skinCream before:absolute before:top-1 before:-z-10 before:translate-x-1 before:transition-opacity before:duration-200 before:ease-out hover:before:opacity-100 xl:text-5xl",
         {
           "before:content-['The_World.']": title === "The World.",
           "before:content-['Children.']": title === "Children.",

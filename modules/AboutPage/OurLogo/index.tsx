@@ -18,7 +18,7 @@ const OurLogo = () => {
   ];
 
   return (
-    <div className="mb-1 flex h-96 w-screen">
+    <div className="mb-1 flex w-screen flex-col lg:h-96 lg:flex-row">
       <div
         className="h-full flex-[3] bg-darkRed text-5xl font-bold text-skinCream"
         style={{
@@ -27,8 +27,8 @@ const OurLogo = () => {
           backgroundBlendMode: "multiply",
         }}
       >
-        <div className="flex h-full w-full gap-20 px-20">
-          <div className="flex flex-[3] flex-col items-end justify-center gap-8">
+        <div className="flex h-full w-full flex-col-reverse gap-10 sm:gap-16 sm:px-20 py-16 sm:py-10 sm:flex-row lg:py-0 xl:gap-20">
+          <div className="flex flex-[3] flex-col justify-center gap-8 sm:items-end">
             {logoTitleDesc.map((el, i) => (
               <LogoComponent
                 title={el.name}
@@ -40,7 +40,7 @@ const OurLogo = () => {
             ))}
           </div>
           <div className="flex h-full flex-[2] items-center justify-center">
-            <LogoLight className="w-52 fill-skinCream" />
+            <LogoLight className="w-32 fill-skinCream xl:w-52" />
           </div>
         </div>
       </div>
@@ -53,9 +53,9 @@ const OurLogo = () => {
         }}
       >
         <AnimatePresence>
-          <div className="relative flex h-full w-full flex-col items-start justify-center text-white">
+          <div className="relative h-64 w-full flex-col  text-white sm:h-80 lg:h-full">
             <motion.div
-              className="absolute flex h-full w-full flex-col items-start justify-center gap-5 px-20"
+              className="absolute flex h-full w-full flex-col items-center justify-center gap-5 px-5 sm:px-20 text-center sm:items-start sm:text-left"
               key={
                 !Number.isNaN(selectedTitle)
                   ? logoTitleDesc[selectedTitle].name
@@ -73,7 +73,7 @@ const OurLogo = () => {
               <p className="text-lg">
                 {!Number.isNaN(selectedTitle)
                   ? logoTitleDesc[selectedTitle].desc
-                  : "Click on one of the text on the left to see the description."}
+                  : "Click on one of the text to see the description."}
               </p>
             </motion.div>
           </div>
