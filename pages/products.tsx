@@ -1,12 +1,10 @@
 import { NextPage } from "next";
 import React from "react";
 
+import Layout from "../modules/ProductsPage/Layout";
+
 const Products: NextPage = () => {
-  return (
-    <div className="flex h-screen w-screen items-center justify-center bg-black text-5xl font-bold text-white">
-      Products Page
-    </div>
-  );
+  return <Layout />;
 };
 
 export default Products;
