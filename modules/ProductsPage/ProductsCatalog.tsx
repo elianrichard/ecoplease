@@ -71,7 +71,6 @@ const ProductsCatalog = () => {
       const filtered = productsPlaceholder.filter(
         (el) => el.type === selectedCategory
       );
-      console.log(filtered);
       setProductLists(filtered);
     }
   }, [selectedCategory]);
