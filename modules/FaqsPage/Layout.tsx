@@ -79,7 +79,7 @@ const Layout = () => {
         }}
       >
         <div className="relative px-10 py-10 md:py-20 xl:px-20">
-          <p className="mb-10 text-5xl font-bold uppercase lg:leading-tight text-darkRed md:text-4xl xl:leading-tight xl:text-5xl">
+          <p className="mb-10 text-4xl font-bold uppercase text-darkRed lg:leading-tight xl:text-5xl xl:leading-tight">
             Frequently Asked Questions
           </p>
           <div className="relative flex w-full flex-col items-center gap-5 rounded-xl bg-white p-10 pb-14">
