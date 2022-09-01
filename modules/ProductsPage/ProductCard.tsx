@@ -17,18 +17,20 @@ const ProductCard = ({ product }: Props) => {
       layout
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0, y: 100 }}
+      exit={{ opacity: 0 }}
       className="w-full overflow-hidden rounded-xl"
     >
       <div className="relative aspect-square w-full bg-darkRed">
         <Image src={product.image} layout="fill" alt="packaging" />
-        <div className="absolute right-0 top-0 rounded-bl-xl bg-white px-4 py-1 font-bold uppercase text-ecoRed">
+        <div className="absolute right-0 top-0 rounded-bl-xl bg-white px-4 py-1 text-sm font-bold uppercase text-ecoRed xs:text-base">
           {product.type}
         </div>
       </div>
       <div className="bg-white px-5 py-3 text-ecoRed">
-        <p className="text-xl font-bold">{product.name}</p>
-        <p>{product.material}</p>
+        <p className="font-bold text-base md:text-lg">
+          {product.name}
+        </p>
+        <p className="md:text-base text-sm">{product.material}</p>
       </div>
     </motion.div>
   );

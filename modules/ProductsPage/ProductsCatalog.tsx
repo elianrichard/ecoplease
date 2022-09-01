@@ -85,12 +85,12 @@ const ProductsCatalog = () => {
         backgroundBlendMode: "multiply",
       }}
     >
-      <div className="flex w-4/5 flex-col items-center gap-14">
-        <div className="flex w-full items-center gap-5">
+      <div className="flex w-full flex-col items-center gap-14 px-5 sm:w-4/5 sm:px-0">
+        <div className="flex w-full flex-wrap items-center justify-center gap-3 sm:gap-5">
           {categoryList.map((el, i) => (
             <button
               key={i}
-              className={`flex-1 rounded-xl py-3 text-xl font-bold uppercase transition-all duration-200 ease-out ${
+              className={`h-full rounded-xl py-3 px-3 text-base font-bold uppercase transition-all duration-200 ease-out sm:text-lg xl:text-xl ${
                 el === selectedCategory
                   ? "bg-darkRed text-white"
                   : "bg-white text-ecoRed"
@@ -102,7 +102,10 @@ const ProductsCatalog = () => {
           ))}
         </div>
         <AnimatePresence>
-          <motion.div layout className="grid w-full grid-cols-4 gap-10">
+          <motion.div
+            layout
+            className="grid w-full grid-cols-2 gap-5 md:gap-10 sm:grid-cols-3 xl:grid-cols-4"
+          >
             {productLists.map((el) => (
               <ProductCard key={el.id} product={el} />
             ))}
