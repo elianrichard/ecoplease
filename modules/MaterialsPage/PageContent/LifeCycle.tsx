@@ -53,7 +53,7 @@ const LifeCycle = () => {
   }, [currentCycle]);
 
   return (
-    <div className="w-full">
+    <div className="w-full mb-14">
       <p className="mb-24 w-full text-center text-5xl font-bold uppercase text-ecoRed">
         Life Cycle
       </p>
