@@ -1,11 +1,22 @@
 import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
-import Description from "./Description";
-import Characteristics from "./Characteristics";
-import LifeCycle from "./LifeCycle";
+import Bamboo from "./Bamboo";
+import Sugarcane from "./Sugarcane";
 
 const PageContent = () => {
   const [selectedContent, setSelectedContent] = useState<number>(0);
+
+  const contentProps = {
+    className: "mt-20 flex flex-col gap-28",
+    initial: { opacity: 0, x: -300 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: 300 },
+    transition: {
+      ease: "easeInOut",
+      duration: 0.5
+    },
+  };
 
   return (
     <>
@@ -38,11 +49,13 @@ const PageContent = () => {
       </div>
       <div className="flex w-screen justify-center bg-skinCream py-20">
         <div className="flex w-4/5 flex-col items-center justify-center">
-          <div className="mt-20 flex flex-col gap-28">
-            <Description />
-            <Characteristics />
-            <LifeCycle />
-          </div>
+          <AnimatePresence mode="wait">
+            {selectedContent ? (
+              <Bamboo key={selectedContent} {...contentProps} />
+            ) : (
+              <Sugarcane key={selectedContent} {...contentProps} />
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </>
