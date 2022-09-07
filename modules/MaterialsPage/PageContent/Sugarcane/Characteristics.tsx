@@ -38,22 +38,21 @@ const characteristicsPlaceholder = [
 const Characteristics = () => {
   return (
     <div className="w-full">
-      <p className="mb-10 w-full text-center text-5xl font-bold uppercase text-ecoRed">
+      <p className="mb-10 w-full text-center text-2xl font-bold uppercase text-ecoRed xs:text-3xl sm:text-4xl md:text-5xl">
         Characteristics
       </p>
-      <div className="grid w-full grid-cols-3 gap-8">
+      <div className="grid w-full grid-cols-1 gap-5 xs:grid-cols-2 lg:grid-cols-3 xl:gap-8">
         {characteristicsPlaceholder.map((el, i) => (
           <div
-            className="group flex h-52 flex-col justify-between rounded-xl bg-darkRed px-6 py-5 shadow-[0px_5px_10px_0px_rgba(0,0,0,0.5)] transition-all duration-200 ease-out hover:bg-white"
+            className="group flex flex-col justify-start gap-5 rounded-xl bg-darkRed px-6 py-5 shadow-[0px_5px_10px_0px_rgba(0,0,0,0.5)] transition-all duration-200 ease-out hover:bg-white xs:h-60 xs:justify-between xs:gap-0"
             key={i}
           >
-            <NoPlasticIcon
-              width="60"
-              className="fill-skinCream group-hover:fill-darkRed"
-            />
+            <NoPlasticIcon className="w-14 fill-skinCream group-hover:fill-darkRed xs:w-10 sm:w-14" />
             <div className="text-skinCream transition-all duration-200 ease-out group-hover:text-darkRed">
-              <p className="text-lg font-bold uppercase">{el.title}</p>
-              <p className="text-sm">{el.desc}</p>
+              <p className="text-lg font-bold uppercase xs:text-base sm:text-lg">
+                {el.title}
+              </p>
+              <p className="text-sm xs:text-xs sm:text-sm">{el.desc}</p>
             </div>
           </div>
         ))}
