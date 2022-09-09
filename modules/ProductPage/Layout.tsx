@@ -67,14 +67,14 @@ const Layout = () => {
             descDiv.current?.clientHeight > descDivPos
               ? "sm:fixed"
               : "bottom-0 sm:absolute"
-          } w-screen bg-ecoRed px-10 py-10 sm:h-[calc(100vh-64px)] sm:w-[60vw] sm:px-14 lg:w-[50vw] lg:px-20`}
+          } flex w-screen flex-col bg-ecoRed px-10 py-10 sm:h-[calc(100vh-64px)] sm:w-[60vw] sm:px-14 lg:w-[50vw] lg:px-20`}
           style={{
             backgroundImage: `url(${PaperTextureImg.src})`,
             backgroundSize: "cover",
             backgroundBlendMode: "multiply",
           }}
         >
-          <div className="product-scrollbar flex h-full w-full flex-col gap-10 overflow-x-hidden text-white sm:overflow-y-scroll">
+          <div className="product-scrollbar mb-5 flex h-full w-full flex-col gap-10 overflow-x-hidden text-white sm:overflow-y-scroll">
             <div>
               <p className="mb-2 text-2xl font-bold md:text-3xl">
                 <span className="uppercase text-skinCream">
@@ -128,35 +128,35 @@ const Layout = () => {
                 ></div>
               ))}
             </div>
-            <div className="flex flex-col items-start gap-5 text-white md:text-xl">
-              <IconContext.Provider value={{ className: "w-10" }}>
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-xl bg-black px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-black"
-                >
-                  Request Sample <IoIosArrowForward />
-                </a>
-              </IconContext.Provider>
-              <div className="flex gap-5">
-                <a
-                  href={productPlaceholder.tokpedLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline rounded-xl bg-green-700 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-green-700"
-                >
-                  Buy at Tokopedia
-                </a>
-                <a
-                  href={productPlaceholder.shopeeLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline rounded-xl bg-orange-500 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-orange-500"
-                >
-                  Buy at Shopee
-                </a>
-              </div>
+          </div>
+          <div className="flex flex-col items-start gap-2 text-white md:text-xl">
+            <IconContext.Provider value={{ className: "w-10" }}>
+              <a
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-xl bg-black px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-black"
+              >
+                Request Sample <IoIosArrowForward />
+              </a>
+            </IconContext.Provider>
+            <div className="flex gap-5">
+              <a
+                href={productPlaceholder.tokpedLink}
+                target="_blank"
+                rel="noreferrer"
+                className="inline rounded-xl bg-green-700 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-green-700"
+              >
+                Buy at Tokopedia
+              </a>
+              <a
+                href={productPlaceholder.shopeeLink}
+                target="_blank"
+                rel="noreferrer"
+                className="inline rounded-xl bg-orange-500 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-orange-500"
+              >
+                Buy at Shopee
+              </a>
             </div>
           </div>
         </div>
