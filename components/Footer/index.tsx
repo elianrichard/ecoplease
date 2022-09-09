@@ -22,12 +22,12 @@ const Footer = () => {
           <p className="mb-2 bg-skinCream px-3 py-1 text-lg font-black text-black">
             QUICK LINKS
           </p>
-          <Link href={"/"}>
+          <Link href={"/products"}>
             <a className="transition-all duration-200 ease-out hover:text-paleGreen">
               Product Catalog
             </a>
           </Link>
-          <Link href={"/"}>
+          <Link href={"/materials"}>
             <a className="transition-all duration-200 ease-out hover:text-paleGreen">
               Our Materials
             </a>
@@ -57,17 +57,17 @@ const Footer = () => {
           <p className="mb-2 inline-block bg-skinCream px-3 py-1 text-lg font-black text-black">
             ABOUT
           </p>
-          <Link href={"/"}>
+          <Link href={"/about"}>
             <a className="transition-all duration-200 ease-out hover:text-paleGreen">
               Our Journey
             </a>
           </Link>
-          <Link href={"/"}>
+          <Link href={"/econews"}>
             <a className="transition-all duration-200 ease-out hover:text-paleGreen">
               Blog
             </a>
           </Link>
-          <Link href={"/"}>
+          <Link href={"/faqs"}>
             <a className="transition-all duration-200 ease-out hover:text-paleGreen">
               FAQs
             </a>

@@ -22,7 +22,7 @@ const Header = () => {
     ["Products", "/products"],
   ];
   const rightMenu = [
-    ["Eco News", "/eco-news"],
+    ["Eco News", "/econews"],
     ["FAQs", "/faqs"],
   ];
   return (

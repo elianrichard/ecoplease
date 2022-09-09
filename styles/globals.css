@@ -98,6 +98,27 @@
     background: #e5d2b6;
   }
 
+  /* width */
+  .product-scrollbar::-webkit-scrollbar {
+    width: 5px !important;
+  }
+
+  /* Track */
+  .product-scrollbar::-webkit-scrollbar-track {
+    background: #ac151a;
+  }
+
+  /* Handle */
+  .product-scrollbar::-webkit-scrollbar-thumb {
+    background: #e5d2b6;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  .product-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+  }
+
   .clip-path-triangle {
     clip-path: polygon(
       calc(100% - 20px) 0,
