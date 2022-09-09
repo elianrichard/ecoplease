@@ -45,10 +45,13 @@ const Layout = () => {
   }, [descDivPos]);
 
   return (
-    <div className="flex w-screen bg-ecoRed" ref={descDiv}>
-      <div className="w-1/2">
+    <div className="flex w-screen flex-col bg-ecoRed sm:flex-row" ref={descDiv}>
+      <div className="scrollbar-custom flex flex-[2] flex-row overflow-x-scroll sm:flex-col sm:overflow-x-hidden lg:flex-1 ">
         {productPlaceholder.imageList.map((el, i) => (
-          <div className="relative h-96 w-full" key={i}>
+          <div
+            className="relative h-72 min-w-[100vw] sm:h-96 sm:w-full sm:min-w-full"
+            key={i}
+          >
             <Image
               src={el}
               layout="fill"
@@ -58,32 +61,32 @@ const Layout = () => {
           </div>
         ))}
       </div>
-      <div className="relative w-1/2">
+      <div className="relative flex-[3] lg:flex-1">
         <div
           className={`${
             descDiv.current?.clientHeight > descDivPos
-              ? "fixed"
-              : "absolute bottom-0"
-          } h-[calc(100vh-64px)] w-[50vw] bg-ecoRed px-20 py-10`}
+              ? "sm:fixed"
+              : "bottom-0 sm:absolute"
+          } w-screen bg-ecoRed px-10 py-10 sm:h-[calc(100vh-64px)] sm:w-[60vw] sm:px-14 lg:w-[50vw] lg:px-20`}
           style={{
             backgroundImage: `url(${PaperTextureImg.src})`,
             backgroundSize: "cover",
             backgroundBlendMode: "multiply",
           }}
         >
-          <div className="product-scrollbar flex h-full w-full flex-col gap-10 overflow-x-hidden overflow-y-scroll text-white">
+          <div className="product-scrollbar flex h-full w-full flex-col gap-10 overflow-x-hidden text-white sm:overflow-y-scroll">
             <div>
-              <p className="mb-2 text-3xl font-bold">
+              <p className="mb-2 text-2xl font-bold md:text-3xl">
                 <span className="uppercase text-skinCream">
                   {productPlaceholder.id}
                 </span>{" "}
                 / {productPlaceholder.name}
               </p>
-              <p className="text-2xl font-semibold">
+              <p className="text-xl font-semibold md:text-2xl">
                 Rp {productPlaceholder.price}
               </p>
             </div>
-            <div className="text-xl">
+            <div className="text-lg md:text-xl">
               <p>
                 <span className="bg-white px-3 font-bold text-ecoRed">
                   Size:
@@ -104,8 +107,10 @@ const Layout = () => {
               </p>
             </div>
             <div>
-              <p className="text-xl font-bold">Product Characteristic</p>
-              <ol className="text-lg">
+              <p className="text-lg font-bold md:text-xl">
+                Product Characteristic
+              </p>
+              <ol className="md:text-lg">
                 {productPlaceholder.characteristics.map((el, i) => (
                   <li key={i}>
                     {i + 1}. {el}
@@ -113,7 +118,7 @@ const Layout = () => {
                 ))}
               </ol>
             </div>
-            <div className="flex items-center gap-3 text-xl font-bold">
+            <div className="flex items-center gap-3 text-lg font-bold md:text-xl">
               <p>Colors Available:</p>
               {productPlaceholder.color.map((el, i) => (
                 <div
@@ -123,7 +128,7 @@ const Layout = () => {
                 ></div>
               ))}
             </div>
-            <div className="flex flex-col items-start gap-5 text-xl text-white">
+            <div className="flex flex-col items-start gap-5 text-white md:text-xl">
               <IconContext.Provider value={{ className: "w-10" }}>
                 <a
                   href="#"
