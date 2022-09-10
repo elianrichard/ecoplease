@@ -21,7 +21,7 @@ const NewsCard = ({ article, index }: Props) => {
           (index + 1) % 2 === 0
             ? "flex-col self-end sm:flex-row-reverse"
             : "flex-col sm:flex-row"
-        } overflow-hidden rounded-xl bg-skinCream`}
+        } cursor-pointer overflow-hidden rounded-xl bg-skinCream transition-transform duration-200 ease-out hover:scale-110`}
       >
         <div
           className="min-h-80 custom-clip-econews relative h-80 w-full bg-skinCream before:absolute before:h-full before:w-full before:bg-black/40 sm:h-auto sm:w-2/5 md:w-3/5"

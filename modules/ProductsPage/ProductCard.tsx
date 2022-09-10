@@ -21,7 +21,7 @@ const ProductCard = ({ product }: Props) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="w-full overflow-hidden rounded-xl"
+        className="w-full cursor-pointer overflow-hidden rounded-xl transition-transform duration-200 ease-out hover:scale-110"
       >
         <div className="relative aspect-square w-full bg-darkRed">
           <Image src={product.image} layout="fill" alt="packaging" />
