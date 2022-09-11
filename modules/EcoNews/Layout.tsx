@@ -5,25 +5,13 @@ import { useQuery } from "@tanstack/react-query";
 import EconewsRipped from "../../asset/svgs/ripped/EconewsRipped";
 import EconewsRippedFlip from "../../asset/svgs/ripped/EconewsRippedFlip";
 
-// import NewsBgImg1 from "../../asset/pictures/econews/news-bg-1.png";
-import LayoutBgImg from "../../asset/pictures/econews/layout-bg.jpg";
+import usePostsQuery from "../_common/queries/usePostsQuery";
 import NewsCard from "./NewsCard";
+import LayoutBgImg from "../../asset/pictures/econews/layout-bg.jpg";
 
-import { PostsType } from "../_common/types/PostType";
 
 const Layout = () => {
-  const { isLoading, data: articles } = useQuery(
-    ["posts"],
-    (): Promise<AxiosResponse<PostsType[]>> => {
-      return axios.get("https://ecoplease.hrefid.com/wp-json/wp/v2/posts");
-    },
-    {
-      select: (data) => {
-        const reversed = data.data.reverse();
-        return reversed;
-      },
-    }
-  );
+  const { isLoading, data: articles } = usePostsQuery();
 
   return (
     <div

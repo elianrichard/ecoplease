@@ -1,11 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import axios, { AxiosResponse } from "axios";
-import { useQuery } from "@tanstack/react-query";
 
 import { PostsType } from "../_common/types/PostType";
-import { MediaType } from "../_common/types/MediaType";
 import getProperDate from "../_common/hooks/getProperDate";
+import useMediaQuery from "../_common/queries/useMediaQuery";
 
 interface Props {
   article: PostsType;
@@ -13,18 +11,10 @@ interface Props {
 }
 
 const NewsCard = ({ article, index }: Props) => {
-  const { data } = useQuery(
-    ["featured-media", article.featured_media],
-    (): Promise<AxiosResponse<MediaType>> => {
-      return axios.get(
-        `https://ecoplease.hrefid.com/wp-json/wp/v2/media/${article.featured_media}`
-      );
-    }
-  );
-
+  const { data } = useMediaQuery(article.featured_media);
   const imageLink = data?.data.guid.rendered;
 
-  const blogDate = new Date(article.date)
+  const blogDate = new Date(article.date);
   const blogProperDate = getProperDate(blogDate);
 
   return (
