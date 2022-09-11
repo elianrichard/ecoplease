@@ -19,7 +19,16 @@ const Layout = () => {
     question: "",
   });
 
-  const faqContentList = FaqContent;
+  const onSubmit = () => {
+    if (formInput.name && formInput.question)
+      window.open(
+        `https://wa.me/628118121011?text=Nama%3A%20${encodeURI(
+          formInput.name
+        )}%0APertanyaan%3A${encodeURI(formInput.question)}`,
+        "_blank"
+      );
+    else alert("Please input all field!");
+  };
 
   return (
     <div className="mb-1 flex w-screen flex-col-reverse md:min-h-screen md:flex-row">
@@ -33,7 +42,7 @@ const Layout = () => {
       >
         <div className="h-full w-full bg-darkRed/30">
           <div className="flex h-full w-full flex-col items-center justify-start gap-20 py-10 px-10 md:py-20 xl:px-20">
-            {faqContentList.map((elParent, mainIndex) => (
+            {FaqContent.map((elParent, mainIndex) => (
               <div
                 className="flex h-full w-full flex-col items-center justify-start gap-5"
                 key={mainIndex}
@@ -94,7 +103,10 @@ const Layout = () => {
                 setFormInput((prev) => ({ ...prev, question: e.target.value }))
               }
             />
-            <button className="absolute bottom-0 translate-y-1/2 rounded-xl  bg-black px-5 py-2 text-2xl font-bold text-skinCream xl:text-3xl">
+            <button
+              onClick={onSubmit}
+              className="absolute bottom-0 translate-y-1/2 rounded-xl  bg-black px-5 py-2 text-2xl font-bold text-skinCream xl:text-3xl"
+            >
               SUMBIT
             </button>
           </div>
