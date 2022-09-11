@@ -11,11 +11,11 @@ const ItemsCard = ({
   children,
 }: PropsWithChildren<Props>) => {
   return (
-    <div className="flex flex-col justify-center items-center flex-1 text-white text-center">
-      <div className="flex items-center justify-center mb-6 fill-white w-32 xs:w-full">
+    <div className="flex flex-1 flex-col items-center justify-center text-center text-white">
+      <div className="mb-6 flex w-32 items-center justify-center fill-white xs:w-full">
         {children}
       </div>
-      <p className="font-bold text-lg xs:text-2xl mb-2">{title}</p>
+      <p className="mb-2 text-lg font-bold uppercase xs:text-2xl">{title}</p>
       <p className="text-sm xs:text-base">{description}</p>
     </div>
   );
