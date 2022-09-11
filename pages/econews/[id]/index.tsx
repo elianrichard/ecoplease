@@ -31,45 +31,52 @@ const BlogPost = ({ post }: Props) => {
   }, [post.content.rendered]);
 
   return (
-    <div className="bg-skinCream py-16 px-10 lg:py-28 lg:px-28">
-      <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:items-start">
-        <div className="flex flex-[4] flex-col gap-10">
-          <div>
-            <p className="mb-2">{blogProperDate}</p>
-            <p className="text-4xl font-bold">{post.title.rendered}</p>
-          </div>
-          <div className="relative h-[400px] w-full">
-            <Image
-              src={NewsImg}
-              layout="fill"
-              objectFit="cover"
-              alt="econews"
-            />
-          </div>
-          <div className="flex flex-col gap-5 text-lg" ref={blogContent}></div>
-          <IconContext.Provider value={{className: "w-5 h-5 inline"}}>
-            <a href="#" className="text-xl font-bold">Back to Top <BsArrowUp /></a>
-          </IconContext.Provider>
-        </div>
-        <div className="flex flex-1 items-center justify-center md:mt-20">
-          <div className="flex flex-row gap-6 sm:gap-14 md:flex-col md:border-l-2 md:border-black md:pl-10">
-            <IconContext.Provider value={{ className: "w-8 h-8" }}>
-              <a href="#" target="_blank" rel="norefferer">
-                <FaWhatsapp />
-              </a>
-              <a href="#" target="_blank" rel="norefferer">
-                <FaFacebookF />
-              </a>
-              <a href="#" target="_blank" rel="norefferer">
-                <FaTwitter />
-              </a>
-              <a href="#" target="_blank" rel="norefferer">
-                <FaInstagram />
-              </a>
-              <a href="#" target="_blank" rel="norefferer">
-                <FaLink />
+    <div className="bg-skinCream py-16 lg:py-28 flex justify-center">
+      <div className="w-4/5 max-w-[1000px]">
+        <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:items-start">
+          <div className="flex flex-[4] flex-col gap-10">
+            <div>
+              <p className="mb-2">{blogProperDate}</p>
+              <p className="text-4xl font-bold">{post.title.rendered}</p>
+            </div>
+            <div className="relative h-[400px] w-full">
+              <Image
+                src={NewsImg}
+                layout="fill"
+                objectFit="cover"
+                alt="econews"
+              />
+            </div>
+            <div
+              className="flex flex-col gap-5 text-justify sm:text-lg"
+              ref={blogContent}
+            ></div>
+            <IconContext.Provider value={{ className: "w-5 h-5 inline" }}>
+              <a href="#" className="text-xl font-bold">
+                Back to Top <BsArrowUp />
               </a>
             </IconContext.Provider>
+          </div>
+          <div className="flex flex-1 items-center justify-center md:mt-20">
+            <div className="flex flex-row gap-6 sm:gap-14 md:flex-col md:border-l-2 md:border-black md:pl-10">
+              <IconContext.Provider value={{ className: "w-8 h-8" }}>
+                <a href="#" target="_blank" rel="norefferer">
+                  <FaWhatsapp />
+                </a>
+                <a href="#" target="_blank" rel="norefferer">
+                  <FaFacebookF />
+                </a>
+                <a href="#" target="_blank" rel="norefferer">
+                  <FaTwitter />
+                </a>
+                <a href="#" target="_blank" rel="norefferer">
+                  <FaInstagram />
+                </a>
+                <a href="#" target="_blank" rel="norefferer">
+                  <FaLink />
+                </a>
+              </IconContext.Provider>
+            </div>
           </div>
         </div>
       </div>
@@ -79,7 +86,9 @@ const BlogPost = ({ post }: Props) => {
 
 export default BlogPost;
 
-export const getStaticProps = async (context: { params: { id: number, title: string } }) => {
+export const getStaticProps = async (context: {
+  params: { id: number; title: string };
+}) => {
   const post = await axios.get(
     `https://ecoplease.hrefid.com/wp-json/wp/v2/posts/${context.params.id}`
   );

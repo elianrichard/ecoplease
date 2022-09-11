@@ -47,7 +47,7 @@ const NewsCard = ({ article, index }: Props) => {
             backgroundBlendMode: "multiply",
           }}
         />
-        <div className="flex h-full w-full translate-x-2 flex-col gap-2 p-6 text-darkRed sm:w-3/5 sm:p-10 md:w-2/5">
+        <div className="flex h-full w-full sm:translate-x-2 flex-col gap-2 p-6 text-darkRed sm:w-3/5 sm:p-10 md:w-2/5">
           <p className="text-2xl font-bold sm:text-3xl">
             {article.title.rendered}
           </p>

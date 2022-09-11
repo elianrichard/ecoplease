@@ -18,7 +18,7 @@ const Layout = () => {
       className="relative min-h-screen w-screen bg-ecoRed"
       style={{
         backgroundImage: `url(${LayoutBgImg.src})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundBlendMode: "multiply",
       }}
@@ -38,7 +38,7 @@ const Layout = () => {
           {articles && !isLoading ? (
             articles.map((el, i) => <NewsCard article={el} index={i} key={i} />)
           ) : (
-            <p className="text-center text-6xl font-bold text-skinCream">
+            <p className="text-center text-4xl sm:text-5xl md:text-6xl font-bold text-skinCream">
               LOADING...
             </p>
           )}
