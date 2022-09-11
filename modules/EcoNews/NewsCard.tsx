@@ -18,7 +18,15 @@ const NewsCard = ({ article, index }: Props) => {
   const blogProperDate = getProperDate(blogDate);
 
   return (
-    <Link href={`/econews/${article.title.rendered}`}>
+    <Link
+      href={{
+        pathname: "/econews/[id]",
+        query: {
+          id: article.id,
+          title: article.title.rendered,
+        },
+      }}
+    >
       <div
         className={`min-h-80 flex w-full xl:w-4/5 ${
           (index + 1) % 2 === 0
