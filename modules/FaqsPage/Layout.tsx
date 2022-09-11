@@ -22,7 +22,7 @@ const Layout = () => {
   const onSubmit = () => {
     if (formInput.name && formInput.question)
       window.open(
-        `https://wa.me/628118121011?text=Nama%3A%20${encodeURI(
+        `https://wa.me/62812345678?text=Nama%3A%20${encodeURI(
           formInput.name
         )}%0APertanyaan%3A${encodeURI(formInput.question)}`,
         "_blank"
