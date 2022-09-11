@@ -8,18 +8,24 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import WhatsappButton from "../components/WhatsappButton";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 function MyApp({ Component, pageProps }: AppProps) {
+  const queryClient = new QueryClient();
+
   return (
     <>
       <DefaultSeo {...SEO} />
-      <div className="overflow-x-hidden relative">
-        <Header />
-        <main className="pt-16">
-          <Component {...pageProps} />
-        </main>
-        <Footer />
-        <WhatsappButton />
-      </div>
+      <QueryClientProvider client={queryClient}>
+        <div className="relative overflow-x-hidden">
+          <Header />
+          <main className="pt-16">
+            <Component {...pageProps} />
+          </main>
+          <Footer />
+          <WhatsappButton />
+        </div>
+      </QueryClientProvider>
     </>
   );
 }

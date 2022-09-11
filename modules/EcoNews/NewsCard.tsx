@@ -1,21 +1,34 @@
 import React from "react";
-import { StaticImageData } from "next/image";
 import Link from "next/link";
+import axios, { AxiosResponse } from "axios";
+import { useQuery } from "@tanstack/react-query";
+
+import { PostsType } from "../_common/types/PostType";
+import { MediaType } from "../_common/types/MediaType";
+import getProperDate from "../_common/hooks/getProperDate";
 
 interface Props {
-  article: {
-    title: string;
-    author: string;
-    date: string;
-    excerpt: string;
-    image: StaticImageData;
-  };
+  article: PostsType;
   index: number;
 }
 
 const NewsCard = ({ article, index }: Props) => {
+  const { data } = useQuery(
+    ["featured-media", article.featured_media],
+    (): Promise<AxiosResponse<MediaType>> => {
+      return axios.get(
+        `https://ecoplease.hrefid.com/wp-json/wp/v2/media/${article.featured_media}`
+      );
+    }
+  );
+
+  const imageLink = data?.data.guid.rendered;
+
+  const blogDate = new Date(article.date)
+  const blogProperDate = getProperDate(blogDate);
+
   return (
-    <Link href={`/econews/${article.title}`}>
+    <Link href={`/econews/${article.title.rendered}`}>
       <div
         className={`min-h-80 flex w-full xl:w-4/5 ${
           (index + 1) % 2 === 0
@@ -30,18 +43,22 @@ const NewsCard = ({ article, index }: Props) => {
               (index + 1) % 2 === 0
                 ? "url(#ecoNewsMaskFlip)"
                 : "url(#ecoNewsMask)",
-            backgroundImage: `url(${article.image.src})`,
+            backgroundImage: `url(${imageLink})`,
             backgroundSize: "cover",
             backgroundPosition: "center center",
             backgroundBlendMode: "multiply",
           }}
         />
         <div className="flex h-full w-full translate-x-2 flex-col gap-2 p-6 text-darkRed sm:w-3/5 sm:p-10 md:w-2/5">
-          <p className="text-2xl font-bold sm:text-3xl">{article.title}</p>
-          <p className="mb-3 text-sm font-bold text-ecoRed sm:mb-5 sm:text-base">
-            {article.author} • {article.date}
+          <p className="text-2xl font-bold sm:text-3xl">
+            {article.title.rendered}
           </p>
-          <p className="text-sm sm:text-base">{article.excerpt}</p>
+          <p className="mb-3 text-sm font-bold text-ecoRed sm:mb-5 sm:text-base">
+            {blogProperDate}
+          </p>
+          <p className="text-sm sm:text-base">
+            {article.excerpt.rendered.replace("<p>", "").replace("</p>", "")}
+          </p>
         </div>
       </div>
     </Link>
