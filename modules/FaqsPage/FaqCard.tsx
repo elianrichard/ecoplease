@@ -29,7 +29,7 @@ const FaqCard = ({ question, answer, index, selected, setSelected }: Props) => {
         else setSelected(NaN);
       }}
     >
-      <div className="flex w-full items-center justify-between gap-3 text-lg lg:text-xl text-ecoRed">
+      <div className="flex w-full items-center justify-between gap-3 text-lg text-ecoRed lg:text-xl">
         <p>{question}</p>
         <IconContext.Provider
           value={{
@@ -51,8 +51,9 @@ const FaqCard = ({ question, answer, index, selected, setSelected }: Props) => {
               open: { opacity: 1, height: "auto" },
               collapsed: { opacity: 0, height: 0 },
             }}
+            className="w-full"
           >
-            <p className="pt-5 lg:text-lg text-black" ref={answerElement}>
+            <p className="pt-5 text-black lg:text-lg" ref={answerElement}>
               {answer}
             </p>
           </motion.div>

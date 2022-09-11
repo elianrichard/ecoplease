@@ -5,33 +5,7 @@ import FaqCard from "./FaqCard";
 import FaqBgImg from "../../asset/pictures/faq/faq-bg.png";
 import PaperTextureImg from "../../asset/pictures/paper-texture-3.png";
 
-const placeHolderFaqs = [
-  {
-    question: "Bahannya terbuat dari apa aja?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium.",
-  },
-  {
-    question: "Bahannya terbuat dari apa aja?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium.",
-  },
-  {
-    question: "Bahannya terbuat dari apa aja?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium.",
-  },
-  {
-    question: "Bahannya terbuat dari apa aja?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium.",
-  },
-  {
-    question: "Bahannya terbuat dari apa aja?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ad accusamus non illum nulla rerum maiores illo doloresconsequatur praesentium.",
-  },
-];
+import FaqContent from "./FaqContent";
 
 interface FormInputType {
   name: string;
@@ -45,6 +19,8 @@ const Layout = () => {
     question: "",
   });
 
+  const faqContentList = FaqContent;
+
   return (
     <div className="mb-1 flex w-screen flex-col-reverse md:min-h-screen md:flex-row">
       <div
@@ -56,16 +32,26 @@ const Layout = () => {
         }}
       >
         <div className="h-full w-full bg-darkRed/30">
-          <div className="flex h-full w-full flex-col items-center justify-start gap-5 py-10 px-10 md:py-20 xl:px-20">
-            {placeHolderFaqs.map((el, i) => (
-              <FaqCard
-                question={el.question}
-                answer={el.answer}
-                index={i}
-                setSelected={setSelectedCard}
-                selected={selectedCard}
-                key={i}
-              />
+          <div className="flex h-full w-full flex-col items-center justify-start gap-20 py-10 px-10 md:py-20 xl:px-20">
+            {faqContentList.map((elParent, mainIndex) => (
+              <div
+                className="flex h-full w-full flex-col items-center justify-start gap-5"
+                key={mainIndex}
+              >
+                <p className="bg-ecoRed px-6 py-2 text-5xl font-bold uppercase text-skinCream">
+                  {elParent.title}
+                </p>
+                {elParent.faqs.map((el, i) => (
+                  <FaqCard
+                    question={el.question}
+                    answer={el.answer}
+                    index={i + mainIndex * elParent.faqs.length}
+                    setSelected={setSelectedCard}
+                    selected={selectedCard}
+                    key={i}
+                  />
+                ))}
+              </div>
             ))}
           </div>
         </div>
