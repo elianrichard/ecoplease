@@ -7,40 +7,47 @@ import {
   IoMdArrowDropright,
 } from "react-icons/io";
 
-import NoPlasticIcon from "../../../../asset/svgs/icons/Characteristics/NoPlasticIcon";
+import BambooIcon from "../../../../asset/svgs/icons/Characteristics/BambooIcon";
+import CutleriesIcon from "../../../../asset/svgs/icons/Characteristics/CutleriesIcon";
+import DegradationIcon from "../../../../asset/svgs/icons/Characteristics/DegradationIcon";
+import MoldingIcon from "../../../../asset/svgs/icons/Characteristics/MoldingIcon";
+import PowderIcon from "../../../../asset/svgs/icons/Characteristics/PowderIcon";
+import RegrowthIcon from "../../../../asset/svgs/icons/Characteristics/RegrowthIcon";
+import SunIcon from "../../../../asset/svgs/icons/Characteristics/SunIcon";
+import TrashIcon from "../../../../asset/svgs/icons/Characteristics/TrashIcon";
 
 const lifeCyclePlaceholder = [
   {
-    icon: <NoPlasticIcon className="w-full" />,
-    desc: "Dry Processing 1",
+    icon: <BambooIcon className="w-full" />,
+    desc: "Bamboo",
   },
   {
-    icon: <NoPlasticIcon className="w-full" />,
-    desc: "Dry Processing 2",
+    icon: <SunIcon className="w-full" />,
+    desc: "Dry Processing",
   },
   {
-    icon: <NoPlasticIcon className="w-full" />,
-    desc: "Dry Processing 3",
+    icon: <PowderIcon className="w-full" />,
+    desc: "Powder",
   },
   {
-    icon: <NoPlasticIcon className="w-full" />,
-    desc: "Dry Processing 4",
+    icon: <MoldingIcon className="w-full" />,
+    desc: "Molding",
   },
   {
-    icon: <NoPlasticIcon className="w-full" />,
-    desc: "Dry Processing 5",
+    icon: <CutleriesIcon className="w-full" />,
+    desc: "Ecoplease Product",
   },
   {
-    icon: <NoPlasticIcon className="w-full" />,
-    desc: "Dry Processing 6",
+    icon: <TrashIcon className="w-full" />,
+    desc: "Disposal",
   },
   {
-    icon: <NoPlasticIcon className="w-full" />,
-    desc: "Dry Processing 7",
+    icon: <DegradationIcon className="w-full" />,
+    desc: "Biodegradation",
   },
   {
-    icon: <NoPlasticIcon className="w-full" />,
-    desc: "Dry Processing 8",
+    icon: <RegrowthIcon className="w-full" />,
+    desc: "Regrowth",
   },
 ];
 
@@ -101,7 +108,7 @@ const LifeCycle = () => {
       <p className="mb-24 w-full text-center text-5xl font-bold uppercase text-ecoRed">
         Life Cycle
       </p>
-      <div className="flex flex-col items-center justify-center gap-20 sm:gap-14 sm:flex-row md:gap-20 lg:gap-32">
+      <div className="flex flex-col items-center justify-center gap-20 sm:flex-row sm:gap-14 md:gap-20 lg:gap-32">
         <div
           className={navArrowClass}
           onClick={() => {
@@ -118,12 +125,12 @@ const LifeCycle = () => {
             <IoIosArrowBack />
           </IconContext.Provider>
         </div>
-        <div className="relative flex aspect-square w-[90%] sm:w-[400px] flex-col items-center justify-center rounded-full xl:w-[500px] ">
-          <div className="flex h-fit w-32 sm:w-52 flex-col items-center justify-center">
+        <div className="relative flex aspect-square w-[90%] flex-col items-center justify-center rounded-full sm:w-[400px] xl:w-[500px] ">
+          <div className="flex h-fit w-32 flex-col items-center justify-center sm:w-52">
             <div className="mb-4 w-16 sm:w-20 md:mb-6 md:w-24 lg:w-32">
               {cycleContent.icon}
             </div>
-            <p className="text-center text-xl sm:text-2xl font-bold uppercase md:text-3xl lg:text-4xl">
+            <p className="text-center text-xl font-bold uppercase sm:text-2xl md:text-3xl lg:text-4xl">
               {cycleContent.desc}
             </p>
           </div>
@@ -133,14 +140,15 @@ const LifeCycle = () => {
               <div
                 className={`absolute ${topPlacement[i]} ${
                   leftPlacement[i]
-                } z-0 flex aspect-square h-[80px] w-[80px] items-center justify-center rounded-full text-2xl font-bold before:absolute before:top-1/2 before:left-1/2 before:aspect-square before:h-[50px] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full md:before:h-[70px] xl:text-4xl xl:before:h-[80px] ${
+                } z-10 flex aspect-square h-[80px] w-[80px] items-center justify-center rounded-full text-2xl font-bold before:absolute before:top-1/2 before:left-1/2 before:aspect-square before:h-[50px] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full md:before:h-[70px] xl:text-4xl xl:before:h-[80px] ${
                   i === currentCycle
                     ? "text-ecoRed before:bg-white before:shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]"
                     : "text-white before:bg-ecoRed"
-                } p-5 transition-all duration-200 ease-out`}
+                } cursor-pointer p-5 transition-all duration-200 ease-out`}
                 key={i}
+                onClick={() => setCurrentCycle(i)}
               >
-                <p className="z-10">{i + 1}</p>
+                <p className="pointer-events-none z-10">{i + 1}</p>
               </div>
             ))}
           </div>
@@ -188,7 +196,7 @@ const LifeCycle = () => {
             <IoIosArrowForward />
           </IconContext.Provider>
         </div>
-        <div className="sm:hidden flex gap-10">
+        <div className="flex gap-10 sm:hidden">
           <div
             className="transition-200 group h-fit w-fit cursor-pointer rounded-full bg-black p-2 transition-all duration-200 ease-out hover:bg-white lg:p-3"
             onClick={() => {
