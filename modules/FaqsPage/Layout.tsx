@@ -6,6 +6,7 @@ import FaqBgImg from "../../asset/pictures/faq/faq-bg.png";
 import PaperTextureImg from "../../asset/pictures/paper-texture-3.png";
 
 import FaqContent from "./FaqContent";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface FormInputType {
   name: string;
@@ -13,6 +14,7 @@ interface FormInputType {
 }
 
 const Layout = () => {
+  const [selectedFaq, setSelectedFaq] = useState<number>(0);
   const [selectedCard, setSelectedCard] = useState<number>(NaN);
   const [formInput, setFormInput] = useState<FormInputType>({
     name: "",
@@ -32,36 +34,57 @@ const Layout = () => {
 
   return (
     <div className="mb-1 flex w-screen flex-col-reverse md:min-h-screen md:flex-row">
-      <div
-        className="relative w-screen bg-skinCream md:min-h-screen md:w-3/5"
-        style={{
-          backgroundImage: `url(${FaqBgImg.src})`,
-          backgroundSize: "100%",
-          backgroundBlendMode: "multiply",
-        }}
-      >
-        <div className="h-full w-full bg-darkRed/30">
+      <div className="relative w-screen bg-black/50 md:min-h-screen md:w-3/5">
+        <div
+          className="absolute -z-10 h-full w-full"
+          style={{
+            backgroundImage: `url(${FaqBgImg.src})`,
+            backgroundSize: "100%",
+            backgroundBlendMode: "multiply",
+            filter: "grayscale(80%)",
+          }}
+        />
+        <div className="z-10 h-full w-full">
           <div className="flex h-full w-full flex-col items-center justify-start gap-20 py-10 px-10 md:py-20 xl:px-20">
-            {FaqContent.map((elParent, mainIndex) => (
-              <div
-                className="flex h-full w-full flex-col items-center justify-start gap-5"
-                key={mainIndex}
-              >
-                <p className="bg-ecoRed px-6 py-2 text-5xl font-bold uppercase text-skinCream">
-                  {elParent.title}
+            <div className="flex flex-col justify-center gap-5 sm:flex-row sm:flex-wrap w-full">
+              {FaqContent.map((el, i) => (
+                <p
+                  className={`cursor-pointer w-full sm:w-fit rounded-xl px-6 py-2 text-center text-3xl font-bold uppercase transition-all duration-200 ease-out ${
+                    i === selectedFaq
+                      ? "bg-skinCream text-ecoRed"
+                      : "bg-ecoRed text-skinCream"
+                  }`}
+                  onClick={() => {
+                    setSelectedCard(NaN);
+                    setSelectedFaq(i);
+                  }}
+                  key={i}
+                >
+                  {el.title}
                 </p>
-                {elParent.faqs.map((el, i) => (
+              ))}
+            </div>
+            <AnimatePresence initial={true} mode="wait">
+              <motion.div
+                className="flex h-full w-full flex-col items-center justify-start gap-5"
+                key={selectedFaq}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 50 }}
+                transition={{ ease: "easeInOut", duration: 0.5 }}
+              >
+                {FaqContent[selectedFaq].faqs.map((el, i) => (
                   <FaqCard
                     question={el.question}
                     answer={el.answer}
-                    index={i + mainIndex * elParent.faqs.length}
+                    index={i}
                     setSelected={setSelectedCard}
                     selected={selectedCard}
                     key={i}
                   />
                 ))}
-              </div>
-            ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
