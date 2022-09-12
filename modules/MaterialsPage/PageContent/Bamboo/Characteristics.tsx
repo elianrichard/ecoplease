@@ -1,37 +1,47 @@
 import React from "react";
 
-import NoPlasticIcon from "../../../../asset/svgs/icons/Characteristics/Bamboo/SVG/NoPlasticIcon";
+import NoPlasticIcon from "../../../../asset/svgs/icons/Characteristics/NoPlasticIcon";
+import TrashIcon from "../../../../asset/svgs/icons/Characteristics/TrashIcon";
+import BambooIcon from "../../../../asset/svgs/icons/Characteristics/BambooIcon";
+import TemperatureIcon from "../../../../asset/svgs/icons/Characteristics/TemperatureIcon";
+import CertifiedIcon from "../../../../asset/svgs/icons/Characteristics/CertifiedIcon";
+import FireIcon from "../../../../asset/svgs/icons/Characteristics/FireIcon";
+
+const svgProps = {
+  className:
+    "w-14 h-14 fill-skinCream group-hover:fill-darkRed xs:w-10 sm:w-14 sm:h-14 xs:h-10",
+};
 
 const characteristicsPlaceholder = [
   {
     title: "NO PLA",
     desc: "100% Plastic Free",
-    icon: <NoPlasticIcon width="60" fill="#fff" />,
+    icon: <NoPlasticIcon {...svgProps} />,
   },
   {
     title: "100% Home Compostible",
     desc: "Biodegradable within 90 days after use and  put in natural conditions",
-    icon: <NoPlasticIcon width="60" fill="#fff" />,
+    icon: <TrashIcon {...svgProps} />,
   },
   {
     title: "Natural Looks, Natural Smell",
     desc: "Made from natural bamboo fiber",
-    icon: <NoPlasticIcon width="60" fill="#fff" />,
+    icon: <BambooIcon {...svgProps} />,
   },
   {
     title: "Will not Melt in Hot Drinks",
     desc: "Temperature resistance -20 - 100°",
-    icon: <NoPlasticIcon width="60" fill="#fff" />,
+    icon: <TemperatureIcon {...svgProps} />,
   },
   {
     title: "Certification",
     desc: "TUV Rheiland OK Compost Home, SGS, FDA, BPO Compostable",
-    icon: <NoPlasticIcon width="60" fill="#fff" />,
+    icon: <CertifiedIcon {...svgProps} />,
   },
   {
     title: "Combustible",
     desc: "100% Combustible Chemical Free",
-    icon: <NoPlasticIcon width="60" fill="#fff" />,
+    icon: <FireIcon {...svgProps} />,
   },
 ];
 
@@ -47,7 +57,7 @@ const Characteristics = () => {
             className="group flex flex-col justify-start gap-5 rounded-xl bg-darkRed px-6 py-5 shadow-[0px_5px_10px_0px_rgba(0,0,0,0.5)] transition-all duration-200 ease-out hover:bg-white xs:h-60 xs:justify-between xs:gap-0"
             key={i}
           >
-            <NoPlasticIcon className="w-14 fill-skinCream group-hover:fill-darkRed xs:w-10 sm:w-14" />
+            {el.icon}
             <div className="text-skinCream transition-all duration-200 ease-out group-hover:text-darkRed">
               <p className="text-lg font-bold uppercase xs:text-base sm:text-lg">
                 {el.title}

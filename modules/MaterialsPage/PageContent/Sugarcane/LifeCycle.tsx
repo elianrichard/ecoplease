@@ -7,7 +7,7 @@ import {
   IoMdArrowDropright,
 } from "react-icons/io";
 
-import NoPlasticIcon from "../../../../asset/svgs/icons/Characteristics/Bamboo/SVG/NoPlasticIcon";
+import NoPlasticIcon from "../../../../asset/svgs/icons/Characteristics/NoPlasticIcon";
 
 const lifeCyclePlaceholder = [
   {

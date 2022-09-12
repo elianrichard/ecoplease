@@ -1,8 +1,8 @@
 import React from "react";
 import { IconContext } from "react-icons";
-import { MdOutlineDeliveryDining } from "react-icons/md";
 import { FaPaintBrush } from "react-icons/fa";
 import { AiOutlineSafetyCertificate, AiOutlineLock } from "react-icons/ai";
+import DeliveryIcon from "../../../asset/svgs/icons/DeliveryIcon";
 
 import ItemsCard from "./ItemsCard";
 
@@ -15,10 +15,10 @@ const Perks = () => {
       <div className="grid w-full grid-cols-2 gap-x-8 gap-y-10 xs:gap-10 lg:grid-cols-4 xl:gap-20">
         <IconContext.Provider value={{ color: "#fff", className: "h-28" }}>
           <ItemsCard title="Free Delivery" description="???">
-            <MdOutlineDeliveryDining className="w-28"/>
+            <DeliveryIcon className="w-20"/>
           </ItemsCard>
           <ItemsCard title="Customize Logo" description="???">
-            <FaPaintBrush className="w-[70px]"/>
+            <FaPaintBrush className="w-[60px]"/>
           </ItemsCard>
           <ItemsCard title="Commitment" description="???">
             <AiOutlineLock className="w-[70px]"/>
