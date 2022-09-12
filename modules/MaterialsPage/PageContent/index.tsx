@@ -5,6 +5,8 @@ import Bamboo from "./Bamboo";
 import Sugarcane from "./Sugarcane";
 
 import BackgroundImg from "../../../asset/pictures/econews/layout-bg.jpg";
+import { IconContext } from "react-icons";
+import { BsArrowUp } from "react-icons/bs";
 
 const PageContent = () => {
   const [selectedContent, setSelectedContent] = useState<number>(0);
@@ -58,7 +60,7 @@ const PageContent = () => {
           </button>
         </div>
       </div>
-      <div className="flex w-screen justify-center bg-skinCream py-20">
+      <div className="flex w-screen flex-col items-center justify-center gap-16 bg-skinCream py-20">
         <div className="flex w-4/5 flex-col items-center justify-center">
           <AnimatePresence mode="wait">
             {!selectedContent ? (
@@ -67,6 +69,13 @@ const PageContent = () => {
               <Sugarcane key={selectedContent} {...contentProps} />
             )}
           </AnimatePresence>
+        </div>
+        <div>
+          <IconContext.Provider value={{ className: "w-5 h-5 inline" }}>
+            <a href="#" className="text-xl font-bold uppercase">
+              <BsArrowUp /> Back to Top <BsArrowUp />
+            </a>
+          </IconContext.Provider>
         </div>
       </div>
     </>
