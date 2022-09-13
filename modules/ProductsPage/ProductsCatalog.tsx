@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import _ from "lodash";
 
 import ProductCard from "./ProductCard";
 
 import ProductImg from "../../asset/pictures/products/product-sample.jpg";
 import PaperTextureImg from "../../asset/pictures/paper-texture-3.png";
+import useProductsQuery from "../_common/queries/useProductsQuery";
+import { ProductsType } from "../_common/types/ProductsType";
 
 const productsPlaceholder = [
   {
@@ -51,29 +54,29 @@ const productsPlaceholder = [
   },
 ];
 
-type CategoryListType =
-  | "cups"
-  | "straw"
-  | "cutlery"
-  | "packaging"
-  | "all_product";
-
 const ProductsCatalog = () => {
-  const categoryList = ["all_product", "cups", "straw", "cutlery", "packaging"];
-  const [productLists, setProductLists] = useState(productsPlaceholder);
+  // const categoryList = ["all_product", "cups", "straw", "cutlery", "packaging"];
+  const [productLists, setProductLists] = useState<ProductsType[]>();
   const [selectedCategory, setSelectedCategory] =
-    useState<CategoryListType>("all_product");
+    useState("all_product");
+
+  const { data, isLoading } = useProductsQuery();
+  const productsData = data?.data;
+  const allCategoryLists = productsData?.map((el) => el.acf.category);
+  const categoryList = ["all_product"].concat(_.uniq(allCategoryLists));
 
   useEffect(() => {
     if (selectedCategory === "all_product")
-      setProductLists(productsPlaceholder);
+      setProductLists(productsData);
     else {
-      const filtered = productsPlaceholder.filter(
-        (el) => el.type === selectedCategory
+      const filtered = productsData?.filter(
+        (el) => el.acf.category === selectedCategory
       );
       setProductLists(filtered);
     }
-  }, [selectedCategory]);
+  }, [productsData, selectedCategory]);
+
+  console.log(productLists, selectedCategory)
 
   return (
     <div
@@ -94,7 +97,7 @@ const ProductsCatalog = () => {
                   ? "bg-darkRed text-white"
                   : "bg-white text-ecoRed"
               }`}
-              onClick={() => setSelectedCategory(el as CategoryListType)}
+              onClick={() => setSelectedCategory(el)}
             >
               {el.replace("_", " ")}
             </button>
@@ -103,9 +106,9 @@ const ProductsCatalog = () => {
         <AnimatePresence>
           <motion.div
             layout
-            className="grid w-full grid-cols-2 gap-5 md:gap-10 sm:grid-cols-3 xl:grid-cols-4"
+            className="grid w-full grid-cols-2 gap-5 sm:grid-cols-3 md:gap-10 xl:grid-cols-4"
           >
-            {productLists.map((el) => (
+            {productLists?.map((el) => (
               <ProductCard key={el.id} product={el} />
             ))}
           </motion.div>
