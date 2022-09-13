@@ -1,14 +1,11 @@
 import React from "react";
-import axios, { AxiosResponse } from "axios";
-import { useQuery } from "@tanstack/react-query";
 
 import EconewsRipped from "../../asset/svgs/ripped/EconewsRipped";
 import EconewsRippedFlip from "../../asset/svgs/ripped/EconewsRippedFlip";
 
-import usePostsQuery from "../_common/queries/usePostsQuery";
 import NewsCard from "./NewsCard";
+import usePostsQuery from "../_common/queries/usePostsQuery";
 import LayoutBgImg from "../../asset/pictures/econews/layout-bg.jpg";
-
 
 const Layout = () => {
   const { isLoading, data: articles } = usePostsQuery();
