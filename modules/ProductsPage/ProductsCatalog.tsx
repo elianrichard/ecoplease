@@ -4,58 +4,11 @@ import _ from "lodash";
 
 import ProductCard from "./ProductCard";
 
-import ProductImg from "../../asset/pictures/products/product-sample.jpg";
 import PaperTextureImg from "../../asset/pictures/paper-texture-3.png";
 import useProductsQuery from "../_common/queries/useProductsQuery";
 import { ProductsType } from "../_common/types/ProductsType";
 
-const productsPlaceholder = [
-  {
-    name: "Product A",
-    material: "Sugarcane",
-    type: "packaging",
-    image: ProductImg,
-    id: 1,
-  },
-  {
-    name: "Product B",
-    material: "Bamboo",
-    type: "cups",
-    image: ProductImg,
-    id: 2,
-  },
-  {
-    name: "Product C",
-    material: "Sugarcane",
-    type: "cutlery",
-    image: ProductImg,
-    id: 3,
-  },
-  {
-    name: "Product D",
-    material: "Bamboo",
-    type: "straw",
-    image: ProductImg,
-    id: 4,
-  },
-  {
-    name: "Product E",
-    material: "Bamboo",
-    type: "cups",
-    image: ProductImg,
-    id: 5,
-  },
-  {
-    name: "Product F",
-    material: "Sugarcane",
-    type: "straw",
-    image: ProductImg,
-    id: 6,
-  },
-];
-
 const ProductsCatalog = () => {
-  // const categoryList = ["all_product", "cups", "straw", "cutlery", "packaging"];
   const [productLists, setProductLists] = useState<ProductsType[]>();
   const [selectedCategory, setSelectedCategory] =
     useState("all_product");
@@ -64,6 +17,8 @@ const ProductsCatalog = () => {
   const productsData = data?.data;
   const allCategoryLists = productsData?.map((el) => el.acf.category);
   const categoryList = ["all_product"].concat(_.uniq(allCategoryLists));
+
+  // console.log(productsData);
 
   useEffect(() => {
     if (selectedCategory === "all_product")
@@ -75,8 +30,6 @@ const ProductsCatalog = () => {
       setProductLists(filtered);
     }
   }, [productsData, selectedCategory]);
-
-  console.log(productLists, selectedCategory)
 
   return (
     <div

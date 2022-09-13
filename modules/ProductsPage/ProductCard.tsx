@@ -5,12 +5,16 @@ import Link from "next/link";
 import { ProductsType } from "../_common/types/ProductsType";
 
 import ProductImg from "../../asset/pictures/products/product-sample.jpg";
+import useMediaQuery from "../_common/queries/useMediaQuery";
 
 interface Props {
-  product: ProductsType
+  product: ProductsType;
 }
 
 const ProductCard = ({ product }: Props) => {
+  const { data: imageData } = useMediaQuery(product.acf.images[0]);
+  const imageLink = imageData?.data.guid.rendered;
+  console.log(imageLink);
   return (
     <Link href={`/products/${product.id}`}>
       <motion.div
@@ -21,14 +25,18 @@ const ProductCard = ({ product }: Props) => {
         className="w-full cursor-pointer overflow-hidden rounded-xl"
       >
         <div className="relative aspect-square w-full bg-darkRed">
-          <Image src={ProductImg} layout="fill" alt="packaging" />
+          {imageLink && <Image src={imageLink} layout="fill" alt="packaging" />}
           <div className="absolute right-0 top-0 rounded-bl-xl bg-white px-4 py-1 text-sm font-bold uppercase text-ecoRed xs:text-base">
             {product.acf.category}
           </div>
         </div>
         <div className="bg-white px-5 py-3 text-ecoRed">
-          <p className="text-base font-bold md:text-lg capitalize">{product.title.rendered}</p>
-          <p className="text-sm md:text-base capitalize">{product.acf.material}</p>
+          <p className="text-base font-bold capitalize md:text-lg">
+            {product.title.rendered}
+          </p>
+          <p className="text-sm capitalize md:text-base">
+            {product.acf.material}
+          </p>
         </div>
       </motion.div>
     </Link>

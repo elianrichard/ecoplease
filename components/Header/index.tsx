@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import Link from "next/link";
+import { BiMenu } from "react-icons/bi";
+import { IconContext } from "react-icons";
 
 import TextureImg from "../../asset/pictures/paper-texture-3.png";
 import LogoTextLight from "../../asset/svgs/logo/LogoTextLight2";
 
-import { BiMenu } from "react-icons/bi";
-import { IconContext } from "react-icons";
 import LinkButton from "./LinkButton";
 import NestedLinkButton from "./NestedLinkButton";
 
@@ -35,7 +36,9 @@ const Header = () => {
       }}
     >
       <div className="absolute top-1/2 left-8 -translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2">
-        <LogoTextLight className="w-40 lg:w-52" />
+        <Link href={"/"}>
+          <LogoTextLight className="w-40 lg:w-52 cursor-pointer" />
+        </Link>
       </div>
       <div className="absolute right-8 flex h-full w-10 items-center lg:hidden">
         <IconContext.Provider
