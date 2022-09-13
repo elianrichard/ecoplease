@@ -33,7 +33,7 @@ const Layout = () => {
         </div>
         <div className="flex flex-col gap-10">
           {articles && !isLoading ? (
-            articles.map((el, i) => <NewsCard article={el} index={i} key={i} />)
+            articles.data.reverse().map((el, i) => <NewsCard article={el} index={i} key={i} />)
           ) : (
             <p className="text-center text-4xl sm:text-5xl md:text-6xl font-bold text-skinCream">
               LOADING...

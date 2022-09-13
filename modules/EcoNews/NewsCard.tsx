@@ -20,9 +20,10 @@ const NewsCard = ({ article, index }: Props) => {
   return (
     <Link
       href={{
-        pathname: "/econews/[id]",
+        pathname: "/econews/[id]/[title]",
         query: {
           id: article.id,
+          title: article.title.rendered,
         },
       }}
     >
@@ -46,7 +47,7 @@ const NewsCard = ({ article, index }: Props) => {
             backgroundBlendMode: "multiply",
           }}
         />
-        <div className="flex h-full w-full sm:translate-x-2 flex-col gap-2 p-6 text-darkRed sm:w-3/5 sm:p-10 md:w-2/5">
+        <div className="flex h-full w-full flex-col gap-2 p-6 text-darkRed sm:w-3/5 sm:translate-x-2 sm:p-10 md:w-2/5">
           <p className="text-2xl font-bold sm:text-3xl">
             {article.title.rendered}
           </p>

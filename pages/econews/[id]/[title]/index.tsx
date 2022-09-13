@@ -11,9 +11,10 @@ import {
 } from "react-icons/fa";
 import { BsArrowUp } from "react-icons/bs";
 
-import { PostsType } from "../../../modules/_common/types/PostType";
-import getProperDate from "../../../modules/_common/hooks/getProperDate";
-import useMediaQuery from "../../../modules/_common/queries/useMediaQuery";
+import { PostsType } from "../../../../modules/_common/types/PostType";
+import getProperDate from "../../../../modules/_common/hooks/getProperDate";
+import useMediaQuery from "../../../../modules/_common/queries/useMediaQuery";
+import { server } from "../../../../config";
 
 interface Props {
   post: PostsType;
@@ -29,7 +30,7 @@ const BlogPost = ({ post }: Props) => {
     if (blogContent.current)
       blogContent.current.innerHTML = post.content.rendered;
   }, [post.content.rendered]);
-  
+
   const { data: imageData } = useMediaQuery(post.featured_media);
   const imageLink = imageData?.data.guid.rendered;
 
@@ -91,11 +92,9 @@ const BlogPost = ({ post }: Props) => {
 
 export default BlogPost;
 
-export const getStaticProps = async (context: {
-  params: { id: number; title: string };
-}) => {
+export const getStaticProps = async (context: { params: { id: number } }) => {
   const post = await axios.get(
-    `https://ecoplease.hrefid.com/wp-json/wp/v2/posts/${context.params.id}`
+    `${server}/wp-json/wp/v2/posts/${context.params.id}`
   );
   return {
     props: {
@@ -105,15 +104,20 @@ export const getStaticProps = async (context: {
 };
 
 export const getStaticPaths = async () => {
-  const posts = await axios.get(
-    `https://ecoplease.hrefid.com/wp-json/wp/v2/posts/`
-  );
+  const posts = await axios.get(`${server}/wp-json/wp/v2/posts/`);
 
   const ids = posts.data.map((el: PostsType) => el.id);
   const paths = ids.map((id: number) => ({ params: { id: id.toString() } }));
 
+  const newPaths = posts.data.map((el: PostsType) => ({
+    params: {
+      id: el.id.toString(),
+      title: el.title.rendered.toString(),
+    },
+  }));
+
   return {
-    paths,
+    paths: newPaths,
     fallback: false,
   };
 };

@@ -11,12 +11,6 @@ const usePostsQuery = () => {
     (): Promise<AxiosResponse<PostsType[]>> => {
       return axios.get(`${server}/wp-json/wp/v2/posts`);
     },
-    {
-      select: (data) => {
-        const reversed = data.data.reverse();
-        return reversed;
-      },
-    }
   );
   return { data, isLoading };
 };
