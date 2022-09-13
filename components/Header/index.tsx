@@ -37,7 +37,9 @@ const Header = () => {
     >
       <div className="absolute top-1/2 left-8 -translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2">
         <Link href={"/"}>
-          <LogoTextLight className="w-40 lg:w-52 cursor-pointer" />
+          <div>
+            <LogoTextLight className="w-40 cursor-pointer lg:w-52" />
+          </div>
         </Link>
       </div>
       <div className="absolute right-8 flex h-full w-10 items-center lg:hidden">

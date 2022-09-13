@@ -1,13 +1,16 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-import ProductImg1 from "../../asset/pictures/products/product-1.png";
-import ProductImg2 from "../../asset/pictures/products/product-2.png";
-import ProductImg3 from "../../asset/pictures/products/product-3.png";
+import ProductImg1 from "../../../../asset/pictures/products/product-1.png";
+import ProductImg2 from "../../../../asset/pictures/products/product-2.png";
+import ProductImg3 from "../../../../asset/pictures/products/product-3.png";
 
-import PaperTextureImg from "../../asset/pictures/paper-texture-3.png";
+import PaperTextureImg from "../../../../asset/pictures/paper-texture-3.png";
 import { IconContext } from "react-icons";
 import { IoIosArrowForward } from "react-icons/io";
+import axios from "axios";
+import { server } from "../../../../config";
+import { ProductsType } from "../../../../modules/_common/types/ProductsType";
 
 const productPlaceholder = {
   name: "Burger Box",
@@ -28,9 +31,13 @@ const productPlaceholder = {
   imageList: [ProductImg1, ProductImg2, ProductImg3],
 };
 
-const Layout = () => {
+interface Props {
+  product: ProductsType;
+}
+
+const Layout = ({ product }: Props) => {
   const descDiv = useRef() as MutableRefObject<HTMLDivElement>;
-  const [descDivPos, setDescDivPos] = useState(0);
+  const [descDivPos, setDescDivPos] = useState(600);
 
   useEffect(() => {
     const onScroll = (e: any) => {
@@ -43,7 +50,8 @@ const Layout = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [descDivPos]);
-
+  // console.log(product.acf.product_characteristic);
+  console.log(descDivPos);
   return (
     <div className="flex w-screen flex-col bg-ecoRed sm:flex-row" ref={descDiv}>
       <div className="scrollbar-custom flex flex-[2] flex-row overflow-x-scroll sm:flex-col sm:overflow-x-hidden lg:flex-1 ">
@@ -65,8 +73,8 @@ const Layout = () => {
         <div
           className={`${
             descDiv.current?.clientHeight > descDivPos
-              ? "sm:fixed"
-              : "bottom-0 sm:absolute"
+              ? "sm:fixed sm:top-[64px] sm:bottom-auto"
+              : "sm:bottom-0 sm:absolute"
           } flex w-screen flex-col bg-ecoRed px-10 py-10 sm:h-[calc(100vh-64px)] sm:w-[60vw] sm:px-14 lg:w-[50vw] lg:px-20`}
           style={{
             backgroundImage: `url(${PaperTextureImg.src})`,
@@ -76,34 +84,36 @@ const Layout = () => {
         >
           <div className="product-scrollbar mb-5 flex h-full w-full flex-col gap-10 overflow-x-hidden text-white sm:overflow-y-scroll">
             <div>
-              <p className="mb-2 text-2xl font-bold md:text-3xl">
+              <p
+                className={`${
+                  product.acf.price ? "mb-2" : ""
+                } text-2xl font-bold md:text-3xl`}
+              >
                 <span className="uppercase text-skinCream">
-                  {productPlaceholder.id}
+                  {product.acf.code}
                 </span>{" "}
-                / {productPlaceholder.name}
+                / {product.title.rendered}
               </p>
-              <p className="text-xl font-semibold md:text-2xl">
-                Rp {productPlaceholder.price}
-              </p>
+              {product.acf.price && (
+                <p className="text-xl font-semibold md:text-2xl">
+                  Rp {product.acf.price}
+                </p>
+              )}
             </div>
             <div className="text-lg md:text-xl">
-              <p>
-                <span className="bg-white px-3 font-bold text-ecoRed">
-                  Size:
-                </span>{" "}
-                {productPlaceholder.size}
-              </p>
-              <p>
+              <p className="w-fit bg-white px-3 font-bold text-ecoRed">Size:</p>
+              <p>{product.acf.size}</p>
+              <p className="capitalize">
                 <span className="bg-white px-3 font-bold text-ecoRed">
                   Material:
                 </span>{" "}
-                {productPlaceholder.material}
+                {product.acf.material}
               </p>
-              <p>
+              <p className="capitalize">
                 <span className="bg-white px-3 font-bold text-ecoRed">
-                  Packaging:
+                  Colors Available:
                 </span>{" "}
-                {productPlaceholder.packaging}
+                {product.acf.colors}
               </p>
             </div>
             <div>
@@ -111,14 +121,14 @@ const Layout = () => {
                 Product Characteristic
               </p>
               <ol className="md:text-lg">
-                {productPlaceholder.characteristics.map((el, i) => (
+                {product.acf.product_characteristic.split("\r\n").map((el, i) => (
                   <li key={i}>
                     {i + 1}. {el}
                   </li>
                 ))}
               </ol>
             </div>
-            <div className="flex items-center gap-3 text-lg font-bold md:text-xl">
+            {/* <div className="flex items-center gap-3 text-lg font-bold md:text-xl">
               <p>Colors Available:</p>
               {productPlaceholder.color.map((el, i) => (
                 <div
@@ -127,7 +137,7 @@ const Layout = () => {
                   key={i}
                 ></div>
               ))}
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-col items-start gap-2 text-white md:text-xl">
             <IconContext.Provider value={{ className: "w-10" }}>
@@ -166,3 +176,29 @@ const Layout = () => {
 };
 
 export default Layout;
+
+export const getStaticProps = async (context: { params: { id: number } }) => {
+  const post = await axios.get(
+    `${server}/wp-json/wp/v2/products/${context.params.id}`
+  );
+  return {
+    props: {
+      product: post.data,
+    },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const products = await axios.get(`${server}/wp-json/wp/v2/products/`);
+  const newPaths = products.data.map((el: ProductsType) => ({
+    params: {
+      id: el.id.toString(),
+      name: el.title.rendered.toString(),
+    },
+  }));
+
+  return {
+    paths: newPaths,
+    fallback: false,
+  };
+};

@@ -1,10 +1,9 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ProductsType } from "../_common/types/ProductsType";
 
-import ProductImg from "../../asset/pictures/products/product-sample.jpg";
 import useMediaQuery from "../_common/queries/useMediaQuery";
 
 interface Props {
@@ -16,7 +15,15 @@ const ProductCard = ({ product }: Props) => {
   const imageLink = imageData?.data.guid.rendered;
   console.log(imageLink);
   return (
-    <Link href={`/products/${product.id}`}>
+    <Link
+      href={{
+        pathname: "/products/[id]/[name]",
+        query: {
+          id: product.id,
+          name: product.title.rendered,
+        },
+      }}
+    >
       <motion.div
         layout
         initial={{ opacity: 0 }}

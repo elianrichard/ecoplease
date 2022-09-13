@@ -105,10 +105,6 @@ export const getStaticProps = async (context: { params: { id: number } }) => {
 
 export const getStaticPaths = async () => {
   const posts = await axios.get(`${server}/wp-json/wp/v2/posts/`);
-
-  const ids = posts.data.map((el: PostsType) => el.id);
-  const paths = ids.map((id: number) => ({ params: { id: id.toString() } }));
-
   const newPaths = posts.data.map((el: PostsType) => ({
     params: {
       id: el.id.toString(),
