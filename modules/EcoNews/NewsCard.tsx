@@ -23,7 +23,6 @@ const NewsCard = ({ article, index }: Props) => {
         pathname: "/econews/[id]",
         query: {
           id: article.id,
-          title: article.title.rendered,
         },
       }}
     >

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import axios from "axios";
 import Image from "next/image";
 import { IconContext } from "react-icons";
 import {
@@ -8,12 +9,11 @@ import {
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
+import { BsArrowUp } from "react-icons/bs";
 
-import NewsImg from "../../../asset/pictures/econews/news-bg-1.png";
-import axios from "axios";
 import { PostsType } from "../../../modules/_common/types/PostType";
 import getProperDate from "../../../modules/_common/hooks/getProperDate";
-import { BsArrowUp } from "react-icons/bs";
+import useMediaQuery from "../../../modules/_common/queries/useMediaQuery";
 
 interface Props {
   post: PostsType;
@@ -29,9 +29,12 @@ const BlogPost = ({ post }: Props) => {
     if (blogContent.current)
       blogContent.current.innerHTML = post.content.rendered;
   }, [post.content.rendered]);
+  
+  const { data: imageData } = useMediaQuery(post.featured_media);
+  const imageLink = imageData?.data.guid.rendered;
 
   return (
-    <div className="bg-skinCream py-16 lg:py-28 flex justify-center">
+    <div className="flex justify-center bg-skinCream py-16 lg:py-28">
       <div className="w-4/5 max-w-[1000px]">
         <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:items-start">
           <div className="flex flex-[4] flex-col gap-10">
@@ -40,12 +43,14 @@ const BlogPost = ({ post }: Props) => {
               <p className="text-4xl font-bold">{post.title.rendered}</p>
             </div>
             <div className="relative h-[400px] w-full">
-              <Image
-                src={NewsImg}
-                layout="fill"
-                objectFit="cover"
-                alt="econews"
-              />
+              {imageLink && (
+                <Image
+                  src={imageLink}
+                  layout="fill"
+                  objectFit="cover"
+                  alt="econews"
+                />
+              )}
             </div>
             <div
               className="flex flex-col gap-5 text-justify sm:text-lg"
