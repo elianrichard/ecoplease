@@ -9,6 +9,8 @@ import GuttenLogo from "../../asset/pictures/home/partners/Gutten-Morgen.png";
 import LimaLogo from "../../asset/pictures/home/partners/Lima.png";
 import SkipJackLogo from "../../asset/pictures/home/partners/Skipjack.jpeg";
 import SoiLogo from "../../asset/pictures/home/partners/soi.jpg";
+import LucyLogo from "../../asset/pictures/home/partners/Lucy.jpeg";
+import ScowpLogo from "../../asset/pictures/home/partners/Hello-Scowp.jpeg";
 import ThreeLogo from "../../asset/pictures/home/partners/Three-Folks.png";
 
 const Partners = () => {
@@ -19,6 +21,8 @@ const Partners = () => {
     LimaLogo,
     SkipJackLogo,
     SoiLogo,
+    LucyLogo,
+    ScowpLogo,
     ThreeLogo,
   ];
 
@@ -27,9 +31,12 @@ const Partners = () => {
       <p className="before:title-outline-red relative z-0 w-full text-center text-4xl font-black text-darkRed before:absolute before:top-1 before:-z-10 before:translate-x-1 before:content-['OUR_PARTNERS'] xs:text-5xl">
         OUR PARTNERS
       </p>
-      <div className="flex flex-wrap justify-center gap-6 xs:gap-12">
+      <div className="flex flex-wrap justify-center gap-6 xs:gap-12 px-10 sm:px-20 lg:px-40">
         {logoList.map((el, i) => (
-          <div className="relative h-32 w-32 bg-white grayscale-[100%] hover:grayscale-0 hover:scale-105 transition-all duration-200 ease-out" key={i}>
+          <div
+            className="relative h-32 w-32 bg-white grayscale-[100%] transition-all duration-200 ease-out hover:scale-105 hover:grayscale-0"
+            key={i}
+          >
             <Image
               src={el}
               layout="fill"
