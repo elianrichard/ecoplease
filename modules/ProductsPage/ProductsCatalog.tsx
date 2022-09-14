@@ -10,8 +10,7 @@ import { ProductsType } from "../_common/types/ProductsType";
 
 const ProductsCatalog = () => {
   const [productLists, setProductLists] = useState<ProductsType[]>();
-  const [selectedCategory, setSelectedCategory] =
-    useState("all_product");
+  const [selectedCategory, setSelectedCategory] = useState("all_product");
 
   const { data, isLoading } = useProductsQuery();
   const productsData = data?.data;
@@ -21,8 +20,7 @@ const ProductsCatalog = () => {
   // console.log(productsData);
 
   useEffect(() => {
-    if (selectedCategory === "all_product")
-      setProductLists(productsData);
+    if (selectedCategory === "all_product") setProductLists(productsData);
     else {
       const filtered = productsData?.filter(
         (el) => el.acf.category === selectedCategory
@@ -48,7 +46,7 @@ const ProductsCatalog = () => {
               className={`h-full rounded-xl py-3 px-3 text-base font-bold uppercase transition-all duration-200 ease-out sm:text-lg xl:text-xl ${
                 el === selectedCategory
                   ? "bg-darkRed text-white"
-                  : "bg-white text-ecoRed"
+                  : "bg-white text-ecoRed hover:bg-darkRed hover:text-white"
               }`}
               onClick={() => setSelectedCategory(el)}
             >

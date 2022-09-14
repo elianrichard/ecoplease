@@ -7,7 +7,7 @@ import PaperTextureImg from "../../asset/pictures/paper-texture.jpg";
 const LandingHero = () => {
   return (
     <div
-      className="flex flex-col-reverse md:flex-row h-fit md:h-[calc(100vh-64px)] w-screen items-center justify-center gap-16 md:gap-14 bg-darkRed px-10 py-20 lg:px-20 xl:px-32"
+      className="flex h-fit w-screen flex-col-reverse items-center justify-center gap-16 bg-darkRed px-10 py-20 md:h-[calc(100vh-64px)] md:flex-row md:gap-14 lg:px-20 xl:px-32"
       style={{
         backgroundImage: `url(${PaperTextureImg.src})`,
         backgroundSize: "cover",
@@ -19,10 +19,9 @@ const LandingHero = () => {
           Made With Natural Plant Fiber
         </p>
         <p className="text-base lg:text-lg">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis,
-          facilis molestiae consequatur velit ducimus quia molestias libero
-          nihil. Molestias culpa, tenetur id officiis debitis voluptatem omnis
-          obcaecati adipisci illo magni.
+          Ecoplease believe in natural and renewable materials. Our company only
+          use materials that can be harvested, replenished and regenerated
+          without any adverse effect on environment.
         </p>
       </div>
       <div className="flex flex-1 justify-center">

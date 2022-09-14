@@ -10,7 +10,7 @@ const LandingHero = () => {
     <>
       <a
         href="#"
-        className="flex h-12 w-screen items-center justify-center bg-black text-lg font-bold uppercase text-skinCream lg:text-2xl xs:text-xl"
+        className="flex h-12 w-screen items-center justify-center bg-black text-lg font-bold uppercase text-skinCream xs:text-xl lg:text-2xl"
       >
         Request Sample Now
         <span>
@@ -20,7 +20,7 @@ const LandingHero = () => {
         </span>
       </a>
       <div
-        className="mb-1 flex w-screen flex-col items-start justify-center gap-10 bg-ecoRed/40 py-24 px-10 lg:py-32 lg:px-32 xs:px-24"
+        className="mb-1 flex w-screen flex-col items-start justify-center gap-10 bg-ecoRed/40 py-24 px-10 xs:px-24 lg:py-32 lg:px-32"
         style={{
           backgroundImage: `url(${LandingBgImg.src})`,
           backgroundSize: "cover",
@@ -38,7 +38,7 @@ const LandingHero = () => {
           ].map((el, i) => (
             <a
               href={el[1]}
-              className="w-fit rounded-md bg-white px-5 py-1 text-xl font-bold uppercase text-ecoRed lg:text-2xl"
+              className="w-fit rounded-md bg-white px-5 py-1 text-xl font-bold uppercase text-ecoRed transition-all duration-200 ease-out hover:scale-105 hover:bg-ecoRed hover:text-white hover:shadow-[0px_0px_20px_0px_rgba(0,0,0,0.5)] lg:text-2xl"
               key={i}
             >
               {el[0]}

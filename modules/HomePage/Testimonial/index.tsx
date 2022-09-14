@@ -2,9 +2,52 @@ import React from "react";
 
 import TestimonialCard from "./TestimonialCard";
 
-import TestimonialPic from "../../../asset/pictures/home/testimonial1.jpg";
+import BlankPersonPic from "../../../asset/pictures/home/blank_profile.webp";
 import TestimonialBackgroundImg from "../../../asset/pictures/home/home-background-2.jpg";
 import TestimonialRipped from "../../../asset/svgs/ripped/TestimonialRipped";
+
+const testimonialsData = [
+  {
+    image: BlankPersonPic,
+    name: "nikho",
+    tag: "Tokopedia",
+    subtitle: "Customer",
+    stars: 5,
+    desc: "udah berkali2 pesan disini selalu mantappp! Bagus banget kualitas produk nya. Seller juga 👏🏻👏🏻",
+  },
+  {
+    image: BlankPersonPic,
+    name: "dian",
+    tag: "Tokopedia",
+    subtitle: "Customer",
+    stars: 5,
+    desc: "Salah satu yang bikin repeat order itu teksturnya tetap kokoh walaupun bukan dari plastik, jujur suka bingung gimana cara ngurangin penggunaan sampah plastik di industri kuliner...",
+  },
+  {
+    image: BlankPersonPic,
+    name: "Ika",
+    tag: "Tokopedia",
+    subtitle: "Customer",
+    stars: 5,
+    desc: "Cakep banget packagingnya!!! Buat jualan cakep bgtttt 100% will reorder. Material Produk Bagus Warna Sesuai",
+  },
+  {
+    image: BlankPersonPic,
+    name: "Adis",
+    tag: "Tokopedia",
+    subtitle: "Customer",
+    stars: 5,
+    desc: "barang sesuai semua tidak ada yang cacat sedikit pun, respond seller cepat , hari libur pun tetap di kirim",
+  },
+  {
+    image: BlankPersonPic,
+    name: "Felix",
+    tag: "Tokopedia",
+    subtitle: "Customer",
+    stars: 5,
+    desc: "Barangny bagus bgt si ini, bner anti leak dan eco friendly. seler ny super gercep dn ramah.. recommended, tq ❤️🙏🏻",
+  },
+];
 
 const Testimonial = () => {
   return (
@@ -28,46 +71,17 @@ const Testimonial = () => {
             TESTIMONIALS
           </p>
           <div className="scrollbar-custom flex w-full items-center gap-20 overflow-y-hidden overflow-x-scroll px-10 pb-20 xs:px-20">
-            <TestimonialCard
-              name="John Doe"
-              tag="@fatlicious_id"
-              location="Jakarta, Indonesia"
-              pic={TestimonialPic}
-              description={
-                "Ecoplease is top of mind of eco-packaging solution. I love to use their products as it delivers good impact to my business and climate sustainability"
-              }
-              rating={5}
-            />
-            <TestimonialCard
-              name="John Doe"
-              tag="@fatlicious_id"
-              location="Jakarta, Indonesia"
-              pic={TestimonialPic}
-              description={
-                "Ecoplease is top of mind of eco-packaging solution. I love to use their products as it delivers good impact to my business and climate sustainability"
-              }
-              rating={5}
-            />
-            <TestimonialCard
-              name="John Doe"
-              tag="@fatlicious_id"
-              location="Jakarta, Indonesia"
-              pic={TestimonialPic}
-              description={
-                "Ecoplease is top of mind of eco-packaging solution. I love to use their products as it delivers good impact to my business and climate sustainability"
-              }
-              rating={5}
-            />
-            <TestimonialCard
-              name="John Doe"
-              tag="@fatlicious_id"
-              location="Jakarta, Indonesia"
-              pic={TestimonialPic}
-              description={
-                "Ecoplease is top of mind of eco-packaging solution. I love to use their products as it delivers good impact to my business and climate sustainability"
-              }
-              rating={5}
-            />
+            {testimonialsData.map((el, i) => (
+              <TestimonialCard
+                name={el.name}
+                tag={el.tag}
+                subtitle={el.subtitle}
+                pic={el.image}
+                description={el.desc}
+                rating={el.stars}
+                key={i}
+              />
+            ))}
           </div>
         </div>
       </div>

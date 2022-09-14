@@ -7,7 +7,7 @@ import { GrStar } from "react-icons/gr";
 interface Props {
   name: String;
   tag: String;
-  location: String;
+  subtitle: String;
   pic: StaticImageData;
   description: String;
   rating: number;
@@ -16,7 +16,7 @@ interface Props {
 const TestimonialCard = ({
   name,
   tag,
-  location,
+  subtitle,
   pic,
   description,
   rating,
@@ -29,7 +29,7 @@ const TestimonialCard = ({
             <p className="text-md font-bold xs:text-lg">
               {name} | {tag}
             </p>
-            <p className="text-sm xs:text-base">{location}</p>
+            <p className="text-sm xs:text-base">{subtitle}</p>
           </div>
           <div className="relative aspect-square h-full overflow-hidden rounded-full">
             <Image src={pic} layout="fill" alt="image of a person" />

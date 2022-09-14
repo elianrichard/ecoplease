@@ -9,29 +9,26 @@ import { IoIosArrowForward } from "react-icons/io";
 import { ProductsType } from "../../../../modules/_common/types/ProductsType";
 import { MediaType } from "../../../../modules/_common/types/MediaType";
 
-import ProductImg1 from "../../../../asset/pictures/products/product-1.png";
-import ProductImg2 from "../../../../asset/pictures/products/product-2.png";
-import ProductImg3 from "../../../../asset/pictures/products/product-3.png";
 import PaperTextureImg from "../../../../asset/pictures/paper-texture-3.png";
 
-const productPlaceholder = {
-  name: "Burger Box",
-  id: "SB102",
-  price: "120.000",
-  size: "6 x 6 (150x150x80) (fold size)",
-  material: "Sugarcane Bagasse",
-  packaging: "50pcs/inner pack",
-  characteristics: [
-    "Non toxic, odorless",
-    "Hot oil and hot water resistant (100 C / 212 F)",
-    "Microwave and refigrator safety",
-    "100% biodegradable within go days after use or put in natural conditions and compostable",
-  ],
-  color: ["#fff", "#000"],
-  tokpedLink: "https://tokopedia.com",
-  shopeeLink: "https://shopee.com",
-  imageList: [ProductImg1, ProductImg2, ProductImg3],
-};
+// const productPlaceholder = {
+//   name: "Burger Box",
+//   id: "SB102",
+//   price: "120.000",
+//   size: "6 x 6 (150x150x80) (fold size)",
+//   material: "Sugarcane Bagasse",
+//   packaging: "50pcs/inner pack",
+//   characteristics: [
+//     "Non toxic, odorless",
+//     "Hot oil and hot water resistant (100 C / 212 F)",
+//     "Microwave and refigrator safety",
+//     "100% biodegradable within go days after use or put in natural conditions and compostable",
+//   ],
+//   color: ["#fff", "#000"],
+//   tokpedLink: "https://tokopedia.com",
+//   shopeeLink: "https://shopee.com",
+//   imageList: [ProductImg1, ProductImg2, ProductImg3],
+// };
 
 interface Props {
   product: ProductsType;
@@ -176,7 +173,7 @@ const Layout = ({ product }: Props) => {
             </IconContext.Provider>
             <div className="flex gap-5">
               <a
-                href={productPlaceholder.tokpedLink}
+                href={"https://tokopedia.com"}
                 target="_blank"
                 rel="noreferrer"
                 className="inline rounded-xl bg-green-700 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-green-700"
@@ -184,7 +181,7 @@ const Layout = ({ product }: Props) => {
                 Buy at Tokopedia
               </a>
               <a
-                href={productPlaceholder.shopeeLink}
+                href={"https://shopee.com"}
                 target="_blank"
                 rel="noreferrer"
                 className="inline rounded-xl bg-orange-500 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-orange-500"

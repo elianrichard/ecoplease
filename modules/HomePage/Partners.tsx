@@ -1,19 +1,43 @@
 import React from "react";
+import Image from "next/image";
 
 import KopiKenanganSVG from "../../asset/svgs/kopiKenangan";
 
+import BottegaLogo from "../../asset/pictures/home/partners/Bottega.jpeg";
+import CangguLogo from "../../asset/pictures/home/partners/Canggu-Bakehouse.jpg";
+import GuttenLogo from "../../asset/pictures/home/partners/Gutten-Morgen.png";
+import LimaLogo from "../../asset/pictures/home/partners/Lima.png";
+import SkipJackLogo from "../../asset/pictures/home/partners/Skipjack.jpeg";
+import SoiLogo from "../../asset/pictures/home/partners/soi.jpg";
+import ThreeLogo from "../../asset/pictures/home/partners/Three-Folks.png";
+
 const Partners = () => {
+  const logoList = [
+    BottegaLogo,
+    CangguLogo,
+    GuttenLogo,
+    LimaLogo,
+    SkipJackLogo,
+    SoiLogo,
+    ThreeLogo,
+  ];
+
   return (
     <div className="flex w-full flex-col items-center gap-20">
       <p className="before:title-outline-red relative z-0 w-full text-center text-4xl font-black text-darkRed before:absolute before:top-1 before:-z-10 before:translate-x-1 before:content-['OUR_PARTNERS'] xs:text-5xl">
         OUR PARTNERS
       </p>
       <div className="flex flex-wrap justify-center gap-6 xs:gap-12">
-        <KopiKenanganSVG />
-        <KopiKenanganSVG />
-        <KopiKenanganSVG />
-        <KopiKenanganSVG />
-        <KopiKenanganSVG />
+        {logoList.map((el, i) => (
+          <div className="relative h-32 w-32 bg-white grayscale-[100%] hover:grayscale-0 hover:scale-105 transition-all duration-200 ease-out" key={i}>
+            <Image
+              src={el}
+              layout="fill"
+              objectFit="contain"
+              alt="partners logo"
+            />
+          </div>
+        ))}
       </div>
       <a
         href="#"
