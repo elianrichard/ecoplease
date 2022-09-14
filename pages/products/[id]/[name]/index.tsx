@@ -1,16 +1,18 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { server } from "../../../../config";
+import axios, { AxiosResponse } from "axios";
+import { useQueries } from "@tanstack/react-query";
+import { IconContext } from "react-icons";
+
+import { IoIosArrowForward } from "react-icons/io";
+import { ProductsType } from "../../../../modules/_common/types/ProductsType";
+import { MediaType } from "../../../../modules/_common/types/MediaType";
 
 import ProductImg1 from "../../../../asset/pictures/products/product-1.png";
 import ProductImg2 from "../../../../asset/pictures/products/product-2.png";
 import ProductImg3 from "../../../../asset/pictures/products/product-3.png";
-
 import PaperTextureImg from "../../../../asset/pictures/paper-texture-3.png";
-import { IconContext } from "react-icons";
-import { IoIosArrowForward } from "react-icons/io";
-import axios from "axios";
-import { server } from "../../../../config";
-import { ProductsType } from "../../../../modules/_common/types/ProductsType";
 
 const productPlaceholder = {
   name: "Burger Box",
@@ -50,32 +52,52 @@ const Layout = ({ product }: Props) => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [descDivPos]);
-  // console.log(product.acf.product_characteristic);
-  console.log(descDivPos);
+  const imageIds = product.acf.images;
+
+  const fetchImageById = (id: number): Promise<AxiosResponse<MediaType>> => {
+    return axios.get(`${server}/wp-json/wp/v2/media/${id}`);
+  };
+
+  const imageQueries = useQueries({
+    queries: imageIds.map((id) => ({
+      queryKey: ["image", id],
+      queryFn: () => fetchImageById(id),
+    })),
+  });
+
+  const imageLinks =
+    imageQueries?.map((el) => el.data?.data.guid.rendered) || [];
+
   return (
     <div className="flex w-screen flex-col bg-ecoRed sm:flex-row" ref={descDiv}>
       <div className="scrollbar-custom flex flex-[2] flex-row overflow-x-scroll sm:flex-col sm:overflow-x-hidden lg:flex-1 ">
-        {productPlaceholder.imageList.map((el, i) => (
-          <div
-            className="relative h-72 min-w-[100vw] sm:h-96 sm:w-full sm:min-w-full"
-            key={i}
-          >
-            <Image
-              src={el}
-              layout="fill"
-              objectFit="cover"
-              alt="product name"
-            />
-          </div>
-        ))}
+        {imageLinks ? (
+          imageLinks.map((el, i) => (
+            <div
+              className="relative aspect-square h-72 sm:h-auto sm:w-full"
+              key={i}
+            >
+              {el && (
+                <Image
+                  src={el}
+                  layout="fill"
+                  objectFit="cover"
+                  alt="product name"
+                />
+              )}
+            </div>
+          ))
+        ) : (
+          <div></div>
+        )}
       </div>
-      <div className="relative flex-[3] lg:flex-1">
+      <div className="relative flex-[3] lg:flex-[2]">
         <div
           className={`${
             descDiv.current?.clientHeight > descDivPos
               ? "sm:fixed sm:top-[64px] sm:bottom-auto"
-              : "sm:bottom-0 sm:absolute"
-          } flex w-screen flex-col bg-ecoRed px-10 py-10 sm:h-[calc(100vh-64px)] sm:w-[60vw] sm:px-14 lg:w-[50vw] lg:px-20`}
+              : "sm:absolute sm:bottom-0"
+          } flex w-screen flex-col bg-ecoRed px-10 py-10 sm:h-[calc(100vh-64px)] sm:w-[60vw] sm:px-14 lg:w-[66.67vw] lg:px-20`}
           style={{
             backgroundImage: `url(${PaperTextureImg.src})`,
             backgroundSize: "cover",
@@ -121,11 +143,13 @@ const Layout = ({ product }: Props) => {
                 Product Characteristic
               </p>
               <ol className="md:text-lg">
-                {product.acf.product_characteristic.split("\r\n").map((el, i) => (
-                  <li key={i}>
-                    {i + 1}. {el}
-                  </li>
-                ))}
+                {product.acf.product_characteristic
+                  .split("\r\n")
+                  .map((el, i) => (
+                    <li key={i}>
+                      {i + 1}. {el}
+                    </li>
+                  ))}
               </ol>
             </div>
             {/* <div className="flex items-center gap-3 text-lg font-bold md:text-xl">
