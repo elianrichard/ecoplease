@@ -8,7 +8,7 @@ import CangguLogo from "../../asset/pictures/home/partners/Canggu-Bakehouse.jpg"
 import GuttenLogo from "../../asset/pictures/home/partners/Gutten-Morgen.png";
 import LimaLogo from "../../asset/pictures/home/partners/Lima.png";
 import SkipJackLogo from "../../asset/pictures/home/partners/Skipjack.jpeg";
-import SoiLogo from "../../asset/pictures/home/partners/soi.jpg";
+import SoiLogo from "../../asset/pictures/home/partners/Soi.jpg";
 import LucyLogo from "../../asset/pictures/home/partners/Lucy.jpeg";
 import ScowpLogo from "../../asset/pictures/home/partners/Hello-Scowp.jpeg";
 import ThreeLogo from "../../asset/pictures/home/partners/Three-Folks.png";
