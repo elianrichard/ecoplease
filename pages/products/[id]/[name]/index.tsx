@@ -10,6 +10,7 @@ import { ProductsType } from "../../../../modules/_common/types/ProductsType";
 import { MediaType } from "../../../../modules/_common/types/MediaType";
 
 import PaperTextureImg from "../../../../asset/pictures/paper-texture-3.png";
+import LoadingIcon from "../../../../components/LoadingIcon";
 
 // const productPlaceholder = {
 //   name: "Burger Box",
@@ -83,7 +84,7 @@ const Layout = ({ product }: Props) => {
                 alt="product name"
               />
             ) : (
-              <div>LOADING IMAGE</div>
+              <LoadingIcon />
             )}
           </div>
         ))}

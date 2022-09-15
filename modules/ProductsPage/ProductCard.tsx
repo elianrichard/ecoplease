@@ -1,19 +1,20 @@
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { ProductsType } from "../_common/types/ProductsType";
+import { motion } from "framer-motion";
 
+import { ProductsType } from "../_common/types/ProductsType";
 import useMediaQuery from "../_common/queries/useMediaQuery";
+
+import LoadingIcon from "../../components/LoadingIcon";
 
 interface Props {
   product: ProductsType;
 }
 
 const ProductCard = ({ product }: Props) => {
-  const { data: imageData } = useMediaQuery(product.acf.images[0]);
+  const { data: imageData, isLoading } = useMediaQuery(product.acf.images[0]);
   const imageLink = imageData?.data.guid.rendered;
-  console.log(imageLink);
   return (
     <Link
       href={{
@@ -32,7 +33,11 @@ const ProductCard = ({ product }: Props) => {
         className="w-full cursor-pointer overflow-hidden rounded-xl"
       >
         <div className="relative aspect-square w-full bg-darkRed">
-          {imageLink ? <Image src={imageLink} layout="fill" alt="packaging" /> :(<p>TEST</p>)}
+          {!isLoading && imageLink ? (
+            <Image src={imageLink} layout="fill" alt="packaging" />
+          ) : (
+            <LoadingIcon />
+          )}
           <div className="absolute right-0 top-0 rounded-bl-xl bg-white px-4 py-1 text-sm font-bold uppercase text-ecoRed xs:text-base">
             {product.acf.category}
           </div>
