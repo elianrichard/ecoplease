@@ -151,7 +151,7 @@ const Layout = ({ product }: Props) => {
               ))}
             </div> */}
           </div>
-          <div className="flex flex-col items-start gap-2 text-white md:text-xl">
+          <div className="flex flex-col items-center gap-2 text-white xs:items-start md:text-xl">
             <IconContext.Provider value={{ className: "w-10" }}>
               <a
                 href="#"
@@ -162,7 +162,7 @@ const Layout = ({ product }: Props) => {
                 Request Sample <IoIosArrowForward />
               </a>
             </IconContext.Provider>
-            <div className="flex gap-5">
+            <div className="flex flex-col gap-2 xs:flex-row xs:gap-5">
               <a
                 href={"https://tokopedia.com"}
                 target="_blank"
