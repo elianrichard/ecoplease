@@ -11,25 +11,22 @@ import WhatsappButton from "../components/WhatsappButton";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+const queryClient = new QueryClient();
+
 function MyApp({ Component, pageProps }: AppProps) {
-  const queryClient = new QueryClient();
-
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <DefaultSeo {...SEO} />
-      <QueryClientProvider client={queryClient}>
-        <div className="relative overflow-x-hidden">
-          <Header />
-          <main className="pt-16">
-            <Component {...pageProps} />
-          </main>
-          <Footer />
-          <WhatsappButton />
-        </div>
-
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-    </>
+      <div className="relative overflow-x-hidden">
+        <Header />
+        <main className="pt-16">
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+        <WhatsappButton />
+      </div>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 }
 
