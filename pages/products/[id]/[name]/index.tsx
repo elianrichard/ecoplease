@@ -11,6 +11,7 @@ import { MediaType } from "../../../../modules/_common/types/MediaType";
 
 import PaperTextureImg from "../../../../asset/pictures/paper-texture-3.png";
 import LoadingIcon from "../../../../components/LoadingIcon";
+import useMediaQueries from "../../../../modules/_common/queries/useMediaQueries";
 
 // const productPlaceholder = {
 //   name: "Burger Box",
@@ -52,18 +53,7 @@ const Layout = ({ product }: Props) => {
   }, [descDivPos]);
   const imageIds = product.acf.images;
 
-  const fetchImageById = (id: number): Promise<AxiosResponse<MediaType>> => {
-    return axios.get(`${server}/wp-json/wp/v2/media/${id}`);
-  };
-
-  const imageQueries = useQueries({
-    queries: imageIds.map((id) => ({
-      queryKey: ["media", id],
-      queryFn: () => fetchImageById(id),
-      refetchOnMount: false,
-      keepPreviousData: true,
-    })),
-  });
+  const imageQueries = useMediaQueries(imageIds);
 
   const imageLinks =
     imageQueries?.map((el) => el.data?.data.guid.rendered) || [];

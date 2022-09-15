@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Repeat, Transition } from "framer-motion";
 
 const LoadingIcon = () => {
   const containerVariants = {
@@ -16,12 +16,6 @@ const LoadingIcon = () => {
     },
   };
 
-  const dotsTransition = {
-    duration: 0.6,
-    yoyo: Infinity,
-    ease: "easeInOut",
-  };
-
   return (
     <motion.div
       className="flex h-full w-full items-center justify-center gap-5"
@@ -32,17 +26,32 @@ const LoadingIcon = () => {
       <motion.div
         className="aspect-square h-4 rounded-full bg-white"
         variants={dotsVariants}
-        transition={dotsTransition}
+        transition={{
+          duration: 0.6,
+          repeat: Infinity,
+          ease: "easeInOut",
+          repeatType: "reverse",
+        }}
       />
       <motion.div
         className="aspect-square h-4 rounded-full bg-white"
         variants={dotsVariants}
-        transition={dotsTransition}
+        transition={{
+          duration: 0.6,
+          repeat: Infinity,
+          ease: "easeInOut",
+          repeatType: "reverse",
+        }}
       />
       <motion.div
         className="aspect-square h-4 rounded-full bg-white"
         variants={dotsVariants}
-        transition={dotsTransition}
+        transition={{
+          duration: 0.6,
+          repeat: Infinity,
+          ease: "easeInOut",
+          repeatType: "reverse",
+        }}
       />
     </motion.div>
   );

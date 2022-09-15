@@ -12,7 +12,6 @@ const useMediaQuery = (id: number) => {
       return axios.get(`${server}/wp-json/wp/v2/media/${id}`);
     },
     {
-      staleTime: 5000,
       refetchOnMount: false,
       keepPreviousData: true,
     }

@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
 
 import { server } from "../../../config";
@@ -11,10 +11,6 @@ const useProductsQuery = () => {
     (): Promise<AxiosResponse<ProductsType[]>> => {
       return axios.get(`${server}/wp-json/wp/v2/products`);
     },
-    {
-      refetchOnMount: false,
-      keepPreviousData: true,
-    }
   );
   return { data, isLoading };
 };

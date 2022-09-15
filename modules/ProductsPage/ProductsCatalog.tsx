@@ -11,7 +11,6 @@ import { ProductsType } from "../_common/types/ProductsType";
 const ProductsCatalog = () => {
   const [productLists, setProductLists] = useState<ProductsType[]>();
   const [selectedCategory, setSelectedCategory] = useState("all_product");
-
   const { data, isLoading } = useProductsQuery();
   const productsData = data?.data;
   const allCategoryLists = productsData?.map((el) => el.acf.category);
@@ -63,7 +62,7 @@ const ProductsCatalog = () => {
               ))}
             </motion.div>
           ) : (
-            <div className="w-full text-center text-xl sm:text-5xl font-bold uppercase text-white bg-ecoRed p-5">
+            <div className="w-full bg-ecoRed p-5 text-center text-xl font-bold uppercase text-white sm:text-5xl">
               LOADING YOUR ECO PRODUCTS...
             </div>
           )}
