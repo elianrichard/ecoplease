@@ -32,7 +32,7 @@ const ProductCard = ({ product }: Props) => {
         className="w-full cursor-pointer overflow-hidden rounded-xl"
       >
         <div className="relative aspect-square w-full bg-darkRed">
-          {imageLink && <Image src={imageLink} layout="fill" alt="packaging" />}
+          {imageLink ? <Image src={imageLink} layout="fill" alt="packaging" /> :(<p>TEST</p>)}
           <div className="absolute right-0 top-0 rounded-bl-xl bg-white px-4 py-1 text-sm font-bold uppercase text-ecoRed xs:text-base">
             {product.acf.category}
           </div>

@@ -11,6 +11,10 @@ const usePostsQuery = () => {
     (): Promise<AxiosResponse<PostsType[]>> => {
       return axios.get(`${server}/wp-json/wp/v2/posts`);
     },
+    {
+      refetchOnMount: false,
+      keepPreviousData: true,
+    }
   );
   return { data, isLoading };
 };

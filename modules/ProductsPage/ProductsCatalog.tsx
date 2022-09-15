@@ -17,8 +17,6 @@ const ProductsCatalog = () => {
   const allCategoryLists = productsData?.map((el) => el.acf.category);
   const categoryList = ["all_product"].concat(_.uniq(allCategoryLists));
 
-  // console.log(productsData);
-
   useEffect(() => {
     if (selectedCategory === "all_product") setProductLists(productsData);
     else {
@@ -55,14 +53,20 @@ const ProductsCatalog = () => {
           ))}
         </div>
         <AnimatePresence>
-          <motion.div
-            layout
-            className="grid w-full grid-cols-2 gap-5 sm:grid-cols-3 md:gap-10 xl:grid-cols-4"
-          >
-            {productLists?.map((el) => (
-              <ProductCard key={el.id} product={el} />
-            ))}
-          </motion.div>
+          {!isLoading ? (
+            <motion.div
+              layout
+              className="grid w-full grid-cols-2 gap-5 sm:grid-cols-3 md:gap-10 xl:grid-cols-4"
+            >
+              {productLists?.map((el) => (
+                <ProductCard key={el.id} product={el} />
+              ))}
+            </motion.div>
+          ) : (
+            <div className="w-full text-center text-xl sm:text-5xl font-bold uppercase text-white bg-ecoRed p-5">
+              LOADING YOUR ECO PRODUCTS...
+            </div>
+          )}
         </AnimatePresence>
       </div>
     </div>

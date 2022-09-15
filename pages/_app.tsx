@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import WhatsappButton from "../components/WhatsappButton";
 
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -25,6 +26,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Footer />
           <WhatsappButton />
         </div>
+
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>
   );

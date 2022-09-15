@@ -57,8 +57,10 @@ const Layout = ({ product }: Props) => {
 
   const imageQueries = useQueries({
     queries: imageIds.map((id) => ({
-      queryKey: ["image", id],
+      queryKey: ["media", id],
       queryFn: () => fetchImageById(id),
+      refetchOnMount: false,
+      keepPreviousData: true,
     })),
   });
 
@@ -68,25 +70,23 @@ const Layout = ({ product }: Props) => {
   return (
     <div className="flex w-screen flex-col bg-ecoRed sm:flex-row" ref={descDiv}>
       <div className="scrollbar-custom flex flex-[2] flex-row overflow-x-scroll sm:flex-col sm:overflow-x-hidden lg:flex-1 ">
-        {imageLinks ? (
-          imageLinks.map((el, i) => (
-            <div
-              className="relative aspect-square h-72 sm:h-auto sm:w-full"
-              key={i}
-            >
-              {el && (
-                <Image
-                  src={el}
-                  layout="fill"
-                  objectFit="cover"
-                  alt="product name"
-                />
-              )}
-            </div>
-          ))
-        ) : (
-          <div></div>
-        )}
+        {imageLinks.map((el, i) => (
+          <div
+            className="relative aspect-square h-72 sm:h-auto sm:w-full"
+            key={i}
+          >
+            {!imageQueries[i].isLoading && el ? (
+              <Image
+                src={el}
+                layout="fill"
+                objectFit="cover"
+                alt="product name"
+              />
+            ) : (
+              <div>LOADING IMAGE</div>
+            )}
+          </div>
+        ))}
       </div>
       <div className="relative flex-[3] lg:flex-[2]">
         <div

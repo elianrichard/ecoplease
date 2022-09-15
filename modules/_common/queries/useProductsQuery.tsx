@@ -10,6 +10,10 @@ const useProductsQuery = () => {
     ["products"],
     (): Promise<AxiosResponse<ProductsType[]>> => {
       return axios.get(`${server}/wp-json/wp/v2/products`);
+    },
+    {
+      refetchOnMount: false,
+      keepPreviousData: true,
     }
   );
   return { data, isLoading };
