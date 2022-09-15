@@ -1,8 +1,9 @@
 import React, { Dispatch, SetStateAction } from "react";
 
-import paperTextureImg from "../../asset/pictures/paper-texture-2.jpg";
-import VideoRippedPaper from "../../asset/svgs/ripped/VideoRippedPaper";
-import VideoThumbnailImg from "../../asset/pictures/home/landing-hero.jpg";
+import paperTextureImg from "../../../asset/pictures/paper-texture-2.jpg";
+import VideoRippedPaper from "../../../asset/svgs/ripped/VideoRippedPaper";
+import VideoThumbnailImg from "../../../asset/pictures/home/landing-hero.jpg";
+import Counter from "./Counter";
 
 interface Props {
   setVideoModal: Dispatch<SetStateAction<boolean>>;
@@ -43,33 +44,7 @@ const VideoCounter = ({ setVideoModal }: Props) => {
           </div>
         </div>
         <div className=" flex h-full w-full flex-1 flex-col items-center justify-center">
-          <div className="grid h-full w-full grid-cols-2 gap-y-10 text-5xl font-black text-darkRed sm:text-6xl lg:h-1/2 lg:gap-y-0 xs:grid-cols-3">
-            <div className="flex h-full w-full flex-col items-center justify-center">
-              <p>100</p>
-              <p className="text-2xl sm:text-3xl">XXXXXX</p>
-            </div>
-            <div className="flex h-full w-full flex-col items-center justify-center">
-              <p>50K</p>
-              <p className="text-2xl sm:text-3xl">XXXXXX</p>
-            </div>
-            <div className="flex h-full w-full flex-col items-center justify-center">
-              <p>6</p>
-              <p className="text-2xl sm:text-3xl">XXXXXX</p>
-            </div>
-            <div className="flex h-full w-full flex-col items-center justify-center">
-              <p>40</p>
-              <p className="text-2xl sm:text-3xl">XXXXXX</p>
-            </div>
-            <div className="flex h-full w-full flex-col items-center justify-center">
-              <p>5</p>
-              <p className="text-2xl sm:text-3xl">XXXXXX</p>
-            </div>
-            <div className="flex h-full w-full flex-col items-center justify-center">
-              <p>10++</p>
-              <p className="text-2xl sm:text-3xl">XXXXXX</p>
-            </div>
-          </div>
-          {/* <div className="h-1/6 w-full bg-green-900"></div> */}
+          <Counter />
         </div>
       </div>
     </div>

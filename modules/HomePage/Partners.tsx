@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
 
-import KopiKenanganSVG from "../../asset/svgs/kopiKenangan";
-
 import BottegaLogo from "../../asset/pictures/home/partners/Bottega.jpeg";
 import CangguLogo from "../../asset/pictures/home/partners/Canggu-Bakehouse.jpg";
 import GuttenLogo from "../../asset/pictures/home/partners/Gutten-Morgen.png";

@@ -28,7 +28,7 @@ const Layout = () => {
             ECO NEWS
           </p>
           <p className="text-lg sm:text-xl">
-            Your daily dose of eco-fiendly news
+            Your daily dose of eco-friendly news
           </p>
         </div>
         <div className="flex flex-col gap-10">
