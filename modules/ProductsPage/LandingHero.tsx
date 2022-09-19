@@ -3,7 +3,7 @@ import React from "react";
 import { IconContext } from "react-icons";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-import LandingBgImg from "../../asset/pictures/products/landing-bg.png";
+import LandingBgImg from "../../asset/pictures/products/landing-bg.webp";
 
 const LandingHero = () => {
   return (

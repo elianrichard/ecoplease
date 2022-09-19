@@ -4,7 +4,7 @@ import _ from "lodash";
 
 import ProductCard from "./ProductCard";
 
-import PaperTextureImg from "../../asset/pictures/paper-texture-3.png";
+import PaperTextureImg from "../../asset/pictures/paper-texture-3.webp";
 import useProductsQuery from "../_common/queries/useProductsQuery";
 import { ProductsType } from "../_common/types/ProductsType";
 

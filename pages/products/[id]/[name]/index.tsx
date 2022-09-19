@@ -1,36 +1,15 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { server } from "../../../../config";
-import axios, { AxiosResponse } from "axios";
-import { useQueries } from "@tanstack/react-query";
+import axios from "axios";
 import { IconContext } from "react-icons";
 
 import { IoIosArrowForward } from "react-icons/io";
 import { ProductsType } from "../../../../modules/_common/types/ProductsType";
-import { MediaType } from "../../../../modules/_common/types/MediaType";
 
-import PaperTextureImg from "../../../../asset/pictures/paper-texture-3.png";
+import PaperTextureImg from "../../../../asset/pictures/paper-texture-3.webp";
 import LoadingIcon from "../../../../components/LoadingIcon";
 import useMediaQueries from "../../../../modules/_common/queries/useMediaQueries";
-
-// const productPlaceholder = {
-//   name: "Burger Box",
-//   id: "SB102",
-//   price: "120.000",
-//   size: "6 x 6 (150x150x80) (fold size)",
-//   material: "Sugarcane Bagasse",
-//   packaging: "50pcs/inner pack",
-//   characteristics: [
-//     "Non toxic, odorless",
-//     "Hot oil and hot water resistant (100 C / 212 F)",
-//     "Microwave and refigrator safety",
-//     "100% biodegradable within go days after use or put in natural conditions and compostable",
-//   ],
-//   color: ["#fff", "#000"],
-//   tokpedLink: "https://tokopedia.com",
-//   shopeeLink: "https://shopee.com",
-//   imageList: [ProductImg1, ProductImg2, ProductImg3],
-// };
 
 interface Props {
   product: ProductsType;

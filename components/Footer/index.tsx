@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import LogoLightSVG from "../../asset/svgs/logo/LogoLight";
-import TextureImg from "../../asset/pictures/paper-texture-3.png";
+import TextureImg from "../../asset/pictures/paper-texture-3.webp";
 
 const Footer = () => {
   return (

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BiMenu } from "react-icons/bi";
 import { IconContext } from "react-icons";
 
-import TextureImg from "../../asset/pictures/paper-texture-3.png";
+import TextureImg from "../../asset/pictures/paper-texture-3.webp";
 import LogoTextLight from "../../asset/svgs/logo/LogoTextLight2";
 
 import LinkButton from "./LinkButton";
