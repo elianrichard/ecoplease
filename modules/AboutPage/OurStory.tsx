@@ -1,7 +1,7 @@
 import React from "react";
 
-import TextureImg from "../../asset/pictures/paper-texture-3.png";
-import OurStoryBgImg from "../../asset/pictures/about/our-story-bg.jpg";
+import TextureImg from "../../asset/pictures/paper-texture-3.webp";
+import OurStoryBgImg from "../../asset/pictures/about/our-story-bg.webp";
 
 const OurStory = () => {
   return (

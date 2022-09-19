@@ -1,8 +1,8 @@
 import React from "react";
 
-import TextureImg from "../../asset/pictures/paper-texture-3.png";
-import OurMissionBgImg from "../../asset/pictures/about/our-mission-bg.png";
-import OurVisionBgImg from "../../asset/pictures/about/our-vision-bg.png";
+import TextureImg from "../../asset/pictures/paper-texture-3.webp";
+import OurMissionBgImg from "../../asset/pictures/about/our-mission-bg.webp";
+import OurVisionBgImg from "../../asset/pictures/about/our-vision-bg.webp";
 
 const VisionMission = () => {
   return (

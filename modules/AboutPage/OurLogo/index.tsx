@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import TextureImg from "../../../asset/pictures/paper-texture-3.png";
-import OurLogoBgImg from "../../../asset/pictures/about/our-logo-bg.jpg";
+import TextureImg from "../../../asset/pictures/paper-texture-3.webp";
+import OurLogoBgImg from "../../../asset/pictures/about/our-logo-bg.webp";
 
 import LogoLight from "../../../asset/svgs/logo/LogoLight";
 
