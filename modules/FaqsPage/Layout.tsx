@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import FaqCard from "./FaqCard";
 
-import FaqBgImg from "../../asset/pictures/faq/faq-bg.png";
-import PaperTextureImg from "../../asset/pictures/paper-texture-3.png";
+import FaqBgImg from "../../asset/pictures/home-bg.webp";
+import PaperTextureImg from "../../asset/pictures/paper-texture-3.webp";
 
 import FaqContent from "./FaqContent";
 import { AnimatePresence, motion } from "framer-motion";
@@ -46,10 +46,10 @@ const Layout = () => {
         />
         <div className="z-10 h-full w-full">
           <div className="flex h-full w-full flex-col items-center justify-start gap-20 py-10 px-10 md:py-20 xl:px-20">
-            <div className="flex flex-col justify-center gap-5 sm:flex-row sm:flex-wrap w-full">
+            <div className="flex w-full flex-col justify-center gap-5 sm:flex-row sm:flex-wrap">
               {FaqContent.map((el, i) => (
                 <p
-                  className={`cursor-pointer w-full sm:w-fit rounded-xl px-6 py-2 text-center text-3xl font-bold uppercase transition-all duration-200 ease-out ${
+                  className={`w-full cursor-pointer rounded-xl px-6 py-2 text-center text-3xl font-bold uppercase transition-all duration-200 ease-out sm:w-fit ${
                     i === selectedFaq
                       ? "bg-skinCream text-ecoRed"
                       : "bg-ecoRed text-skinCream"

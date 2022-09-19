@@ -1,8 +1,8 @@
 import React from "react";
 
 import SugarcaneImg1 from "../../../../asset/pictures/materials/sugarcane-1.webp";
-import SugarcaneImg2 from "../../../../asset/pictures/materials/sugarcane-2.jpg";
-import SugarcaneImg3 from "../../../../asset/pictures/materials/sugarcane-3.jpg";
+import SugarcaneImg2 from "../../../../asset/pictures/materials/sugarcane-2.webp";
+import SugarcaneImg3 from "../../../../asset/pictures/materials/sugarcane-3.webp";
 
 const Description = () => {
   return (

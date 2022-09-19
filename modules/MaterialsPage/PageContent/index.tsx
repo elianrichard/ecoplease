@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Bamboo from "./Bamboo";
 import Sugarcane from "./Sugarcane";
 
-import BackgroundImg from "../../../asset/pictures/econews/layout-bg.jpg";
+import BackgroundImg from "../../../asset/pictures/econews/layout-bg.webp";
 import { IconContext } from "react-icons";
 import { BsArrowUp } from "react-icons/bs";
 

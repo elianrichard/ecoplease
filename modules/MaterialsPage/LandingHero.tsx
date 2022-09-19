@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
-import LandingProductImg from "../../asset/pictures/materials/landing-hero.png";
-import PaperTextureImg from "../../asset/pictures/paper-texture.jpg";
+import LandingProductImg from "../../asset/pictures/materials/landing-hero.webp";
+import PaperTextureImg from "../../asset/pictures/paper-texture.webp";
 
 const LandingHero = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 
-import BambooImg1 from "../../../../asset/pictures/materials/bamboo-1.jpg";
-import BambooImg2 from "../../../../asset/pictures/materials/bamboo-2.jpg";
-import BambooImg3 from "../../../../asset/pictures/materials/bamboo-3.jpg";
+import BambooImg1 from "../../../../asset/pictures/materials/bamboo-1.webp";
+import BambooImg2 from "../../../../asset/pictures/materials/bamboo-2.webp";
+import BambooImg3 from "../../../../asset/pictures/materials/bamboo-3.webp";
 
 const Description = () => {
   return (

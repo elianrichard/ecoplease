@@ -2,10 +2,10 @@ import React from "react";
 
 import EconewsRipped from "../../asset/svgs/ripped/EconewsRipped";
 import EconewsRippedFlip from "../../asset/svgs/ripped/EconewsRippedFlip";
+import LayoutBgImg from "../../asset/pictures/econews/layout-bg.webp";
 
 import NewsCard from "./NewsCard";
 import usePostsQuery from "../_common/queries/usePostsQuery";
-import LayoutBgImg from "../../asset/pictures/econews/layout-bg.jpg";
 
 const Layout = () => {
   const { isLoading, data: articles } = usePostsQuery();
@@ -33,9 +33,9 @@ const Layout = () => {
         </div>
         <div className="flex flex-col gap-10">
           {articles && !isLoading ? (
-            articles.data.reverse().map((el, i) => <NewsCard article={el} index={i} key={i} />)
+            articles.map((el, i) => <NewsCard article={el} index={i} key={i} />)
           ) : (
-            <p className="text-center text-4xl sm:text-5xl md:text-6xl font-bold text-skinCream">
+            <p className="text-center text-4xl font-bold text-skinCream sm:text-5xl md:text-6xl">
               LOADING...
             </p>
           )}

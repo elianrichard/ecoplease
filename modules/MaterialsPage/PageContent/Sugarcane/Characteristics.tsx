@@ -1,6 +1,5 @@
 import React from "react";
 
-import NoPlasticIcon from "../../../../asset/svgs/icons/Characteristics/NoPlasticIcon";
 import TrashIcon from "../../../../asset/svgs/icons/Characteristics/TrashIcon";
 import TemperatureIcon from "../../../../asset/svgs/icons/Characteristics/TemperatureIcon";
 import CertifiedIcon from "../../../../asset/svgs/icons/Characteristics/CertifiedIcon";

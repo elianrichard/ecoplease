@@ -6,10 +6,9 @@ import {
   IoIosArrowForward,
   IoMdArrowDropright,
 } from "react-icons/io";
+
 import CompostIcon from "../../../../asset/svgs/icons/Characteristics/CompostIcon";
 import DegradationIcon from "../../../../asset/svgs/icons/Characteristics/DegradationIcon";
-
-import NoPlasticIcon from "../../../../asset/svgs/icons/Characteristics/NoPlasticIcon";
 import PackagingIcon from "../../../../asset/svgs/icons/Characteristics/PackagingIcon";
 import PulpIcon from "../../../../asset/svgs/icons/Characteristics/PulpIcon";
 import SugarcaneIcon from "../../../../asset/svgs/icons/Characteristics/SugarcaneIcon";
