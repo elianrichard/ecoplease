@@ -3,7 +3,7 @@ import React from "react";
 import TestimonialCard from "./TestimonialCard";
 
 import BlankPersonPic from "../../../asset/pictures/home/blank_profile.webp";
-import TestimonialBackgroundImg from "../../../asset/pictures/home/home-background-2.jpg";
+import TestimonialBackgroundImg from "../../../asset/pictures/home/home-background-2.webp";
 import TestimonialRipped from "../../../asset/svgs/ripped/TestimonialRipped";
 
 const testimonialsData = [

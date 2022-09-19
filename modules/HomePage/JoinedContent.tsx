@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 
-import paperTextureImg from "../../asset/pictures/paper-texture-2.jpg";
+import paperTextureImg from "../../asset/pictures/paper-texture-2.webp";
 
 const JoinedContent = ({ children }: PropsWithChildren) => {
   return (

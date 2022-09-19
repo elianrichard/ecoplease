@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
-import productLandingImg from "../../asset/pictures/home/hero-product.png";
-import paperTextureImg from "../../asset/pictures/paper-texture.jpg";
+import productLandingImg from "../../asset/pictures/home/hero-product.webp";
+import paperTextureImg from "../../asset/pictures/paper-texture.webp";
 
 import RippedSVG from "../../asset/svgs/ripped/RippedLanding";
 

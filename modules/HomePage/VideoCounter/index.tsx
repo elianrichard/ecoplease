@@ -1,8 +1,8 @@
 import React, { Dispatch, SetStateAction } from "react";
 
-import paperTextureImg from "../../../asset/pictures/paper-texture-2.jpg";
+import paperTextureImg from "../../../asset/pictures/paper-texture-2.webp";
+import VideoThumbnailImg from "../../../asset/pictures/home/landing-hero.webp";
 import VideoRippedPaper from "../../../asset/svgs/ripped/VideoRippedPaper";
-import VideoThumbnailImg from "../../../asset/pictures/home/landing-hero.jpg";
 import Counter from "./Counter";
 
 interface Props {

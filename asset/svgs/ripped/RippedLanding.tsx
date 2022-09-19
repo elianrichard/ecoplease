@@ -1,5 +1,5 @@
 import * as React from "react";
-import landingHeroImg from "../../pictures/home/landing-hero.jpg";
+import landingHeroImg from "../../pictures/home/landing-hero.webp";
 
 function rippedSVG(props: any) {
   return (

@@ -3,7 +3,7 @@ import React from "react";
 import Perks from "./Perks";
 import Comparison from "./Comparison";
 
-import backgroundImg from "../../../asset/pictures/home/home-background-1.png";
+import backgroundImg from "../../../asset/pictures/home-bg.webp";
 
 const PerksComparison = () => {
   return (
