@@ -27,7 +27,8 @@ const TestimonialCard = ({
         <div className="flex w-full justify-between">
           <div className="flex flex-col">
             <p className="text-md font-bold xs:text-lg">
-              {name} | {tag}
+              {name}
+              {tag ? ` | ${tag}` : ""}
             </p>
             <p className="text-sm xs:text-base">{subtitle}</p>
           </div>

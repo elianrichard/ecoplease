@@ -10,7 +10,7 @@ const testimonialsData = [
   {
     image: BlankPersonPic,
     name: "nikho",
-    tag: "Tokopedia",
+    tag: "",
     subtitle: "Customer",
     stars: 5,
     desc: "udah berkali2 pesan disini selalu mantappp! Bagus banget kualitas produk nya. Seller juga 👏🏻👏🏻",
@@ -18,7 +18,7 @@ const testimonialsData = [
   {
     image: BlankPersonPic,
     name: "dian",
-    tag: "Tokopedia",
+    tag: "",
     subtitle: "Customer",
     stars: 5,
     desc: "Salah satu yang bikin repeat order itu teksturnya tetap kokoh walaupun bukan dari plastik, jujur suka bingung gimana cara ngurangin penggunaan sampah plastik di industri kuliner...",
@@ -26,7 +26,7 @@ const testimonialsData = [
   {
     image: BlankPersonPic,
     name: "Ika",
-    tag: "Tokopedia",
+    tag: "",
     subtitle: "Customer",
     stars: 5,
     desc: "Cakep banget packagingnya!!! Buat jualan cakep bgtttt 100% will reorder. Material Produk Bagus Warna Sesuai",
@@ -34,7 +34,7 @@ const testimonialsData = [
   {
     image: BlankPersonPic,
     name: "Adis",
-    tag: "Tokopedia",
+    tag: "",
     subtitle: "Customer",
     stars: 5,
     desc: "barang sesuai semua tidak ada yang cacat sedikit pun, respond seller cepat , hari libur pun tetap di kirim",
@@ -42,7 +42,7 @@ const testimonialsData = [
   {
     image: BlankPersonPic,
     name: "Felix",
-    tag: "Tokopedia",
+    tag: "",
     subtitle: "Customer",
     stars: 5,
     desc: "Barangny bagus bgt si ini, bner anti leak dan eco friendly. seler ny super gercep dn ramah.. recommended, tq ❤️🙏🏻",
