@@ -10,6 +10,9 @@ import SoiLogo from "../../asset/pictures/home/partners/Soi.webp";
 import LucyLogo from "../../asset/pictures/home/partners/Lucy.webp";
 import ScowpLogo from "../../asset/pictures/home/partners/Hello-Scowp.webp";
 import ThreeLogo from "../../asset/pictures/home/partners/Three-Folks.webp";
+import AnthologyLogo from "../../asset/pictures/home/partners/Anthology.webp";
+import HauseLogo from "../../asset/pictures/home/partners/Hause.webp";
+import WilliamsLogo from "../../asset/pictures/home/partners/Williams.webp";
 
 const Partners = () => {
   const logoList = [
@@ -22,6 +25,9 @@ const Partners = () => {
     LucyLogo,
     ScowpLogo,
     ThreeLogo,
+    AnthologyLogo,
+    HauseLogo,
+    WilliamsLogo,
   ];
 
   return (
