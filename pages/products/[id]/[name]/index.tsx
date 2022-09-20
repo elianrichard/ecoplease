@@ -37,8 +37,10 @@ const Layout = ({ product }: Props) => {
   const imageLinks =
     imageQueries?.map((el) => el.data?.data.guid.rendered) || [];
 
+  // console.log(imageLinks);
+
   return (
-    <div className="flex w-screen flex-col bg-ecoRed sm:flex-row" ref={descDiv}>
+    <div className="relative flex w-screen flex-col sm:flex-row" ref={descDiv}>
       <div className="scrollbar-custom flex flex-[2] flex-row overflow-x-scroll sm:flex-col sm:overflow-x-hidden lg:flex-1 ">
         {imageLinks.map((el, i) => (
           <div
@@ -64,62 +66,69 @@ const Layout = ({ product }: Props) => {
             descDiv.current?.clientHeight > descDivPos
               ? "sm:fixed sm:top-[64px] sm:bottom-auto"
               : "sm:absolute sm:bottom-0"
-          } flex w-screen flex-col bg-ecoRed px-10 py-10 sm:h-[calc(100vh-64px)] sm:w-[60vw] sm:px-14 lg:w-[66.67vw] lg:px-20`}
-          style={{
-            backgroundImage: `url(${PaperTextureImg.src})`,
-            backgroundSize: "cover",
-            backgroundBlendMode: "multiply",
-          }}
+          } relative flex w-screen sm:h-[calc(100vh-64px)] sm:w-[60vw] lg:w-[66.67vw]`}
         >
-          <div className="product-scrollbar mb-5 flex h-full w-full flex-col gap-10 overflow-x-hidden text-white sm:overflow-y-scroll">
-            <div>
-              <p
-                className={`${
-                  product.acf.price ? "mb-2" : ""
-                } text-2xl font-bold md:text-3xl`}
-              >
-                <span className="uppercase text-skinCream">
-                  {product.acf.code}
-                </span>{" "}
-                / {product.title.rendered}
-              </p>
-              {product.acf.price && (
-                <p className="text-xl font-semibold md:text-2xl">
-                  Rp {product.acf.price}
+          <div className="absolute -z-10 h-full w-full bg-ecoRed">
+            <Image
+              src={PaperTextureImg}
+              alt="ecoplease background"
+              layout="fill"
+              objectFit="cover"
+              className="mix-blend-multiply"
+            />
+          </div>
+          <div className="flex h-full w-full flex-col px-10 py-10 sm:px-14 lg:px-20">
+            <div className="product-scrollbar mb-5 flex h-full w-full flex-col gap-10 overflow-x-hidden text-white sm:overflow-y-scroll">
+              <div>
+                <p
+                  className={`${
+                    product.acf.price ? "mb-2" : ""
+                  } text-2xl font-bold md:text-3xl`}
+                >
+                  <span className="uppercase text-skinCream">
+                    {product.acf.code}
+                  </span>{" "}
+                  / {product.title.rendered}
                 </p>
-              )}
-            </div>
-            <div className="text-lg md:text-xl">
-              <p className="w-fit bg-white px-3 font-bold text-ecoRed">Size:</p>
-              <p>{product.acf.size}</p>
-              <p className="capitalize">
-                <span className="bg-white px-3 font-bold text-ecoRed">
-                  Material:
-                </span>{" "}
-                {product.acf.material}
-              </p>
-              <p className="capitalize">
-                <span className="bg-white px-3 font-bold text-ecoRed">
-                  Colors Available:
-                </span>{" "}
-                {product.acf.colors}
-              </p>
-            </div>
-            <div>
-              <p className="text-lg font-bold md:text-xl">
-                Product Characteristic
-              </p>
-              <ol className="md:text-lg">
-                {product.acf.product_characteristic
-                  .split("\r\n")
-                  .map((el, i) => (
-                    <li key={i}>
-                      {i + 1}. {el}
-                    </li>
-                  ))}
-              </ol>
-            </div>
-            {/* <div className="flex items-center gap-3 text-lg font-bold md:text-xl">
+                {product.acf.price && (
+                  <p className="text-xl font-semibold md:text-2xl">
+                    Rp {product.acf.price}
+                  </p>
+                )}
+              </div>
+              <div className="text-lg md:text-xl">
+                <p className="w-fit bg-white px-3 font-bold text-ecoRed">
+                  Size:
+                </p>
+                <p>{product.acf.size}</p>
+                <p className="capitalize">
+                  <span className="bg-white px-3 font-bold text-ecoRed">
+                    Material:
+                  </span>{" "}
+                  {product.acf.material}
+                </p>
+                <p className="capitalize">
+                  <span className="bg-white px-3 font-bold text-ecoRed">
+                    Colors Available:
+                  </span>{" "}
+                  {product.acf.colors}
+                </p>
+              </div>
+              <div>
+                <p className="text-lg font-bold md:text-xl">
+                  Product Characteristic
+                </p>
+                <ol className="md:text-lg">
+                  {product.acf.product_characteristic
+                    .split("\r\n")
+                    .map((el, i) => (
+                      <li key={i}>
+                        {i + 1}. {el}
+                      </li>
+                    ))}
+                </ol>
+              </div>
+              {/* <div className="flex items-center gap-3 text-lg font-bold md:text-xl">
               <p>Colors Available:</p>
               {productPlaceholder.color.map((el, i) => (
                 <div
@@ -129,35 +138,36 @@ const Layout = ({ product }: Props) => {
                 ></div>
               ))}
             </div> */}
-          </div>
-          <div className="flex flex-col items-center gap-2 text-white xs:items-start md:text-xl">
-            <IconContext.Provider value={{ className: "w-10" }}>
-              <a
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-black px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-black"
-              >
-                Request Sample <IoIosArrowForward />
-              </a>
-            </IconContext.Provider>
-            <div className="flex flex-col gap-2 xs:flex-row xs:gap-5">
-              <a
-                href={"https://tokopedia.com"}
-                target="_blank"
-                rel="noreferrer"
-                className="inline rounded-xl bg-green-700 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-green-700"
-              >
-                Buy at Tokopedia
-              </a>
-              <a
-                href={"https://shopee.com"}
-                target="_blank"
-                rel="noreferrer"
-                className="inline rounded-xl bg-orange-500 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-orange-500"
-              >
-                Buy at Shopee
-              </a>
+            </div>
+            <div className="flex flex-col items-center gap-2 text-white xs:items-start md:text-xl">
+              <IconContext.Provider value={{ className: "w-10" }}>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl bg-black px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-black"
+                >
+                  Request Sample <IoIosArrowForward />
+                </a>
+              </IconContext.Provider>
+              <div className="flex flex-col gap-2 xs:flex-row xs:gap-5">
+                <a
+                  href={"https://tokopedia.com"}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline rounded-xl bg-green-700 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-green-700"
+                >
+                  Buy at Tokopedia
+                </a>
+                <a
+                  href={"https://shopee.com"}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline rounded-xl bg-orange-500 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-orange-500"
+                >
+                  Buy at Shopee
+                </a>
+              </div>
             </div>
           </div>
         </div>

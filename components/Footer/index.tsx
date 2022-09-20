@@ -1,20 +1,23 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import LogoLightSVG from "../../asset/svgs/logo/LogoLight";
 import TextureImg from "../../asset/pictures/paper-texture-3.webp";
 
 const Footer = () => {
   return (
-    <footer
-      className="flex w-screen justify-center bg-darkRed py-16"
-      style={{
-        backgroundImage: `url(${TextureImg.src})`,
-        backgroundSize: "cover",
-        backgroundBlendMode: "multiply",
-      }}
-    >
-      <div className="flex w-full flex-col justify-between gap-10 px-10 text-center text-white md:flex-row md:gap-0 lg:w-4/5 lg:px-0 xl:w-3/5">
+    <footer className="relative flex w-screen justify-center">
+      <div className="absolute -z-10 h-full w-full bg-darkRed">
+        <Image
+          src={TextureImg}
+          alt="ecoplease background"
+          layout="fill"
+          objectFit="cover"
+          className="mix-blend-multiply"
+        />
+      </div>
+      <div className="flex w-full flex-col justify-between gap-10 py-16 px-10 text-center text-white md:flex-row md:gap-0 lg:w-4/5 lg:px-0 xl:w-3/5">
         <div className="flex items-center justify-center">
           <LogoLightSVG className="w-32 fill-white" />
         </div>

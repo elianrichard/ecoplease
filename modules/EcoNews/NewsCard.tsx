@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { PostsType } from "../_common/types/PostType";
 import getProperDate from "../_common/hooks/getProperDate";
@@ -13,6 +14,7 @@ interface Props {
 const NewsCard = ({ article, index }: Props) => {
   const { data } = useMediaQuery(article.featured_media);
   const imageLink = data?.data.guid.rendered;
+  console.log(imageLink);
 
   const blogDate = new Date(article.date);
   const blogProperDate = getProperDate(blogDate);
@@ -35,18 +37,29 @@ const NewsCard = ({ article, index }: Props) => {
         } cursor-pointer overflow-hidden rounded-xl bg-skinCream transition-transform duration-200 ease-out hover:scale-105`}
       >
         <div
-          className="min-h-80 custom-clip-econews relative h-80 w-full bg-skinCream before:absolute before:h-full before:w-full before:bg-black/40 sm:h-auto sm:w-2/5 md:w-3/5"
+          className="min-h-80 custom-clip-econews relative h-80 w-full sm:h-auto sm:w-2/5 md:w-3/5"
           style={{
             clipPath:
               (index + 1) % 2 === 0
                 ? "url(#ecoNewsMaskFlip)"
                 : "url(#ecoNewsMask)",
-            backgroundImage: `url(${imageLink})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-            backgroundBlendMode: "multiply",
+            // backgroundImage: `url(${imageLink})`,
+            // backgroundSize: "cover",
+            // backgroundPosition: "center center",
+            // backgroundBlendMode: "multiply",
           }}
-        />
+        >
+          {imageLink && (
+            <Image
+              className="z-30"
+              src={imageLink.toString()}
+              alt="ecoplease background"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center center"
+            />
+          )}
+        </div>
         <div className="flex h-full w-full flex-col gap-2 p-6 text-darkRed sm:w-3/5 sm:translate-x-2 sm:p-10 md:w-2/5">
           <p className="text-2xl font-bold sm:text-3xl">
             {article.title.rendered}

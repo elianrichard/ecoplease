@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence } from "framer-motion";
 
 import Bamboo from "./Bamboo";
@@ -24,16 +25,16 @@ const PageContent = () => {
 
   return (
     <>
-      <div className="relative my-1 flex w-screen flex-col items-center justify-center gap-10 bg-black/50 py-16 px-10 xs:px-20 xl:px-32">
-        <div
-          className="absolute -z-10 h-full w-full"
-          style={{
-            backgroundImage: `url(${BackgroundImg.src})`,
-            backgroundBlendMode: "multiply",
-            backgroundSize: "cover",
-            filter: "grayscale(80%)",
-          }}
-        />
+      <div className="relative my-1 flex w-screen flex-col items-center justify-center gap-10 py-16 px-10 xs:px-20 xl:px-32">
+        <div className="absolute -z-10 h-full w-full after:absolute after:h-full after:w-full after:bg-black/50">
+          <Image
+            src={BackgroundImg}
+            alt="ecoplease background"
+            layout="fill"
+            objectFit="cover"
+            className="grayscale-[80%]"
+          />
+        </div>
         <p className="text-center text-4xl font-bold uppercase text-white md:text-5xl">
           PICK YOUR MATERIALS
         </p>

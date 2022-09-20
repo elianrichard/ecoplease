@@ -1,19 +1,21 @@
 import React, { PropsWithChildren } from "react";
+import Image from "next/image";
 
 import paperTextureImg from "../../asset/pictures/paper-texture-2.webp";
 
 const JoinedContent = ({ children }: PropsWithChildren) => {
   return (
-    <div
-      className="mb-1 flex w-screen flex-col items-center gap-20 bg-skinCream/80 py-20"
-      style={{
-        backgroundImage: `url("${paperTextureImg.src}")`,
-        backgroundSize: "cover",
-        backgroundPosition: "top center",
-        backgroundBlendMode: "multiply",
-      }}
-    >
-      {children}
+    <div className="relative mb-1 flex w-screen">
+      <div className="absolute -z-10 h-full w-full bg-skinCream/80">
+        <Image
+          src={paperTextureImg}
+          alt="ecoplease background"
+          layout="fill"
+          objectFit="cover"
+          className="mix-blend-multiply"
+        />
+      </div>
+      <div className="flex flex-col items-center gap-20 py-20">{children}</div>
     </div>
   );
 };

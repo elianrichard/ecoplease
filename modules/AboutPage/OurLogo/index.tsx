@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 import TextureImg from "../../../asset/pictures/paper-texture-3.webp";
@@ -19,15 +20,17 @@ const OurLogo = () => {
 
   return (
     <div className="mb-1 flex w-screen flex-col lg:h-96 lg:flex-row">
-      <div
-        className="h-full flex-[3] bg-darkRed text-5xl font-bold text-skinCream"
-        style={{
-          backgroundImage: `url(${TextureImg.src})`,
-          backgroundSize: "cover",
-          backgroundBlendMode: "multiply",
-        }}
-      >
-        <div className="flex h-full w-full flex-col-reverse gap-10 sm:gap-16 sm:px-20 py-16 sm:py-10 sm:flex-row lg:py-0 xl:gap-20">
+      <div className="relative h-full flex-[3] text-5xl font-bold text-skinCream">
+        <div className="absolute -z-10 h-full w-full bg-darkRed">
+          <Image
+            src={TextureImg}
+            alt="ecoplease background"
+            layout="fill"
+            objectFit="cover"
+            className="mix-blend-multiply"
+          />
+        </div>
+        <div className="flex h-full w-full flex-col-reverse gap-10 py-16 sm:flex-row sm:gap-16 sm:px-20 sm:py-10 lg:py-0 xl:gap-20">
           <div className="flex flex-[3] flex-col justify-center gap-8 sm:items-end">
             {logoTitleDesc.map((el, i) => (
               <LogoComponent
@@ -44,18 +47,20 @@ const OurLogo = () => {
           </div>
         </div>
       </div>
-      <div
-        className="relative h-full flex-[2] bg-darkRed"
-        style={{
-          backgroundImage: `url(${OurLogoBgImg.src})`,
-          backgroundSize: "cover",
-          backgroundBlendMode: "multiply",
-        }}
-      >
+      <div className="relative h-full flex-[2]">
+        <div className="absolute -z-10 h-full w-full bg-darkRed">
+          <Image
+            src={OurLogoBgImg}
+            alt="ecoplease background"
+            layout="fill"
+            objectFit="cover"
+            className="mix-blend-multiply"
+          />
+        </div>
         <AnimatePresence>
           <div className="relative h-64 w-full flex-col  text-white sm:h-80 lg:h-full">
             <motion.div
-              className="absolute flex h-full w-full flex-col items-center justify-center gap-5 px-5 sm:px-20 text-center sm:items-start sm:text-left"
+              className="absolute flex h-full w-full flex-col items-center justify-center gap-5 px-5 text-center sm:items-start sm:px-20 sm:text-left"
               key={
                 !Number.isNaN(selectedTitle)
                   ? logoTitleDesc[selectedTitle].name

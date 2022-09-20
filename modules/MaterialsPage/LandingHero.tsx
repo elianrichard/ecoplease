@@ -6,14 +6,16 @@ import PaperTextureImg from "../../asset/pictures/paper-texture.webp";
 
 const LandingHero = () => {
   return (
-    <div
-      className="flex h-fit w-screen flex-col-reverse items-center justify-center gap-16 bg-darkRed px-10 py-20 md:h-[calc(100vh-64px)] md:flex-row md:gap-14 lg:px-20 xl:px-32"
-      style={{
-        backgroundImage: `url(${PaperTextureImg.src})`,
-        backgroundSize: "cover",
-        backgroundBlendMode: "multiply",
-      }}
-    >
+    <div className="relative flex h-fit w-screen flex-col-reverse items-center justify-center gap-16 px-10 py-20 md:h-[calc(100vh-64px)] md:flex-row md:gap-14 lg:px-20 xl:px-32">
+      <div className="absolute -z-10 h-full w-full bg-darkRed">
+        <Image
+          src={PaperTextureImg}
+          alt="ecoplease background"
+          layout="fill"
+          objectFit="cover"
+          className="mix-blend-multiply"
+        />
+      </div>
       <div className="flex-1 text-skinCream">
         <p className="before:title-outline-skinCream relative mb-5 text-4xl font-bold uppercase before:absolute before:top-[2.5px] before:translate-x-[2.5px] before:text-darkRed before:content-['Made_with_natural_plant_fiber'] lg:text-5xl lg:before:top-1 lg:before:translate-x-1">
           Made With Natural Plant Fiber

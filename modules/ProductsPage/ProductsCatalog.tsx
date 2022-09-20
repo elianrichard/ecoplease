@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import _ from "lodash";
 
@@ -27,15 +28,17 @@ const ProductsCatalog = () => {
   }, [productsData, selectedCategory]);
 
   return (
-    <div
-      className="mb-1 flex w-screen flex-col items-center bg-skinCream py-14"
-      style={{
-        backgroundImage: `url(${PaperTextureImg.src})`,
-        backgroundSize: "cover",
-        backgroundBlendMode: "multiply",
-      }}
-    >
-      <div className="flex w-full flex-col items-center gap-14 px-5 sm:w-4/5 sm:px-0">
+    <div className="relative mb-1 flex w-screen flex-col items-center">
+      <div className="absolute -z-10 h-full w-full bg-skinCream">
+        <Image
+          src={PaperTextureImg}
+          alt="ecoplease background"
+          layout="fill"
+          objectFit="cover"
+          className="mix-blend-multiply"
+        />
+      </div>
+      <div className="flex w-full flex-col items-center gap-14 px-5 py-14 sm:w-4/5 sm:px-0">
         <div className="flex w-full flex-wrap items-center justify-center gap-3 sm:gap-5">
           {categoryList.map((el, i) => (
             <button

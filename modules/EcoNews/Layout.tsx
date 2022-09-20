@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import EconewsRipped from "../../asset/svgs/ripped/EconewsRipped";
 import EconewsRippedFlip from "../../asset/svgs/ripped/EconewsRippedFlip";
@@ -11,15 +12,16 @@ const Layout = () => {
   const { isLoading, data: articles } = usePostsQuery();
 
   return (
-    <div
-      className="relative min-h-screen w-screen bg-ecoRed"
-      style={{
-        backgroundImage: `url(${LayoutBgImg.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        backgroundBlendMode: "multiply",
-      }}
-    >
+    <div className="relative min-h-screen w-screen">
+      <div className="absolute -z-10 h-full w-full bg-ecoRed">
+        <Image
+          src={LayoutBgImg}
+          alt="ecoplease background"
+          layout="fill"
+          objectFit="cover"
+          className="mix-blend-multiply"
+        />
+      </div>
       <EconewsRipped />
       <EconewsRippedFlip />
       <div className="min-h-screen w-full bg-black/30 py-16 px-10 sm:px-16">

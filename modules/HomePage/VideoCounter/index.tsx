@@ -1,4 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
+import Image from "next/image";
 
 import paperTextureImg from "../../../asset/pictures/paper-texture-2.webp";
 import VideoThumbnailImg from "../../../asset/pictures/home/landing-hero.webp";
@@ -11,16 +12,17 @@ interface Props {
 
 const VideoCounter = ({ setVideoModal }: Props) => {
   return (
-    <div
-      className="mb-1 flex h-full w-screen justify-center bg-skinCream py-24 lg:h-screen lg:py-0"
-      style={{
-        backgroundImage: `url("${paperTextureImg.src}")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        backgroundBlendMode: "multiply",
-      }}
-    >
-      <div className="flex h-full w-full flex-col justify-center gap-20 px-10 lg:flex-row xl:w-4/5 xl:px-0">
+    <div className="relative mb-1 flex h-full w-screen justify-center bg-skinCream py-24 lg:h-screen lg:py-0">
+      <div className="absolute h-full w-full">
+        <Image
+          src={paperTextureImg}
+          alt="ecoplease background"
+          layout="fill"
+          objectFit="cover"
+          className="mix-blend-multiply"
+        />
+      </div>
+      <div className="flex h-full w-full flex-col justify-center gap-20 px-10 lg:flex-row xl:w-4/5 xl:px-0 z-10">
         <div className="flex h-full w-full flex-1 items-center justify-center">
           <div
             className="group relative aspect-video w-full cursor-pointer"

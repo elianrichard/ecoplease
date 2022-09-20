@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import SugarcaneImg1 from "../../../../asset/pictures/materials/sugarcane-1.webp";
 import SugarcaneImg2 from "../../../../asset/pictures/materials/sugarcane-2.webp";
@@ -9,21 +10,23 @@ const Description = () => {
     <div className="flex w-full flex-col gap-10">
       <div className="flex w-full flex-col items-center gap-20 lg:flex-row">
         <div className="relative flex flex-1 justify-end">
-          <div
-            className="absolute -bottom-8 right-20 h-72 w-40 bg-ecoRed xs:h-80 xs:w-52 lg:h-96 lg:w-60"
-            style={{
-              backgroundImage: `url(${SugarcaneImg1.src})`,
-              backgroundSize: "cover",
-              backgroundBlendMode: "multiply",
-            }}
-          />
-          <div
-            className="z-0 aspect-square h-48 bg-black xs:h-60 lg:h-72 "
-            style={{
-              backgroundImage: `url(${SugarcaneImg1.src})`,
-              backgroundSize: "cover",
-            }}
-          />
+          <div className="absolute -bottom-8 right-20 h-72 w-40 bg-ecoRed xs:h-80 xs:w-52 lg:h-96 lg:w-60">
+            <Image
+              src={SugarcaneImg1}
+              alt="ecoplease background"
+              layout="fill"
+              objectFit="cover"
+              className="mix-blend-multiply"
+            />
+          </div>
+          <div className="relative z-0 aspect-square h-48 bg-black xs:h-60 lg:h-72">
+            <Image
+              src={SugarcaneImg1}
+              alt="ecoplease background"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
         <div className="flex-1 text-ecoRed xl:flex-[2]">
           <div className="w-full xl:w-2/3">
@@ -40,21 +43,23 @@ const Description = () => {
       </div>
       <div className="flex w-full flex-col-reverse items-center gap-28 md:mt-20 md:flex-row-reverse md:items-start md:gap-10 lg:gap-20">
         <div className="relative flex flex-1 flex-row-reverse md:justify-end">
-          <div
-            className="absolute -top-16 left-32 h-60 w-40 bg-ecoRed xs:h-72 xs:w-52 lg:h-80 lg:w-60 "
-            style={{
-              backgroundImage: `url(${SugarcaneImg2.src})`,
-              backgroundSize: "cover",
-              backgroundBlendMode: "multiply",
-            }}
-          />
-          <div
-            className="z-0 h-52 w-60 bg-black xs:h-64 xs:w-72 lg:h-72 lg:w-80 "
-            style={{
-              backgroundImage: `url(${SugarcaneImg2.src})`,
-              backgroundSize: "cover",
-            }}
-          />
+          <div className="absolute -top-16 left-32 h-60 w-40 bg-ecoRed xs:h-72 xs:w-52 lg:h-80 lg:w-60">
+            <Image
+              src={SugarcaneImg2}
+              alt="ecoplease background"
+              layout="fill"
+              objectFit="cover"
+              className="mix-blend-multiply"
+            />
+          </div>
+          <div className="relative z-0 h-52 w-60 bg-black xs:h-64 xs:w-72 lg:h-72 lg:w-80">
+            <Image
+              src={SugarcaneImg2}
+              alt="ecoplease background"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
         <div className="flex flex-1 justify-end text-ecoRed lg:flex-[2]">
           <div className="w-full md:text-right lg:w-2/3">
@@ -68,21 +73,23 @@ const Description = () => {
       </div>
       <div className="flex w-full flex-col-reverse items-center gap-10 md:flex-row lg:-mt-20 lg:items-end xl:gap-20">
         <div className="relative flex flex-1 justify-end">
-          <div
-            className="absolute -bottom-8 right-10 h-52 w-72 bg-ecoRed lg:right-20 lg:h-60 lg:w-80"
-            style={{
-              backgroundImage: `url(${SugarcaneImg3.src})`,
-              backgroundSize: "cover",
-              backgroundBlendMode: "multiply",
-            }}
-          />
-          <div
-            className="z-0 h-72 w-52 bg-black lg:h-80 lg:w-60 "
-            style={{
-              backgroundImage: `url(${SugarcaneImg3.src})`,
-              backgroundSize: "cover",
-            }}
-          />
+          <div className="absolute -bottom-8 right-10 h-52 w-72 bg-ecoRed lg:right-20 lg:h-60 lg:w-80">
+            <Image
+              src={SugarcaneImg3}
+              alt="ecoplease background"
+              layout="fill"
+              objectFit="cover"
+              className="mix-blend-multiply"
+            />
+          </div>
+          <div className="relative z-0 h-72 w-52 bg-black lg:h-80 lg:w-60">
+            <Image
+              src={SugarcaneImg3}
+              alt="ecoplease background"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
         <div className="flex-[2] text-ecoRed">
           <div className="w-full xl:w-2/3">

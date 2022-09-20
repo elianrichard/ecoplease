@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { BiMenu } from "react-icons/bi";
 import { IconContext } from "react-icons";
 
@@ -28,13 +29,22 @@ const Header = () => {
   ];
   return (
     <nav
-      className="fixed z-50 h-16 w-screen bg-darkRed px-7 shadow-[0px_0px_20px_0px_rgba(0,0,0,0.8)] lg:px-10 xl:px-20"
-      style={{
-        backgroundImage: `url(${TextureImg.src})`,
-        backgroundBlendMode: "multiply",
-        backgroundSize: "100%",
-      }}
+      className="fixed z-50 h-16 w-screen shadow-[0px_0px_20px_0px_rgba(0,0,0,0.8)]"
+      // style={{
+      //   backgroundImage: `url(${TextureImg.src})`,
+      //   backgroundBlendMode: "multiply",
+      //   backgroundSize: "100%",
+      // }}
     >
+      <div className="absolute -z-10 h-full w-full bg-darkRed">
+        <Image
+          src={TextureImg}
+          alt="ecoplease background"
+          layout="fill"
+          objectFit="cover"
+          className="mix-blend-multiply"
+        />
+      </div>
       <div className="absolute top-1/2 left-8 -translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2">
         <Link href={"/"}>
           <div>
@@ -50,7 +60,7 @@ const Header = () => {
         </IconContext.Provider>
       </div>
       <div
-        className={`absolute top-[100%] left-0 flex w-screen flex-col items-center justify-between gap-10 py-10 lg:pointer-events-auto lg:static lg:h-full lg:w-full lg:flex-row lg:bg-transparent lg:py-0 lg:shadow-none lg:transition-none ${
+        className={`absolute top-[100%] left-0 flex w-screen flex-col items-center justify-between gap-10 px-7 py-10 lg:pointer-events-auto lg:static lg:h-full lg:w-full lg:flex-row lg:bg-transparent lg:px-10 lg:py-0 lg:shadow-none lg:transition-none xl:px-20 ${
           isNavbarOpen
             ? "pointer-events-auto bg-ecoRed opacity-100 shadow-[0px_10px_15px_-5px_rgba(0,0,0,0.5)] transition-opacity duration-200 ease-out"
             : "pointer-events-none bg-transparent opacity-0 shadow-none"

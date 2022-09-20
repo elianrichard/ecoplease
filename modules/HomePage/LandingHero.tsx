@@ -9,18 +9,21 @@ import RippedSVG from "../../asset/svgs/ripped/RippedLanding";
 const LandingHero = () => {
   return (
     <div
-      className={`relative mb-1 flex w-screen justify-center overflow-hidden bg-darkRed lg:h-[calc(100vh-64px)]`}
-      style={{
-        backgroundImage: `url("${paperTextureImg.src}")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        backgroundBlendMode: "multiply",
-      }}
+      className={`relative mb-1 flex w-screen justify-center overflow-hidden lg:h-[calc(100vh-64px)]`}
     >
+      <div className="absolute h-full w-full bg-darkRed -z-10">
+        <Image
+          src={paperTextureImg}
+          alt="ecoplease background"
+          layout="fill"
+          objectFit="cover"
+          className="mix-blend-multiply"
+        />
+      </div>
       <div className="absolute top-0 left-0 w-4/5 lg:h-screen">
         <RippedSVG className="z-20 hidden h-full w-full drop-shadow-[0px_0px_20px_rgba(0,0,0,0.8)] lg:block" />
       </div>
-      <div className="z-10 flex w-full flex-col items-center justify-center gap-10 py-32 lg:w-4/5 lg:flex-row lg:py-0">
+      <div className="z-0 flex w-full flex-col items-center justify-center gap-10 py-32 lg:w-4/5 lg:flex-row lg:py-0">
         <div className="flex w-full flex-col items-center justify-center lg:items-start">
           <p className="mb-10 text-center text-4xl font-bold leading-snug text-white sm:text-5xl sm:leading-tight lg:text-left lg:text-6xl lg:leading-snug">
             100% HOME
