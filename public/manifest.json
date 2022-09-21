@@ -1,0 +1,22 @@
+{
+  "name": "ECOPLEASE | The Best Eco-Packaging in Indonesia",
+  "short_name": "ECOPLEASE",
+  "lang": "en-ID",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#CB3233",
+  "background_color": "#FFFFFF",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://ecoplease.vercel.app/asset/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://ecoplease.vercel.app/asset/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
