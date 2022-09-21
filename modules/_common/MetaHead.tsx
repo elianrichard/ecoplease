@@ -1,25 +1,27 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { NextSeo } from "next-seo";
+import { NextSeo, NextSeoProps } from "next-seo";
 
 import { domain } from "../../config";
 
 interface Props {
   title?: string;
   description?: string;
+  openGraph?: any;
   others?: any;
 }
 
-const MetaHead = ({ title, description, others }: Props) => {
-  const { pathname } = useRouter();
-  const SEO = {
+const MetaHead = ({ title, description, openGraph, ...others }: Props) => {
+  const { asPath } = useRouter();
+  const SEO: NextSeoProps = {
     title,
     description,
-    canonical: `${domain + pathname}`,
+    canonical: `${domain + asPath}`,
     openGraph: {
       title,
       description,
-      url: `${domain + pathname}`,
+      url: `${domain + asPath}`,
+      ...openGraph,
     },
     ...others,
   };

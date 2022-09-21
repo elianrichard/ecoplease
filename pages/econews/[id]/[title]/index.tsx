@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { NextPage } from "next";
 import Image from "next/image";
 
-import { server } from "../../../../config";
+import { domain, server } from "../../../../config";
 import axios from "axios";
 
 import { IconContext } from "react-icons";
@@ -15,9 +15,13 @@ import {
 } from "react-icons/fa";
 import { BsArrowUp } from "react-icons/bs";
 
+import { ArticleJsonLd, ArticleJsonLdProps } from "next-seo";
+import MetaHead from "../../../../modules/_common/MetaHead";
+
 import { PostsType } from "../../../../modules/_common/types/PostType";
 import getProperDate from "../../../../modules/_common/hooks/getProperDate";
 import useMediaQuery from "../../../../modules/_common/queries/useMediaQuery";
+import { useRouter } from "next/router";
 
 interface Props {
   post: PostsType;
@@ -37,59 +41,99 @@ const BlogPost: NextPage<Props> = ({ post }: Props) => {
   const { data: imageData } = useMediaQuery(post.featured_media);
   const imageLink = imageData?.data.guid.rendered;
 
+  const postSeo = {
+    title: post.title.rendered,
+    description: post.excerpt.rendered.replace("<p>", "").replace("</p>", ""),
+    openGraph: {
+      type: "article",
+      article: {
+        authors: ["ECOPLEASE"],
+        section: "Sustainable Packaging",
+        publishedTime: post.date,
+        modifiedTime: post.modified,
+        tags: ["sustainable", "packaging", "eco-friendly", "compostable"],
+      },
+      images: [
+        {
+          url: imageData?.data.guid.rendered,
+          width: imageData?.data.media_details.width,
+          height: imageData?.data.media_details.height,
+          alt: imageData?.data.alt_text,
+        },
+      ],
+    },
+  };
+
+  const { asPath } = useRouter();
+
+  const postJsonLd = {
+    type: "Blog" as const,
+    url: `${domain + asPath}`,
+    title: post.title.rendered,
+    images: [imageData?.data.guid.rendered.toString() || ""],
+    datePublished: post.date,
+    dateModified: post.modified,
+    authorName: "ECOPLEASE",
+    description: post.excerpt.rendered.replace("<p>", "").replace("</p>", ""),
+  };
+
   return (
-    <div className="flex justify-center bg-skinCream py-16 lg:py-28">
-      <div className="w-4/5 max-w-[1000px]">
-        <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:items-start">
-          <div className="flex flex-[4] flex-col gap-10">
-            <div>
-              <p className="mb-2">{blogProperDate}</p>
-              <p className="text-4xl font-bold">{post.title.rendered}</p>
-            </div>
-            <div className="relative h-[400px] w-full">
-              {imageLink && (
-                <Image
-                  src={imageLink}
-                  layout="fill"
-                  objectFit="cover"
-                  alt="econews"
-                />
-              )}
-            </div>
-            <div
-              className="flex flex-col gap-5 text-justify sm:text-lg"
-              ref={blogContent}
-            ></div>
-            <IconContext.Provider value={{ className: "w-5 h-5 inline" }}>
-              <a href="#" className="text-xl font-bold">
-                Back to Top <BsArrowUp />
-              </a>
-            </IconContext.Provider>
-          </div>
-          <div className="flex flex-1 items-center justify-center md:mt-20">
-            <div className="flex flex-row gap-6 sm:gap-14 md:flex-col md:border-l-2 md:border-black md:pl-10">
-              <IconContext.Provider value={{ className: "w-8 h-8" }}>
-                <a href="#" target="_blank" rel="norefferer">
-                  <FaWhatsapp />
-                </a>
-                <a href="#" target="_blank" rel="norefferer">
-                  <FaFacebookF />
-                </a>
-                <a href="#" target="_blank" rel="norefferer">
-                  <FaTwitter />
-                </a>
-                <a href="#" target="_blank" rel="norefferer">
-                  <FaInstagram />
-                </a>
-                <a href="#" target="_blank" rel="norefferer">
-                  <FaLink />
+    <>
+      <MetaHead {...postSeo} />
+      <ArticleJsonLd {...postJsonLd} />
+      <div className="flex justify-center bg-skinCream py-16 lg:py-28">
+        <div className="w-4/5 max-w-[1000px]">
+          <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:items-start">
+            <div className="flex flex-[4] flex-col gap-10">
+              <div>
+                <p className="mb-2">{blogProperDate}</p>
+                <p className="text-4xl font-bold">{post.title.rendered}</p>
+              </div>
+              <div className="relative h-[400px] w-full">
+                {imageLink && (
+                  <Image
+                    src={imageLink}
+                    layout="fill"
+                    objectFit="cover"
+                    alt={imageData?.data.alt_text || "ecoplease news image"}
+                  />
+                )}
+              </div>
+              <div
+                className="flex flex-col gap-5 text-justify sm:text-lg"
+                ref={blogContent}
+              ></div>
+              <IconContext.Provider value={{ className: "w-5 h-5 inline" }}>
+                <a href="#" className="text-xl font-bold">
+                  Back to Top <BsArrowUp />
                 </a>
               </IconContext.Provider>
+            </div>
+            <div className="flex flex-1 items-center justify-center md:mt-20">
+              <div className="flex flex-row gap-6 sm:gap-14 md:flex-col md:border-l-2 md:border-black md:pl-10">
+                <IconContext.Provider value={{ className: "w-8 h-8" }}>
+                  <a href="#" target="_blank" rel="norefferer">
+                    <FaWhatsapp />
+                  </a>
+                  <a href="#" target="_blank" rel="norefferer">
+                    <FaFacebookF />
+                  </a>
+                  <a href="#" target="_blank" rel="norefferer">
+                    <FaTwitter />
+                  </a>
+                  <a href="#" target="_blank" rel="norefferer">
+                    <FaInstagram />
+                  </a>
+                  <a href="#" target="_blank" rel="norefferer">
+                    <FaLink />
+                  </a>
+                </IconContext.Provider>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
