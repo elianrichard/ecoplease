@@ -29,7 +29,7 @@ const PageContent = () => {
         <div className="absolute -z-10 h-full w-full after:absolute after:h-full after:w-full after:bg-black/50">
           <Image
             src={BackgroundImg}
-            alt="ecoplease background"
+            alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
             layout="fill"
             objectFit="cover"
             className="grayscale-[80%]"

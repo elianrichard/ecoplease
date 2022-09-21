@@ -101,7 +101,7 @@ const Layout: NextPage<Props> = ({ product }: Props) => {
                   src={el}
                   layout="fill"
                   objectFit="cover"
-                  alt="product name"
+                  alt={`ECOPLEASE ${imageQueries[i].data?.data.title} product image`}
                 />
               ) : (
                 <LoadingIcon />
@@ -120,7 +120,7 @@ const Layout: NextPage<Props> = ({ product }: Props) => {
             <div className="absolute h-full w-full bg-ecoRed">
               <Image
                 src={PaperTextureImg}
-                alt="ecoplease background"
+                alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
                 layout="fill"
                 objectFit="cover"
                 className="mix-blend-multiply"

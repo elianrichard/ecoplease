@@ -10,7 +10,7 @@ const LandingHero = () => {
       <div className="absolute -z-10 h-full w-full bg-darkRed">
         <Image
           src={PaperTextureImg}
-          alt="ecoplease background"
+          alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
           layout="fill"
           objectFit="cover"
           className="mix-blend-multiply"

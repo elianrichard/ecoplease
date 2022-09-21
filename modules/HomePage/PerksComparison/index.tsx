@@ -12,7 +12,7 @@ const PerksComparison = () => {
       <div className="absolute -z-10 h-full w-full bg-darkRed">
         <Image
           src={backgroundImg}
-          alt="ecoplease perks background"
+          alt="ECOPLEASE best eco-friendly, sustainable, and compostable perks background"
           layout="fill"
           objectFit="cover"
           className="bg-darkRed mix-blend-multiply"

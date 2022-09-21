@@ -13,7 +13,7 @@ const Description = () => {
           <div className="absolute -bottom-8 right-20 h-72 w-40 bg-ecoRed xs:h-80 xs:w-52 lg:h-96 lg:w-60">
             <Image
               src={BambooImg1}
-              alt="ecoplease background"
+              alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
               layout="fill"
               objectFit="cover"
               className="mix-blend-multiply"
@@ -22,7 +22,7 @@ const Description = () => {
           <div className="relative z-0 aspect-square h-48 bg-black xs:h-60 lg:h-72">
             <Image
               src={BambooImg1}
-              alt="ecoplease background"
+              alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
               layout="fill"
               objectFit="cover"
             />
@@ -47,7 +47,7 @@ const Description = () => {
             <div className="absolute h-full w-full bg-ecoRed">
               <Image
                 src={BambooImg2}
-                alt="ecoplease background"
+                alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
                 layout="fill"
                 objectFit="cover"
                 objectPosition="left center"
@@ -58,7 +58,7 @@ const Description = () => {
           <div className="relative z-0 h-52 w-60 bg-black xs:h-64 xs:w-72 lg:h-72 lg:w-80">
             <Image
               src={BambooImg2}
-              alt="ecoplease background"
+              alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
               layout="fill"
               objectFit="cover"
             />
@@ -79,7 +79,7 @@ const Description = () => {
           <div className="absolute -bottom-8 right-10 h-52 w-72 bg-ecoRed lg:right-20 lg:h-60 lg:w-80">
             <Image
               src={BambooImg3}
-              alt="ecoplease background"
+              alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
               layout="fill"
               objectFit="cover"
               className="mix-blend-multiply"
@@ -88,7 +88,7 @@ const Description = () => {
           <div className="relative z-0 h-72 w-52 bg-black lg:h-80 lg:w-60">
             <Image
               src={BambooImg3}
-              alt="ecoplease background"
+              alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
               layout="fill"
               objectFit="cover"
             />

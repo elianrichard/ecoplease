@@ -45,7 +45,7 @@ const Partners = () => {
               src={el}
               layout="fill"
               objectFit="contain"
-              alt="partners logo"
+              alt="ECOPLEASE best eco-friendly, sustainable, and compostable partner logo"
             />
           </div>
         ))}

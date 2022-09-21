@@ -33,7 +33,7 @@ const TestimonialCard = ({
             <p className="text-sm xs:text-base">{subtitle}</p>
           </div>
           <div className="relative aspect-square h-full overflow-hidden rounded-full">
-            <Image src={pic} layout="fill" alt="image of a person" />
+            <Image src={pic} layout="fill" alt="ECOPLEASE best eco-friendly, sustainable, and compostable person image" />
           </div>
         </div>
         <div className="flex w-full">

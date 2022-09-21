@@ -13,7 +13,7 @@ const VisionMission = () => {
           <div className="absolute -z-10 h-full w-full bg-skinCream">
             <Image
               src={TextureImg}
-              alt="ecoplease background"
+              alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
               layout="fill"
               objectFit="cover"
               className="mix-blend-multiply"
@@ -29,7 +29,7 @@ const VisionMission = () => {
           <div className="absolute -z-10 h-full w-full bg-darkRed">
             <Image
               src={OurVisionBgImg}
-              alt="ecoplease background"
+              alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
               layout="fill"
               objectFit="cover"
               className="mix-blend-multiply"
@@ -50,7 +50,7 @@ const VisionMission = () => {
           <div className="absolute -z-10 h-full w-full bg-skinCream">
             <Image
               src={TextureImg}
-              alt="ecoplease background"
+              alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
               layout="fill"
               objectFit="cover"
               className="mix-blend-multiply"
@@ -66,7 +66,7 @@ const VisionMission = () => {
           <div className="absolute -z-10 h-full w-full bg-darkRed">
             <Image
               src={OurMissionBgImg}
-              alt="ecoplease background"
+              alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
               layout="fill"
               objectFit="cover"
               className="mix-blend-multiply"

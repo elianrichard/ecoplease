@@ -67,7 +67,7 @@ const Testimonial = () => {
           <div className="absolute -z-10 h-full w-full bg-darkRed">
             <Image
               src={TestimonialBackgroundImg}
-              alt="ecoplease testimonial background"
+              alt="ECOPLEASE best eco-friendly, sustainable, and compostable testimonial background"
               layout="fill"
               objectFit="cover"
               className="bg-darkRed mix-blend-multiply"

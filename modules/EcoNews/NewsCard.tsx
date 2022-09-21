@@ -48,7 +48,7 @@ const NewsCard = ({ article, index }: Props) => {
             <Image
               className="z-10"
               src={imageLink.toString()}
-              alt="ecoplease background"
+              alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
               layout="fill"
               objectFit="cover"
               objectPosition="center center"

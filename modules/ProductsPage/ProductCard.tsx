@@ -34,7 +34,11 @@ const ProductCard = ({ product }: Props) => {
       >
         <div className="relative aspect-square w-full bg-darkRed">
           {!isLoading && imageLink ? (
-            <Image src={imageLink} layout="fill" alt="packaging" />
+            <Image
+              src={imageLink}
+              layout="fill"
+              alt={`ECOPLEASE ${imageData.data.title} product image`}
+            />
           ) : (
             <LoadingIcon />
           )}

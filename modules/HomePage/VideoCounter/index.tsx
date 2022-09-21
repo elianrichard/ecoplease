@@ -16,7 +16,7 @@ const VideoCounter = ({ setVideoModal }: Props) => {
       <div className="absolute h-full w-full">
         <Image
           src={paperTextureImg}
-          alt="ecoplease background"
+          alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
           layout="fill"
           objectFit="cover"
           className="mix-blend-multiply"
@@ -37,7 +37,7 @@ const VideoCounter = ({ setVideoModal }: Props) => {
             >
               <Image
                 src={VideoThumbnailImg}
-                alt="ecoplease video thumbnail"
+                alt="ECOPLEASE best eco-friendly, sustainable, and compostable video thumbnail"
                 layout="fill"
                 objectFit="cover"
               />
