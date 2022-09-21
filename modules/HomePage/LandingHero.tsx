@@ -3,15 +3,17 @@ import Image from "next/image";
 
 import productLandingImg from "../../asset/pictures/home/hero-product.webp";
 import paperTextureImg from "../../asset/pictures/paper-texture.webp";
+import heroLandingImg from "../../asset/pictures/home/landing-hero.webp";
 
-import RippedSVG from "../../asset/svgs/ripped/RippedLanding";
+// import RippedSVG from "../../asset/svgs/ripped/RippedLanding";
+import RippedLandingSVG from "../../asset/svgs/ripped/RippedLandingHome";
 
 const LandingHero = () => {
   return (
     <div
       className={`relative mb-1 flex w-screen justify-center overflow-hidden lg:h-[calc(100vh-64px)]`}
     >
-      <div className="absolute h-full w-full bg-darkRed -z-10">
+      <div className="absolute -z-10 h-full w-full bg-darkRed">
         <Image
           src={paperTextureImg}
           alt="ecoplease background"
@@ -20,8 +22,20 @@ const LandingHero = () => {
           className="mix-blend-multiply"
         />
       </div>
-      <div className="absolute top-0 left-0 w-4/5 lg:h-screen">
-        <RippedSVG className="z-20 hidden h-full w-full drop-shadow-[0px_0px_20px_rgba(0,0,0,0.8)] lg:block" />
+      <RippedLandingSVG />
+      <div
+        className="absolute top-0 left-0 w-4/5 lg:h-screen "
+        style={{ clipPath: `url(#landingHomeMask)` }}
+      >
+        <Image
+          src={heroLandingImg}
+          alt="ecoplease landing hero background"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="-120px 100%"
+          className="scale-125 brightness-[65%] grayscale-[20%] sepia-[100%]"
+        />
+        {/* <RippedSVG className="z-20 hidden h-full w-full drop-shadow-[0px_0px_20px_rgba(0,0,0,0.8)] lg:block" /> */}
       </div>
       <div className="z-0 flex w-full flex-col items-center justify-center gap-10 py-32 lg:w-4/5 lg:flex-row lg:py-0">
         <div className="flex w-full flex-col items-center justify-center lg:items-start">
