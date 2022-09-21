@@ -1,11 +1,21 @@
-import { NextPage } from "next";
 import React from "react";
+import { NextPage } from "next";
 
-import Layout from '../modules/AboutPage/Layout'
+import MetaHead from "../modules/_common/MetaHead";
+import Layout from "../modules/AboutPage/Layout";
 
 const About: NextPage = () => {
+  const aboutSeo = {
+    title: "About",
+    description:
+      "ECOPLEASE about section, vision, mission, and logo explanation",
+  };
+  
   return (
-    <Layout />
+    <>
+      <MetaHead {...aboutSeo} />
+      <Layout />
+    </>
   );
 };
 

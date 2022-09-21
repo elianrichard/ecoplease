@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import axios from "axios";
+import { NextPage } from "next";
 import Image from "next/image";
+
+import { server } from "../../../../config";
+import axios from "axios";
+
 import { IconContext } from "react-icons";
 import {
   FaFacebookF,
@@ -14,13 +18,12 @@ import { BsArrowUp } from "react-icons/bs";
 import { PostsType } from "../../../../modules/_common/types/PostType";
 import getProperDate from "../../../../modules/_common/hooks/getProperDate";
 import useMediaQuery from "../../../../modules/_common/queries/useMediaQuery";
-import { server } from "../../../../config";
 
 interface Props {
   post: PostsType;
 }
 
-const BlogPost = ({ post }: Props) => {
+const BlogPost: NextPage<Props> = ({ post }: Props) => {
   const blogContent = useRef<HTMLDivElement>(null);
 
   const blogDate = new Date(post.date);

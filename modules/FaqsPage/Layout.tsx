@@ -5,7 +5,7 @@ import FaqCard from "./FaqCard";
 import FaqBgImg from "../../asset/pictures/home-bg.webp";
 import PaperTextureImg from "../../asset/pictures/paper-texture-3.webp";
 
-import FaqContent from "./FaqContent";
+import FaqContent from "../_common/FaqContent";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface FormInputType {

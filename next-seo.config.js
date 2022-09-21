@@ -1,4 +1,7 @@
-import { server } from "./config";
+import { domain } from "./config";
+
+// things to input on react component
+// title, description, openGraph.title, openGraph.description, openGraph.url !!!, canonical !!!
 
 const seo = {
   titleTemplate: "ECOPLEASE | %s",
@@ -11,18 +14,16 @@ const seo = {
       "ECOPLEASE, the best eco-friendly, sustainable, degradable, recyclable and home compostable food packaging, cups, and straw in Indonesia",
     type: "website",
     locale: "en_ID",
-    // url: `${server}`, input this inside react page
     site_name: "ECOPLEASE INDONESIA",
     images: [
       {
-        url: `${server}/asset/logo-512.png`,
+        url: `${domain}/asset/logo-512.png`,
         width: 512,
         height: 512,
         alt: "ECOPLEASE Logo Icon",
       },
     ],
   },
-  // canonical: `${server}`, input this inside react page
   additionalMetaTags: [
     {
       name: "viewport",
@@ -47,7 +48,7 @@ const seo = {
     },
     {
       name: "image",
-      content: `${server}/asset/logo-512.png`,
+      content: `${domain}/asset/logo-512.png`,
     },
     {
       property: "og:latitude",
@@ -79,12 +80,18 @@ const seo = {
     },
     {
       property: "og:phone_number",
-      content: "08123456789",
+      content: "08123456789", //TO DO: renew
     },
     {
       property: "og:street-address",
       content:
         "Ruko Great Western Jl. M.H. Thamrin Blk. AA2 No.29, RT.007/RW.001, Panunggangan Utara",
+    },
+  ],
+  additionalLinkTags: [
+    {
+      rel: "manifest",
+      content: "/manifest.json",
     },
   ],
 };

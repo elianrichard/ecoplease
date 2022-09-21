@@ -1,21 +1,24 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import { NextPage } from "next";
 import Image from "next/image";
+
 import { server } from "../../../../config";
 import axios from "axios";
-import { IconContext } from "react-icons";
 
+import { IconContext } from "react-icons";
 import { IoIosArrowForward } from "react-icons/io";
+
 import { ProductsType } from "../../../../modules/_common/types/ProductsType";
+import useMediaQueries from "../../../../modules/_common/queries/useMediaQueries";
 
 import PaperTextureImg from "../../../../asset/pictures/paper-texture-3.webp";
 import LoadingIcon from "../../../../components/LoadingIcon";
-import useMediaQueries from "../../../../modules/_common/queries/useMediaQueries";
 
 interface Props {
   product: ProductsType;
 }
 
-const Layout = ({ product }: Props) => {
+const Layout: NextPage<Props> = ({ product }: Props) => {
   const descDiv = useRef() as MutableRefObject<HTMLDivElement>;
   const [descDivPos, setDescDivPos] = useState(600);
 
