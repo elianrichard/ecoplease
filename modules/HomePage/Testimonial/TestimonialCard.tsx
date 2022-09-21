@@ -22,8 +22,8 @@ const TestimonialCard = ({
   rating,
 }: Props) => {
   return (
-    <div className="relative h-56 min-w-[24rem] before:absolute before:top-2 before:left-2 before:h-full before:w-full before:rounded-3xl before:rounded-br-none before:bg-darkGreen xs:h-72">
-      <div className="absolute top-0 left-0 flex h-full w-full flex-col gap-2 rounded-3xl rounded-br-none border-[6px] border-darkGreen bg-skinCream py-3 px-5 xs:gap-3 xs:p-7">
+    <div className="relative h-56 min-w-[24rem] before:absolute before:top-2 before:left-2 before:h-full before:w-full before:rounded-3xl before:rounded-br-none before:bg-lightYellow xs:h-72">
+      <div className="absolute top-0 left-0 flex h-full w-full flex-col gap-2 rounded-3xl rounded-br-none border-[6px] border-ecoRed bg-skinCream py-3 px-5 xs:gap-3 xs:p-7">
         <div className="flex w-full justify-between">
           <div className="flex flex-col">
             <p className="text-md font-bold xs:text-lg">

@@ -59,7 +59,7 @@ const Testimonial = () => {
       >
         <TestimonialRipped />
         <div
-          className="relative flex w-full flex-col items-center justify-center pt-28 pb-40"
+          className="relative flex w-full flex-col items-center justify-center pt-28 pb-32"
           style={{
             clipPath: "url(#testimonialMask)",
           }}
@@ -76,7 +76,7 @@ const Testimonial = () => {
           <p className="mb-14 text-4xl font-bold text-white xs:text-5xl">
             TESTIMONIALS
           </p>
-          <div className="scrollbar-custom flex w-full items-center gap-20 overflow-y-hidden overflow-x-scroll px-10 pb-20 xs:px-20">
+          <div className="scrollbar-custom flex w-full items-center gap-20 overflow-y-hidden overflow-x-scroll px-10 pt-5 pb-20 xs:px-20">
             {testimonialsData.map((el, i) => (
               <TestimonialCard
                 name={el.name}

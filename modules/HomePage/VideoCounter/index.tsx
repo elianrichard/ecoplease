@@ -12,7 +12,7 @@ interface Props {
 
 const VideoCounter = ({ setVideoModal }: Props) => {
   return (
-    <div className="relative mb-1 flex h-full w-screen justify-center bg-skinCream py-24 lg:h-screen lg:py-0">
+    <div className="relative mb-1 flex h-full w-screen justify-center bg-skinCream lg:h-screen">
       <div className="absolute h-full w-full">
         <Image
           src={paperTextureImg}
@@ -22,7 +22,7 @@ const VideoCounter = ({ setVideoModal }: Props) => {
           className="mix-blend-multiply"
         />
       </div>
-      <div className="z-10 flex h-full w-full flex-col justify-center gap-20 px-10 lg:flex-row xl:w-4/5 xl:px-0">
+      <div className="z-10 flex h-full w-full flex-col justify-center gap-20 px-10 py-24 lg:flex-row lg:py-0 xl:w-4/5 xl:px-0">
         <div className="flex h-full w-full flex-1 items-center justify-center">
           <div
             className="group relative aspect-video w-full cursor-pointer"
