@@ -14,7 +14,6 @@ interface Props {
 const NewsCard = ({ article, index }: Props) => {
   const { data } = useMediaQuery(article.featured_media);
   const imageLink = data?.data.guid.rendered;
-  console.log(imageLink);
 
   const blogDate = new Date(article.date);
   const blogProperDate = getProperDate(blogDate);
@@ -37,21 +36,17 @@ const NewsCard = ({ article, index }: Props) => {
         } cursor-pointer overflow-hidden rounded-xl bg-skinCream transition-transform duration-200 ease-out hover:scale-105`}
       >
         <div
-          className="min-h-80 custom-clip-econews relative h-80 w-full sm:h-auto sm:w-2/5 md:w-3/5"
+          className="min-h-80 custom-clip-econews relative h-80 w-full after:absolute after:z-20 after:h-full after:w-full after:bg-darkRed/20 sm:h-auto sm:w-2/5 md:w-3/5"
           style={{
             clipPath:
               (index + 1) % 2 === 0
                 ? "url(#ecoNewsMaskFlip)"
                 : "url(#ecoNewsMask)",
-            // backgroundImage: `url(${imageLink})`,
-            // backgroundSize: "cover",
-            // backgroundPosition: "center center",
-            // backgroundBlendMode: "multiply",
           }}
         >
           {imageLink && (
             <Image
-              className="z-30"
+              className="z-10"
               src={imageLink.toString()}
               alt="ecoplease background"
               layout="fill"

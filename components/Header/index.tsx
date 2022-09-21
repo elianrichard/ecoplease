@@ -28,14 +28,7 @@ const Header = () => {
     ["FAQs", "/faqs"],
   ];
   return (
-    <nav
-      className="fixed z-50 h-16 w-screen shadow-[0px_0px_20px_0px_rgba(0,0,0,0.8)]"
-      // style={{
-      //   backgroundImage: `url(${TextureImg.src})`,
-      //   backgroundBlendMode: "multiply",
-      //   backgroundSize: "100%",
-      // }}
-    >
+    <nav className="fixed z-50 h-16 w-screen shadow-[0px_0px_20px_0px_rgba(0,0,0,0.8)]">
       <div className="absolute -z-10 h-full w-full bg-darkRed">
         <Image
           src={TextureImg}

@@ -22,7 +22,7 @@ const VideoCounter = ({ setVideoModal }: Props) => {
           className="mix-blend-multiply"
         />
       </div>
-      <div className="flex h-full w-full flex-col justify-center gap-20 px-10 lg:flex-row xl:w-4/5 xl:px-0 z-10">
+      <div className="z-10 flex h-full w-full flex-col justify-center gap-20 px-10 lg:flex-row xl:w-4/5 xl:px-0">
         <div className="flex h-full w-full flex-1 items-center justify-center">
           <div
             className="group relative aspect-video w-full cursor-pointer"
@@ -30,17 +30,20 @@ const VideoCounter = ({ setVideoModal }: Props) => {
           >
             <VideoRippedPaper />
             <div
-              className="aspect-video w-full bg-skinCream/80 brightness-50 grayscale-[20%] sepia"
+              className="relative aspect-video w-full bg-skinCream/80 brightness-50 grayscale-[20%] sepia"
               style={{
                 clipPath: "url(#videoMask)",
-                backgroundImage: `url(${VideoThumbnailImg.src})`,
-                backgroundSize: "contain",
-                backgroundPosition: "center center",
-                backgroundBlendMode: "multiply",
               }}
-            />
+            >
+              <Image
+                src={VideoThumbnailImg}
+                alt="ecoplease video thumbnail"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
             <div
-              className="absolute top-1/2 left-1/2 aspect-square w-14 -translate-x-1/2 -translate-y-1/2 bg-ecoRed transition-all group-hover:bg-darkRed xs:w-20"
+              className="absolute top-1/2 left-1/2 aspect-square w-14 -translate-x-1/2 -translate-y-1/2 bg-ecoRed transition-all duration-200 ease-out group-hover:bg-darkRed xs:w-20"
               style={{ clipPath: "polygon(0% 0%, 100% 50%, 0% 100%)" }}
             />
           </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import TestimonialCard from "./TestimonialCard";
 
@@ -58,15 +59,20 @@ const Testimonial = () => {
       >
         <TestimonialRipped />
         <div
-          className="flex w-full flex-col items-center justify-center bg-darkRed pt-28 pb-40"
+          className="relative flex w-full flex-col items-center justify-center pt-28 pb-40"
           style={{
             clipPath: "url(#testimonialMask)",
-            backgroundImage: `url(${TestimonialBackgroundImg.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-            backgroundBlendMode: "multiply",
           }}
         >
+          <div className="absolute -z-10 h-full w-full bg-darkRed">
+            <Image
+              src={TestimonialBackgroundImg}
+              alt="ecoplease testimonial background"
+              layout="fill"
+              objectFit="cover"
+              className="bg-darkRed mix-blend-multiply"
+            />
+          </div>
           <p className="mb-14 text-4xl font-bold text-white xs:text-5xl">
             TESTIMONIALS
           </p>

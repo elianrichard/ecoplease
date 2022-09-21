@@ -37,10 +37,11 @@ const Layout = ({ product }: Props) => {
   const imageLinks =
     imageQueries?.map((el) => el.data?.data.guid.rendered) || [];
 
-  // console.log(imageLinks);
-
   return (
-    <div className="relative flex w-screen flex-col sm:flex-row" ref={descDiv}>
+    <div
+      className="relative flex w-screen flex-col bg-ecoRed sm:flex-row"
+      ref={descDiv}
+    >
       <div className="scrollbar-custom flex flex-[2] flex-row overflow-x-scroll sm:flex-col sm:overflow-x-hidden lg:flex-1 ">
         {imageLinks.map((el, i) => (
           <div
@@ -68,7 +69,7 @@ const Layout = ({ product }: Props) => {
               : "sm:absolute sm:bottom-0"
           } relative flex w-screen sm:h-[calc(100vh-64px)] sm:w-[60vw] lg:w-[66.67vw]`}
         >
-          <div className="absolute -z-10 h-full w-full bg-ecoRed">
+          <div className="absolute h-full w-full bg-ecoRed">
             <Image
               src={PaperTextureImg}
               alt="ecoplease background"
@@ -77,7 +78,7 @@ const Layout = ({ product }: Props) => {
               className="mix-blend-multiply"
             />
           </div>
-          <div className="flex h-full w-full flex-col px-10 py-10 sm:px-14 lg:px-20">
+          <div className="z-20 flex h-full w-full flex-col px-10 py-10 sm:px-14 lg:px-20">
             <div className="product-scrollbar mb-5 flex h-full w-full flex-col gap-10 overflow-x-hidden text-white sm:overflow-y-scroll">
               <div>
                 <p
