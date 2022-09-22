@@ -32,12 +32,12 @@ const OurStory = () => {
           />
         </div>
         <div className="flex h-full w-full flex-col items-start justify-center gap-5 px-10 py-10 text-lg md:py-0 lg:px-20 xl:text-xl">
-          <p className="text-4xl font-bold uppercase leading-tight xl:text-5xl xl:leading-tight">
+          <h1 className="text-4xl font-bold uppercase leading-tight xl:text-5xl xl:leading-tight">
             How we end up <br className="hidden md:block" />
             <span className="bg-darkGreen px-3 text-white">
               caring the world?
             </span>
-          </p>
+          </h1>
           <p>
             The world is <span className="font-bold text-darkRed">hurting</span>
             , and we see it

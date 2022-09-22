@@ -32,9 +32,9 @@ const LandingHero = () => {
           />
         </div>
         <div className="flex w-full flex-col items-start justify-center gap-10 py-24 px-10 xs:px-24 lg:py-32 lg:px-32">
-          <p className="before:title-outline-skinCream relative z-0 text-left text-5xl font-bold uppercase leading-tight text-skinCream before:absolute before:top-1 before:-z-10 before:translate-x-1 before:text-darkRed before:content-['Your_eco_Journey_Starts_Here'] lg:text-6xl">
+          <h1 className="before:title-outline-skinCream relative z-0 text-left text-5xl font-bold uppercase leading-tight text-skinCream before:absolute before:top-1 before:-z-10 before:translate-x-1 before:text-darkRed before:content-['Your_eco_Journey_Starts_Here'] lg:text-6xl">
             Your Eco <br /> Journey <br /> Starts Here
-          </p>
+          </h1>
           <div className="flex flex-col gap-5 md:flex-row">
             {[
               ["Our Catalog", "#"],

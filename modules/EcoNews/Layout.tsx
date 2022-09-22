@@ -27,9 +27,9 @@ const Layout = () => {
       <EconewsRippedFlip />
       <div className="min-h-screen w-full bg-black/30 py-16 px-10 sm:px-16">
         <div className="mb-16 text-center text-skinCream">
-          <p className="before:title-outline-skinCream relative z-0 mb-5 text-4xl font-bold before:absolute before:top-1 before:-z-10 before:translate-x-1 before:content-['ECO_NEWS'] sm:text-5xl">
+          <h1 className="before:title-outline-skinCream relative z-0 mb-5 text-4xl font-bold before:absolute before:top-1 before:-z-10 before:translate-x-1 before:content-['ECO_NEWS'] sm:text-5xl">
             ECO NEWS
-          </p>
+          </h1>
           <p className="text-lg sm:text-xl">
             Your daily dose of eco-friendly news
           </p>

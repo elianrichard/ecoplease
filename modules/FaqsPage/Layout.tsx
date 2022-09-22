@@ -97,9 +97,9 @@ const Layout = () => {
         }}
       >
         <div className="relative px-10 py-10 md:py-20 xl:px-20">
-          <p className="mb-10 text-4xl font-bold uppercase text-darkRed lg:leading-tight xl:text-5xl xl:leading-tight">
+          <h1 className="mb-10 text-4xl font-bold uppercase text-darkRed lg:leading-tight xl:text-5xl xl:leading-tight">
             Frequently Asked Questions
-          </p>
+          </h1>
           <div className="relative flex w-full flex-col items-center gap-5 rounded-xl bg-white p-10 pb-14">
             <p className="text-center text-2xl font-bold text-black xl:text-3xl">
               Ask a Question!

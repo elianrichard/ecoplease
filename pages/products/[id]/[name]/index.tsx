@@ -129,7 +129,7 @@ const Layout: NextPage<Props> = ({ product }: Props) => {
             <div className="z-20 flex h-full w-full flex-col px-10 py-10 sm:px-14 lg:px-20">
               <div className="product-scrollbar mb-5 flex h-full w-full flex-col gap-10 overflow-x-hidden text-white sm:overflow-y-scroll">
                 <div>
-                  <p
+                  <h1
                     className={`${
                       product.acf.price ? "mb-2" : ""
                     } text-2xl font-bold md:text-3xl`}
@@ -138,7 +138,7 @@ const Layout: NextPage<Props> = ({ product }: Props) => {
                       {product.acf.code}
                     </span>{" "}
                     / {product.title.rendered}
-                  </p>
+                  </h1>
                   {product.acf.price && (
                     <p className="text-xl font-semibold md:text-2xl">
                       Rp {product.acf.price}

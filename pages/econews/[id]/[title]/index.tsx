@@ -82,7 +82,7 @@ const BlogPost: NextPage<Props> = ({ post }: Props) => {
             <div className="flex flex-[4] flex-col gap-10">
               <div>
                 <p className="mb-2">{blogProperDate}</p>
-                <p className="text-4xl font-bold">{post.title.rendered}</p>
+                <h1 className="text-4xl font-bold">{post.title.rendered}</h1>
               </div>
               <div className="relative h-[400px] w-full">
                 {imageLink && (

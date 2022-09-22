@@ -18,9 +18,9 @@ const LandingHero = () => {
         />
       </div>
       <div className="flex-1 text-skinCream">
-        <p className="before:title-outline-skinCream relative mb-5 text-4xl font-bold uppercase before:absolute before:top-[2.5px] before:translate-x-[2.5px] before:text-darkRed before:content-['Made_with_natural_plant_fiber'] lg:text-5xl lg:before:top-1 lg:before:translate-x-1">
+        <h1 className="before:title-outline-skinCream relative mb-5 text-4xl font-bold uppercase before:absolute before:top-[2.5px] before:translate-x-[2.5px] before:text-darkRed before:content-['Made_with_natural_plant_fiber'] lg:text-5xl lg:before:top-1 lg:before:translate-x-1">
           Made With Natural Plant Fiber
-        </p>
+        </h1>
         <p className="text-base lg:text-lg">
           Ecoplease believe in natural and renewable materials. Our company only
           use materials that can be harvested, replenished and regenerated

@@ -41,13 +41,13 @@ const LandingHero = () => {
       </div>
       <div className="z-0 flex w-full flex-col items-center justify-center gap-10 py-32 lg:w-4/5 lg:flex-row lg:py-0">
         <div className="flex w-full flex-col items-center justify-center lg:items-start">
-          <p className="mb-10 text-center text-4xl font-bold leading-snug text-white sm:text-5xl sm:leading-tight lg:text-left lg:text-6xl lg:leading-snug">
+          <h1 className="mb-10 text-center text-4xl font-bold leading-snug text-white sm:text-5xl sm:leading-tight lg:text-left lg:text-6xl lg:leading-snug">
             100% HOME
             <br />
             <span className="bg-white px-5 text-darkRed">COMPOSTABLE</span>
             <br />
             PACKAGING
-          </p>
+          </h1>
           <a
             href="#"
             className="clip-path-triangle relative mb-5 bg-skinCream py-2 px-10 text-center text-xl font-bold text-darkRed transition-all duration-200 ease-out hover:px-14 lg:bg-ecoRed lg:text-3xl lg:text-skinCream lg:hover:pl-16 lg:hover:text-white"
