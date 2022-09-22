@@ -14,6 +14,7 @@ const LandingHero = () => {
           layout="fill"
           objectFit="cover"
           className="mix-blend-multiply"
+          priority
         />
       </div>
       <div className="flex-1 text-skinCream">
@@ -32,6 +33,7 @@ const LandingHero = () => {
             src={LandingProductImg}
             layout="responsive"
             alt="ecoplease product"
+            priority
           />
         </div>
       </div>

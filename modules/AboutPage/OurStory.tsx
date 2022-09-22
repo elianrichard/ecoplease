@@ -15,6 +15,7 @@ const OurStory = () => {
             layout="fill"
             objectFit="cover"
             className="mix-blend-multiply"
+            priority
           />
         </div>
         <p className="px-10 py-10 md:py-0">Our Story</p>
@@ -27,6 +28,7 @@ const OurStory = () => {
             layout="fill"
             objectFit="cover"
             className="mix-blend-multiply"
+            priority
           />
         </div>
         <div className="flex h-full w-full flex-col items-start justify-center gap-5 px-10 py-10 text-lg md:py-0 lg:px-20 xl:text-xl">

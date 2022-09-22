@@ -20,6 +20,7 @@ const LandingHero = () => {
           layout="fill"
           objectFit="cover"
           className="mix-blend-multiply"
+          priority
         />
       </div>
       <RippedLandingSVG />
@@ -34,6 +35,7 @@ const LandingHero = () => {
           objectFit="cover"
           objectPosition="-120px 100%"
           className="scale-125 brightness-[65%] grayscale-[20%] sepia-[100%]"
+          priority
         />
         {/* <RippedSVG className="z-20 hidden h-full w-full drop-shadow-[0px_0px_20px_rgba(0,0,0,0.8)] lg:block" /> */}
       </div>
@@ -67,6 +69,7 @@ const LandingHero = () => {
             alt="ECOPLEASE product"
             style={{ filter: "brightness(90%)" }}
             className="lg:object-right-[10px] object-center"
+            priority
           />
         </div>
       </div>

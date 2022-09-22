@@ -28,6 +28,7 @@ const LandingHero = () => {
             layout="fill"
             objectFit="cover"
             className="mix-blend-multiply"
+            priority
           />
         </div>
         <div className="flex w-full flex-col items-start justify-center gap-10 py-24 px-10 xs:px-24 lg:py-32 lg:px-32">

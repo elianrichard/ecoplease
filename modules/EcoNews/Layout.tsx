@@ -20,6 +20,7 @@ const Layout = () => {
           layout="fill"
           objectFit="cover"
           className="mix-blend-multiply"
+          priority
         />
       </div>
       <EconewsRipped />
