@@ -1,4 +1,3 @@
-import { domain } from "./config";
 /** @type {import('next-sitemap').IConfig} */
 
 module.exports = {
