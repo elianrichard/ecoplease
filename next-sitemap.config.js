@@ -1,12 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 
 module.exports = {
-  siteUrl: domain,
+  siteUrl: "https://ecoplease.vercel.app",
   generateRobotsTxt: true,
-  exclude: ["/server-sitemap.xml"], 
-  robotsTxtOptions: {
-    additionalSitemaps: [
-      `${domain}/server-sitemap.xml`, 
-    ],
-  },
 };
