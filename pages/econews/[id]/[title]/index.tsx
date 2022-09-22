@@ -6,13 +6,7 @@ import { domain, server } from "../../../../config";
 import axios from "axios";
 
 import { IconContext } from "react-icons";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLink,
-  FaTwitter,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaLink, FaShareAlt, FaWhatsapp } from "react-icons/fa";
 import { BsArrowUp } from "react-icons/bs";
 
 import { ArticleJsonLd } from "next-seo";
@@ -120,18 +114,26 @@ const BlogPost: NextPage<Props> = ({ post }: Props) => {
                   >
                     <FaWhatsapp />
                   </a>
-                  <a href="#" target="_blank" rel="noreferrer">
-                    <FaFacebookF />
-                  </a>
-                  <a href="#" target="_blank" rel="noreferrer">
-                    <FaTwitter />
-                  </a>
-                  <a href="#" target="_blank" rel="noreferrer">
-                    <FaInstagram />
-                  </a>
-                  <a href="#" target="_blank" rel="noreferrer">
-                    <FaLink />
-                  </a>
+                  <FaShareAlt
+                    onClick={() => {
+                      if (navigator.share) {
+                        navigator
+                          .share({
+                            title: post.title.rendered,
+                            url: `${domain}${realPath}`,
+                          })
+                          .catch(() => alert("There's an error when sharing"));
+                      } else {
+                        alert("Your device isn't supported for this feature.");
+                      }
+                    }}
+                  />
+                  <FaLink
+                    onClick={() => {
+                      navigator.clipboard.writeText(`${domain}${realPath}`);
+                      alert("Link copied to clipboard!");
+                    }}
+                  />
                 </IconContext.Provider>
               </div>
             </div>
