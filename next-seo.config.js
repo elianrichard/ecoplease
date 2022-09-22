@@ -91,7 +91,7 @@ const seo = {
   additionalLinkTags: [
     {
       rel: "manifest",
-      content: "/manifest.json",
+      href: "/manifest.json",
     },
   ],
 };

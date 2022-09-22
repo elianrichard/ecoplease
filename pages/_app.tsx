@@ -8,10 +8,40 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import WhatsappButton from "../components/WhatsappButton";
 
+import { server } from "../config";
+import axios, { AxiosResponse } from "axios";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+import { ProductsType } from "../modules/_common/types/ProductsType";
+import { PostsType } from "../modules/_common/types/PostType";
+
 const queryClient = new QueryClient();
+
+const prefecthQuery = async () => {
+  if (!queryClient.getQueryData(["products"]))
+    await queryClient.prefetchQuery(
+      ["products"],
+      (): Promise<AxiosResponse<ProductsType[]>> => {
+        return axios.get(`${server}/wp-json/wp/v2/products`);
+      },
+      {
+        staleTime: 10 * 1000, // only prefetch if older than 10 seconds
+      }
+    );
+  if (!queryClient.getQueryData(["posts"]))
+    await queryClient.prefetchQuery(
+      ["posts"],
+      (): Promise<AxiosResponse<PostsType[]>> => {
+        return axios.get(`${server}/wp-json/wp/v2/posts`);
+      },
+      {
+        staleTime: 10 * 1000,
+      }
+    );
+};
+
+prefecthQuery();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
