@@ -6,6 +6,10 @@ import axios, { AxiosResponse } from "axios";
 
 import { PostsType } from "../../modules/_common/types/PostType";
 
+const Sitemap = () => {
+  return;
+};
+
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const urls: AxiosResponse<PostsType[]> = await axios.get(
     `${server}/wp-json/wp/v2/posts`
@@ -20,3 +24,5 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   return getServerSideSitemap(ctx, fields);
 };
+
+export default Sitemap;
