@@ -10,7 +10,7 @@ const Sitemap = () => {
   return;
 };
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+const getServerSideProps: GetServerSideProps = async (ctx) => {
   const urls: AxiosResponse<PostsType[]> = await axios.get(
     `${server}/wp-json/wp/v2/posts`
   );
