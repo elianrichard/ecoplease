@@ -24,7 +24,9 @@ const NewsCard = ({ article, index }: Props) => {
         pathname: "/econews/[id]/[title]",
         query: {
           id: article.id,
-          title: article.title.rendered,
+          title: article.title.rendered
+            .replaceAll(" ", "-")
+            .replaceAll(/[^a-z0-9-]/gi, ""),
         },
       }}
     >

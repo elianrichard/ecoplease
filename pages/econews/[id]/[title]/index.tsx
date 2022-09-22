@@ -15,7 +15,7 @@ import {
 } from "react-icons/fa";
 import { BsArrowUp } from "react-icons/bs";
 
-import { ArticleJsonLd, ArticleJsonLdProps } from "next-seo";
+import { ArticleJsonLd } from "next-seo";
 import MetaHead from "../../../../modules/_common/MetaHead";
 
 import { PostsType } from "../../../../modules/_common/types/PostType";
@@ -65,10 +65,11 @@ const BlogPost: NextPage<Props> = ({ post }: Props) => {
   };
 
   const { asPath } = useRouter();
+  const realPath = decodeURIComponent(asPath).replaceAll(/[^a-z0-9-/]/gi, "");
 
   const postJsonLd = {
     type: "Blog" as const,
-    url: `${domain + asPath}`,
+    url: `${domain + realPath}`,
     title: post.title.rendered,
     images: [imageData?.data.guid.rendered.toString() || ""],
     datePublished: post.date,
@@ -112,19 +113,23 @@ const BlogPost: NextPage<Props> = ({ post }: Props) => {
             <div className="flex flex-1 items-center justify-center md:mt-20">
               <div className="flex flex-row gap-6 sm:gap-14 md:flex-col md:border-l-2 md:border-black md:pl-10">
                 <IconContext.Provider value={{ className: "w-8 h-8" }}>
-                  <a href="#" target="_blank" rel="norefferer">
+                  <a
+                    href={`whatsapp://send?text=${domain}${realPath}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <FaWhatsapp />
                   </a>
-                  <a href="#" target="_blank" rel="norefferer">
+                  <a href="#" target="_blank" rel="noreferrer">
                     <FaFacebookF />
                   </a>
-                  <a href="#" target="_blank" rel="norefferer">
+                  <a href="#" target="_blank" rel="noreferrer">
                     <FaTwitter />
                   </a>
-                  <a href="#" target="_blank" rel="norefferer">
+                  <a href="#" target="_blank" rel="noreferrer">
                     <FaInstagram />
                   </a>
-                  <a href="#" target="_blank" rel="norefferer">
+                  <a href="#" target="_blank" rel="noreferrer">
                     <FaLink />
                   </a>
                 </IconContext.Provider>
@@ -155,7 +160,9 @@ export const getStaticPaths = async () => {
   const newPaths = posts.data.map((el: PostsType) => ({
     params: {
       id: el.id.toString(),
-      title: el.title.rendered.toString(),
+      title: el.title.rendered
+        .replaceAll(" ", "-")
+        .replaceAll(/[^a-z0-9-]/gi, ""),
     },
   }));
 
