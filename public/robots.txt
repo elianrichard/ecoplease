@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ecoplease.vercel.app
+
+# Sitemaps
+Sitemap: https://ecoplease.vercel.app/sitemap.xml
