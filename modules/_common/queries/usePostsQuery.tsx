@@ -14,7 +14,6 @@ const usePostsQuery = () => {
     {
       refetchOnMount: false,
       keepPreviousData: true,
-      select: (data) => data.data.reverse(),
     }
   );
   return { data, isLoading };

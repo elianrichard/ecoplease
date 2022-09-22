@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import _ from "lodash";
 
 import EconewsRipped from "../../asset/svgs/ripped/EconewsRipped";
 import EconewsRippedFlip from "../../asset/svgs/ripped/EconewsRippedFlip";
@@ -9,7 +10,9 @@ import NewsCard from "./NewsCard";
 import usePostsQuery from "../_common/queries/usePostsQuery";
 
 const Layout = () => {
-  const { isLoading, data: articles } = usePostsQuery();
+  const { isLoading, data: articlesData } = usePostsQuery();
+
+  const articles = _.sortBy(articlesData?.data, [(el) => el.id]).reverse();
 
   return (
     <div className="relative min-h-screen w-screen">
