@@ -13,14 +13,18 @@ const ProductsCatalog = () => {
   const [productLists, setProductLists] = useState<ProductsType[]>();
   const [selectedCategory, setSelectedCategory] = useState("all_product");
   const { data, isLoading } = useProductsQuery();
-  const productsData = _.sortBy(data?.data, (el) => el.acf.category);
+  const productsData = data?.data;
   const allCategoryLists = productsData?.map((el) => el.acf.category);
   const categoryList = ["all_product"].concat(_.uniq(allCategoryLists));
 
   useEffect(() => {
-    if (selectedCategory === "all_product") setProductLists(productsData);
+    const sortedProductsData = _.sortBy(
+      productsData,
+      (data) => data.acf.category
+    );
+    if (selectedCategory === "all_product") setProductLists(sortedProductsData);
     else {
-      const filtered = productsData?.filter(
+      const filtered = sortedProductsData?.filter(
         (el) => el.acf.category === selectedCategory
       );
       setProductLists(filtered);
