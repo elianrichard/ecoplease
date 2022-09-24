@@ -45,6 +45,13 @@ const ProductCard = ({ product }: Props) => {
           <div className="absolute right-0 top-0 rounded-bl-xl bg-white px-4 py-1 text-sm font-bold uppercase text-ecoRed xs:text-base">
             {product.acf.category}
           </div>
+          {product.acf.new_product.includes("Yes") && (
+            <div className="absolute bottom-0 z-40 flex h-10 w-full items-center justify-center bg-black text-xl">
+              <p className="bg-gradient-to-br from-lightYellow to-lightGreen bg-clip-text font-bold text-transparent">
+                NEW PRODUCT
+              </p>
+            </div>
+          )}
         </div>
         <div className="bg-white px-5 py-3 text-ecoRed">
           <p className="text-base font-bold capitalize md:text-lg">

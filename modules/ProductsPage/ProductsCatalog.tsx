@@ -13,7 +13,7 @@ const ProductsCatalog = () => {
   const [productLists, setProductLists] = useState<ProductsType[]>();
   const [selectedCategory, setSelectedCategory] = useState("all_product");
   const { data, isLoading } = useProductsQuery();
-  const productsData = data?.data;
+  const productsData = _.sortBy(data?.data, (el) => el.acf.category);
   const allCategoryLists = productsData?.map((el) => el.acf.category);
   const categoryList = ["all_product"].concat(_.uniq(allCategoryLists));
 

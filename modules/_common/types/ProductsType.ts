@@ -42,13 +42,16 @@ export interface Cury {
 
 export interface Acf {
   code: string;
-  price: string;
+  price: number;
   size: string;
   material: string;
   colors: string;
   product_characteristic: string;
   images: number[];
   category: string;
+  new_product: string[];
+  link_tokopedia: string;
+  link_shopee: string;
 }
 
 export interface GUID {
