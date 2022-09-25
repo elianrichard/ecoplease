@@ -33,7 +33,7 @@ const Description = () => {
             <p className="mb-2 text-3xl font-bold">
               Why do we choose Bamboo Fiber?
             </p>
-            <p className="text-xl">
+            <p className="sm:text-lg lg:text-xl">
               Bamboo is seen as the finest material to create Eco-friendly
               products as it is sustainable, has a rapid growth which can avoid
               deforestation.
@@ -66,7 +66,7 @@ const Description = () => {
         </div>
         <div className="flex flex-1 justify-end text-ecoRed lg:flex-[2]">
           <div className="w-full md:text-right lg:w-2/3">
-            <p className="text-xl">
+            <p className="sm:text-lg lg:text-xl">
               It is 100% home compostable, stronger than steel, antibacterial,
               and antifungal. Our technique to create Bamboo Fiber is the most
               natural way and doesn&apos;t harm the environment.
@@ -96,7 +96,7 @@ const Description = () => {
         </div>
         <div className="flex-[2] text-ecoRed">
           <div className="w-full xl:w-2/3">
-            <p className="text-xl ">
+            <p className="sm:text-lg lg:text-xl">
               First we collect the bamboo and grind them into powder then the
               powder is processed into natural bamboo fiber.
               <br />

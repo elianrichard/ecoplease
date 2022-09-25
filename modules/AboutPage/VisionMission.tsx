@@ -19,7 +19,7 @@ const VisionMission = () => {
               className="mix-blend-multiply"
             />
           </div>
-          <p className="w-full py-10 text-center text-5xl font-bold uppercase leading-tight text-darkRed sm:py-0 lg:text-6xl">
+          <p className="w-full py-10 text-center text-4xl font-bold uppercase leading-tight text-darkRed sm:py-0 sm:text-5xl lg:text-6xl">
             Our
             <br />
             Vision
@@ -56,7 +56,7 @@ const VisionMission = () => {
               className="mix-blend-multiply"
             />
           </div>
-          <p className="w-full py-10 text-center text-5xl font-bold uppercase leading-tight text-darkRed sm:py-0 lg:text-6xl">
+          <p className="w-full py-10 text-center text-4xl font-bold uppercase leading-tight text-darkRed sm:py-0 sm:text-5xl lg:text-6xl">
             Our
             <br />
             Mission

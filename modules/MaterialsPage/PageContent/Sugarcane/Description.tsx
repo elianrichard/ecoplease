@@ -33,7 +33,7 @@ const Description = () => {
             <p className="mb-2 text-3xl font-bold">
               Why do we choose Sugarcane Bagasse?
             </p>
-            <p className="text-xl">
+            <p className="sm:text-lg lg:text-xl">
               Sugarcane Bagasse is a plant fiber, more specifically it is the
               fibrous matter that is left over after the production of sugar
               from sugarcane.
@@ -63,7 +63,7 @@ const Description = () => {
         </div>
         <div className="flex flex-1 justify-end text-ecoRed lg:flex-[2]">
           <div className="w-full md:text-right lg:w-2/3">
-            <p className="text-xl">
+            <p className="sm:text-lg lg:text-xl">
               So in a word, it is bio-waste. Historically, Bagasse was treated
               as unusable and disposed of - thrown away, burned or left in open
               piles to rot. It was not seen as a useful by-product.
@@ -93,7 +93,7 @@ const Description = () => {
         </div>
         <div className="flex-[2] text-ecoRed">
           <div className="w-full xl:w-2/3">
-            <p className="text-xl ">
+            <p className="sm:text-lg lg:text-xl">
               But now we have turned it into an amazing product. Bagasse
               products are 100% home compostable and biodegradable, chemical
               free and chlorine free.

@@ -46,7 +46,7 @@ const ProductCard = ({ product }: Props) => {
             {product.acf.category}
           </div>
           {product.acf.new_product.includes("Yes") && (
-            <div className="absolute bottom-0 z-40 flex h-10 w-full items-center justify-center bg-black text-xl">
+            <div className="absolute bottom-0 z-40 flex py-1 sm:py-2 w-full items-center justify-center bg-black text-base sm:text-lg md:text-xl">
               <p className="bg-gradient-to-br from-lightYellow to-lightGreen bg-clip-text font-bold text-transparent">
                 NEW PRODUCT
               </p>
