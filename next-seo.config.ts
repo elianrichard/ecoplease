@@ -20,7 +20,7 @@ const seo: DefaultSeoProps = {
     site_name: "ECOPLEASE INDONESIA",
     images: [
       {
-        url: `${domain}/asset/logo-512.png`,
+        url: `${domain}/logo-512.png`,
         width: 512,
         height: 512,
         alt: "ECOPLEASE Logo Icon",
@@ -51,7 +51,7 @@ const seo: DefaultSeoProps = {
     },
     {
       name: "image",
-      content: `${domain}/asset/logo-512.png`,
+      content: `${domain}/logo-512.png`,
     },
     {
       property: "og:latitude",

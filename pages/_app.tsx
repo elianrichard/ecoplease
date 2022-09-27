@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
+import { useRouter } from "next/router";
 
 import SEO from "../next-seo.config";
 
@@ -44,15 +45,19 @@ const prefecthQuery = async () => {
 prefecthQuery();
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { asPath } = useRouter();
+  console.log(asPath);
+  const excludeFooterHeader = ["/linktree"];
+
   return (
     <QueryClientProvider client={queryClient}>
       <DefaultSeo {...SEO} />
       <div className="relative overflow-x-hidden">
-        <Header />
-        <main className="pt-16">
+        {!excludeFooterHeader.includes(asPath) && <Header />}
+        <main className={!excludeFooterHeader.includes(asPath) ? "pt-16" : ""}>
           <Component {...pageProps} />
         </main>
-        <Footer />
+        {!excludeFooterHeader.includes(asPath) && <Footer />}
         <WhatsappButton />
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
