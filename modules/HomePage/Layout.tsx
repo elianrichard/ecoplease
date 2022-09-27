@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import LandingHero from "./LandingHero";
 import VideoCounter from "./VideoCounter";
@@ -7,39 +7,18 @@ import JoinedContent from "./JoinedContent";
 import Partners from "./Partners";
 import Testimonial from "./Testimonial";
 import Certification from "./Certification";
-import ModalContainer from "../../components/_common/ModalContainer";
 
 const Layout = () => {
-  // const [isShowVideoModal, setIsShowVideoModal] = useState<boolean>(false);
-
   return (
     <div className="relative overflow-x-hidden">
       <LandingHero />
       <VideoCounter />
-      {/* <VideoCounter setVideoModal={setIsShowVideoModal} /> */}
       <PerksComparison />
       <JoinedContent>
         <Partners />
         <Testimonial />
         <Certification />
       </JoinedContent>
-      {/* {isShowVideoModal && (
-        <ModalContainer
-          additionalClass="flex justify-center items-center"
-          setModal={setIsShowVideoModal}
-        >
-          <div className="aspect-video w-full bg-black px-5 lg:w-1/2 xs:w-2/3 xs:px-0">
-            <iframe
-              className="h-full w-full"
-              src="https://www.youtube.com/embed/1fueZCTYkpA"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </ModalContainer>
-      )} */}
     </div>
   );
 };

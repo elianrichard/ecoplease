@@ -46,7 +46,6 @@ prefecthQuery();
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { asPath } = useRouter();
-  console.log(asPath);
   const excludeFooterHeader = ["/linktree"];
 
   return (
