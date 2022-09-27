@@ -10,19 +10,20 @@ import Certification from "./Certification";
 import ModalContainer from "../../components/_common/ModalContainer";
 
 const Layout = () => {
-  const [isShowVideoModal, setIsShowVideoModal] = useState<boolean>(false);
+  // const [isShowVideoModal, setIsShowVideoModal] = useState<boolean>(false);
 
   return (
     <div className="relative overflow-x-hidden">
       <LandingHero />
-      <VideoCounter setVideoModal={setIsShowVideoModal} />
+      <VideoCounter />
+      {/* <VideoCounter setVideoModal={setIsShowVideoModal} /> */}
       <PerksComparison />
       <JoinedContent>
         <Partners />
         <Testimonial />
         <Certification />
       </JoinedContent>
-      {isShowVideoModal && (
+      {/* {isShowVideoModal && (
         <ModalContainer
           additionalClass="flex justify-center items-center"
           setModal={setIsShowVideoModal}
@@ -38,7 +39,7 @@ const Layout = () => {
             ></iframe>
           </div>
         </ModalContainer>
-      )}
+      )} */}
     </div>
   );
 };
