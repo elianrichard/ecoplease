@@ -83,7 +83,7 @@ const seo: DefaultSeoProps = {
     },
     {
       property: "og:phone_number",
-      content: "08123456789", //TO DO: renew
+      content: "6287888199947",
     },
     {
       property: "og:street-address",
