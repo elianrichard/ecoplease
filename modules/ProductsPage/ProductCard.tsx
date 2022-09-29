@@ -30,7 +30,7 @@ const ProductCard = ({ product }: Props) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="w-full cursor-pointer overflow-hidden rounded-xl"
+        className="w-full h-full cursor-pointer overflow-hidden rounded-xl"
       >
         <div className="relative aspect-square w-full bg-darkRed">
           {!isLoading && imageLink ? (
@@ -46,7 +46,7 @@ const ProductCard = ({ product }: Props) => {
             {product.acf.category}
           </div>
         </div>
-        <div className="bg-white px-5 py-3 text-ecoRed rounded-b-xl">
+        <div className="bg-white px-5 py-3 text-ecoRed rounded-b-xl h-full">
           <p className="text-base font-bold capitalize md:text-lg">
             {product.title.rendered}{" "}
             {product.acf.new_product.includes("Yes") && (
