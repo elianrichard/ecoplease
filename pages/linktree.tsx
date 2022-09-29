@@ -1,11 +1,9 @@
-import {
-  motion,
-  MotionProps,
-  useAnimationControls,
-  useMotionValue,
-} from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
+import Image from "next/image";
 import React from "react";
-import LogoLight from "../asset/svgs/logo/LogoLight";
+import LogoPrimaryWhite from "../asset/svgs/logo/LogoPrimaryWhite";
+
+import paperTextureImg from "../asset/pictures/paper-texture.webp";
 
 const Linktree = () => {
   const links = [
@@ -35,14 +33,28 @@ const Linktree = () => {
   const linksControl = useAnimationControls();
 
   return (
-    <div className="flex min-h-screen w-screen flex-col items-center justify-center gap-10 bg-darkRed py-20 px-10">
+    <div className="relative flex min-h-screen w-screen flex-col items-center justify-center gap-10 py-20 px-10">
+      <div className="absolute -z-10 h-full w-full bg-darkRed">
+        <Image
+          src={paperTextureImg}
+          alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
+          layout="fill"
+          objectFit="cover"
+          className="mix-blend-multiply"
+          priority
+        />
+      </div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         onAnimationComplete={() => linksControl.start("show")}
-        className="w-32"
+        className="w-40"
       >
-        <LogoLight className="fill-white" />
+        <LogoPrimaryWhite className="fill-white" />
+      </motion.div>
+      <motion.div className="text-center text-white">
+        <p className="mb-3 text-3xl font-bold">Hello eco-warriors!</p>
+        <p>Let us help you today, just click on one of the links below :)</p>
       </motion.div>
       <motion.ul
         variants={containerVar}
@@ -53,7 +65,7 @@ const Linktree = () => {
         {links.map((el, i) => (
           <motion.li
             variants={childrenVar}
-            className="flex w-full items-center justify-center bg-darkRed text-white transition-all duration-200 ease-out hover:bg-white hover:text-darkRed "
+            className="flex w-full items-center justify-center bg-darkRed/0 text-white transition-all duration-200 ease-out hover:bg-white hover:text-darkRed "
             key={i}
           >
             <a

@@ -7,7 +7,7 @@ import heroLandingImg from "../../asset/pictures/home/landing-hero.webp";
 
 // import RippedSVG from "../../asset/svgs/ripped/RippedLanding";
 import RippedLandingSVG from "../../asset/svgs/ripped/RippedLandingHome";
-import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
 
 const LandingHero = () => {
   const containerVar = {
