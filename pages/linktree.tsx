@@ -34,7 +34,11 @@ const Linktree = () => {
 
   return (
     <div className="relative flex min-h-screen w-screen flex-col items-center justify-center gap-10 py-20 px-10">
-      <div className="absolute -z-10 h-full w-full bg-darkRed">
+      <motion.div
+        className="absolute -z-10 h-full w-full bg-darkRed"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
         <Image
           src={paperTextureImg}
           alt="ECOPLEASE best eco-friendly, sustainable, and compostable product background"
@@ -43,7 +47,7 @@ const Linktree = () => {
           className="mix-blend-multiply"
           priority
         />
-      </div>
+      </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
