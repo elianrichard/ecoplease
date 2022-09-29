@@ -14,16 +14,28 @@ const Perks = () => {
       </div>
       <div className="grid w-full grid-cols-2 gap-x-8 gap-y-10 xs:gap-10 lg:grid-cols-4 xl:gap-20">
         <IconContext.Provider value={{ color: "#fff", className: "h-28" }}>
-          <ItemsCard title="Free Delivery" description="???">
+          <ItemsCard
+            title="Free Delivery"
+            description="with minimum order applied"
+          >
             <DeliveryIcon className="w-20" />
           </ItemsCard>
-          <ItemsCard title="Customize Logo" description="???">
+          <ItemsCard
+            title="Customize Logo"
+            description="with minimum order applied"
+          >
             <FaPaintBrush className="w-[60px]" />
           </ItemsCard>
-          <ItemsCard title="Commitment" description="???">
+          <ItemsCard
+            title="Commitment"
+            description="keep the stock ready for reguler customer"
+          >
             <AiOutlineLock className="w-[70px]" />
           </ItemsCard>
-          <ItemsCard title="Certification" description="???">
+          <ItemsCard
+            title="Certification"
+            description="with worldwide certification"
+          >
             <AiOutlineSafetyCertificate className="w-[70px]" />
           </ItemsCard>
         </IconContext.Provider>

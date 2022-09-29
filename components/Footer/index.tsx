@@ -62,7 +62,7 @@ const Footer = () => {
           </p>
           <Link href={"/about"}>
             <a className="transition-all duration-200 ease-out hover:text-paleGreen">
-              Our Journey
+              Our Story
             </a>
           </Link>
           <Link href={"/econews"}>

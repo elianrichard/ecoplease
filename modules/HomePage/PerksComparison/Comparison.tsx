@@ -13,16 +13,16 @@ const Perks = () => {
       </div>
       <div className="grid w-full grid-cols-2 gap-x-5 gap-y-10 xs:gap-10 lg:grid-cols-4 xl:gap-20">
         <IconContext.Provider value={{ color: "#fff", className: "h-28" }}>
-          <ItemsCard title="0% Plastic usage" description="???">
+          <ItemsCard title="0% Plastic usage" description="">
             <GiHeartBottle className="w-[70px]" />
           </ItemsCard>
-          <ItemsCard title="100% Natural Material" description="???">
+          <ItemsCard title="100% Natural Materials" description="">
             <GiTreeBranch className="w-[70px]" />
           </ItemsCard>
-          <ItemsCard title="Degradable within 90 days" description="???">
+          <ItemsCard title="Degradable within 90 - 180 days" description="">
             <GiPlantRoots className="w-[70px]" />
           </ItemsCard>
-          <ItemsCard title="100% Combustible, Chemical-Free" description="???">
+          <ItemsCard title="100% Non-Combustible, Chemical Free" description="">
             <ImFire className="w-[70px]" />
           </ItemsCard>
         </IconContext.Provider>

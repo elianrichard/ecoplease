@@ -39,7 +39,7 @@ const characteristicsPlaceholder = [
     icon: <CertifiedIcon {...svgProps} />,
   },
   {
-    title: "Combustible",
+    title: "Non-Combustible",
     desc: "100% Combustible Chemical Free",
     icon: <FireIcon {...svgProps} />,
   },

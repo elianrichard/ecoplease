@@ -6,12 +6,11 @@ const Counter = () => {
   const counterRefNodes = useRef<HTMLParagraphElement[]>([]);
   const counterPlaceholder = useMemo(() => {
     return [
-      { value: 100, text: "Hello World", prefix: "" },
-      { value: 50, text: "Hello World", prefix: "K" },
-      { value: 6, text: "Hello World", prefix: "" },
-      { value: 40, text: "Hello World", prefix: "" },
-      { value: 5, text: "Hello World", prefix: "" },
-      { value: 10, text: "Hello World", prefix: "++" },
+      { value: 100, text: "Plastic Food Packaging Replaced", prefix: "" },
+      { value: 50, text: "Plastic Straw Replaced", prefix: "K" },
+      { value: 6, text: "Plastic Cutleries Replaced", prefix: "" },
+      { value: 40, text: "Plastic Cup & Lid Replaced", prefix: "" },
+      { value: 5, text: "Eco-awareness Impacted", prefix: "" },
     ];
   }, []);
 
@@ -41,12 +40,17 @@ const Counter = () => {
 
   return (
     <div
-      className="grid h-full w-full grid-cols-2 gap-x-10 gap-y-10 text-5xl font-black text-darkRed xs:grid-cols-3 sm:text-6xl lg:h-1/2 lg:gap-y-0"
+      className="grid h-full w-full grid-cols-2 items-start justify-center gap-10 font-black text-darkRed sm:flex sm:flex-col lg:h-1/2"
       ref={counterRefDiv}
     >
       {counterPlaceholder.map((el, i) => (
         <div
-          className="flex h-full w-full flex-col items-center justify-center"
+          className={`flex h-full w-full flex-col gap-5 sm:grid sm:grid-cols-[1fr,3fr] ${
+            counterPlaceholder.length % 2 !== 0 &&
+            counterPlaceholder.length - 1 === i
+              ? "col-span-2"
+              : ""
+          }`}
           key={i}
         >
           <p
@@ -57,10 +61,13 @@ const Counter = () => {
                 element as HTMLParagraphElement
               )
             }
+            className="flex items-center justify-center text-5xl"
           >
             0{el.prefix}
           </p>
-          <p className="text-2xl sm:text-3x text-center">{el.text}</p>
+          <p className="flex items-center justify-center text-center uppercase xs:text-lg sm:text-xl">
+            {el.text}
+          </p>
         </div>
       ))}
     </div>

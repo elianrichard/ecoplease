@@ -75,7 +75,7 @@ const VisionMission = () => {
           <p className="w-full px-16 text-lg text-white sm:text-right lg:px-20 lg:text-xl">
             To provide a range of 100% Home Compostable products as an{" "}
             <span className="bg-white px-2 font-bold text-darkRed">
-              alternatives
+              alternative
             </span>{" "}
             to non-eco friendly products
           </p>

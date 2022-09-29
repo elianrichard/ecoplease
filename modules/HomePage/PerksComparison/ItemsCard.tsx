@@ -11,7 +11,7 @@ const ItemsCard = ({
   children,
 }: PropsWithChildren<Props>) => {
   return (
-    <div className="flex flex-1 flex-col items-center justify-center text-center text-white">
+    <div className="flex flex-1 flex-col items-center justify-start text-center text-white">
       <div className="mb-6 flex w-32 items-center justify-center fill-white xs:w-full">
         {children}
       </div>
