@@ -8,6 +8,7 @@ import heroLandingImg from "../../asset/pictures/home/landing-hero.webp";
 // import RippedSVG from "../../asset/svgs/ripped/RippedLanding";
 import RippedLandingSVG from "../../asset/svgs/ripped/RippedLandingHome";
 import { motion, useAnimationControls } from "framer-motion";
+import trackEvents from "../_common/hooks/trackEvents";
 
 const LandingHero = () => {
   const containerVar = {
@@ -85,6 +86,7 @@ const LandingHero = () => {
             variants={childrenVar}
             href="#"
             className="clip-path-triangle relative mb-5 bg-skinCream py-2 px-10 text-center text-xl font-bold text-darkRed transition-all duration-200 ease-out hover:px-14 lg:bg-ecoRed lg:text-3xl lg:text-skinCream lg:hover:pl-16 lg:hover:text-white"
+            onClick={() => trackEvents("catalog_click")}
           >
             OUR CATALOG
           </motion.a>
@@ -92,6 +94,7 @@ const LandingHero = () => {
             variants={childrenVar}
             href="#"
             className="clip-path-triangle relative mb-5 bg-skinCream py-2 px-10 text-center text-xl font-bold text-darkRed transition-all duration-200 ease-out hover:px-14 lg:bg-ecoRed lg:text-3xl lg:text-skinCream lg:hover:pl-16 lg:hover:text-white"
+            onClick={() => trackEvents("costumize_click")}
           >
             COSTUMIZE PRODUCT
           </motion.a>

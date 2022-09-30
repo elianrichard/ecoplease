@@ -4,6 +4,7 @@ import { DefaultSeo } from "next-seo";
 import { useRouter } from "next/router";
 
 import SEO from "../next-seo.config";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -50,6 +51,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <GoogleAnalytics trackPageViews/>
       <DefaultSeo {...SEO} />
       <div className="relative overflow-x-hidden">
         {!excludeFooterHeader.includes(asPath) && <Header />}
