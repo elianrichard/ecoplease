@@ -9,6 +9,7 @@ import heroLandingImg from "../../asset/pictures/home/landing-hero.webp";
 import RippedLandingSVG from "../../asset/svgs/ripped/RippedLandingHome";
 import { motion, useAnimationControls } from "framer-motion";
 import trackEvents from "../_common/hooks/trackEvents";
+import whatsappHref from "../_common/constant/whatsappHref";
 
 const LandingHero = () => {
   const containerVar = {
@@ -84,9 +85,7 @@ const LandingHero = () => {
           </h1>
           <motion.a
             variants={childrenVar}
-            href={
-              "https://wa.me/6287888199947?text=Halo%20Ecoplease%2C%20mau%20request%20catalog%20dong%21"
-            }
+            href={whatsappHref("catalog")}
             target="_blank"
             rel="noreferrer noopener"
             className="clip-path-triangle relative mb-5 bg-skinCream py-2 px-10 text-center text-xl font-bold text-darkRed transition-all duration-200 ease-out hover:px-14 lg:bg-ecoRed lg:text-3xl lg:text-skinCream lg:hover:pl-16 lg:hover:text-white"
@@ -96,9 +95,7 @@ const LandingHero = () => {
           </motion.a>
           <motion.a
             variants={childrenVar}
-            href={
-              "https://wa.me/6287888199947?text=Halo%20Ecoplease%2C%20mau%20request%20custom%20design%20produk%20dong%21"
-            }
+            href={whatsappHref("custom")}
             target="_blank"
             rel="noreferrer noopener"
             className="clip-path-triangle relative mb-5 bg-skinCream py-2 px-10 text-center text-xl font-bold text-darkRed transition-all duration-200 ease-out hover:px-14 lg:bg-ecoRed lg:text-3xl lg:text-skinCream lg:hover:pl-16 lg:hover:text-white"
@@ -138,9 +135,7 @@ const LandingHero = () => {
         initial={{ x: 400 }}
         animate={{ x: 0 }}
         transition={{ type: "spring", stiffness: 80 }}
-        href={
-          "https://wa.me/6287888199947?text=Halo%20Ecoplease%2C%20mau%20request%20free%20sample%20dong%21"
-        }
+        href={whatsappHref()}
         target="_blank"
         rel="noreferrer noopener"
         className="absolute top-0 right-0 z-20 flex w-full items-center justify-center bg-black py-5 pl-5 pr-5 text-center text-xl font-bold text-skinCream shadow-[0px_0px_20px_0px_rgba(0,0,0,0.8)] lg:top-10 lg:w-auto lg:justify-start lg:rounded-l-lg lg:py-1 lg:pr-20"

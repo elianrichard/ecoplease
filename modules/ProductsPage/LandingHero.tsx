@@ -6,14 +6,13 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 
 import LandingBgImg from "../../asset/pictures/products/landing-bg.webp";
 import trackEvents from "../_common/hooks/trackEvents";
+import whatsappHref from "../_common/constant/whatsappHref";
 
 const LandingHero = () => {
   return (
     <>
       <a
-        href={
-          "https://wa.me/6287888199947?text=Halo%20Ecoplease%2C%20mau%20request%20free%20sample%20dong%21"
-        }
+        href={whatsappHref("request_sample")}
         target="_blank"
         rel="noreferrer noopener"
         className="flex h-12 w-screen items-center justify-center bg-black text-lg font-bold uppercase text-skinCream xs:text-xl lg:text-2xl"
@@ -43,8 +42,8 @@ const LandingHero = () => {
           </h1>
           <div className="flex flex-col gap-5 md:flex-row">
             {[
-              ["Our Catalog", "https://wa.me/6287888199947?text=Halo%20Ecoplease%2C%20mau%20request%20catalog%20dong%21"],
-              ["Customize Product", "https://wa.me/6287888199947?text=Halo%20Ecoplease%2C%20mau%20request%20custom%20design%20produk%20dong%21"],
+              ["Our Catalog", whatsappHref("catalog")],
+              ["Customize Product", whatsappHref("custom")],
             ].map((el, i) => (
               <a
                 href={el[1]}

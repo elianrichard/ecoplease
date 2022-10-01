@@ -15,6 +15,7 @@ import HauseLogo from "../../asset/pictures/home/partners/Hause.webp";
 import WilliamsLogo from "../../asset/pictures/home/partners/Williams.webp";
 
 import trackEvents from "../_common/hooks/trackEvents";
+import whatsappHref from "../_common/constant/whatsappHref";
 
 const Partners = () => {
   const logoList = [
@@ -54,7 +55,7 @@ const Partners = () => {
       </div>
       <a
         href={
-          "https://wa.me/6287888199947?text=Halo%20Ecoplease%2C%20mau%20jadi%20partner%20eco-warriors%20dong%21"
+          whatsappHref("partner")
         }
         target="_blank"
         rel="noreferrer noopener"
