@@ -53,7 +53,11 @@ const Partners = () => {
         ))}
       </div>
       <a
-        href="#"
+        href={
+          "https://wa.me/6287888199947?text=Halo%20Ecoplease%2C%20mau%20jadi%20partner%20eco-warriors%20dong%21"
+        }
+        target="_blank"
+        rel="noreferrer noopener"
         className="rounded-lg bg-darkRed px-6 py-2 text-lg text-white transition-all duration-200 ease-out hover:scale-110 hover:bg-white hover:text-darkRed hover:shadow-[0px_0px_20px_0px_rgba(0,0,0,0.5)] xs:text-xl"
         onClick={() => trackEvents("partner_click", "home")}
       >

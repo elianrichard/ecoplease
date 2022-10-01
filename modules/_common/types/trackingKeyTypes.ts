@@ -3,4 +3,5 @@ export type trackingKeys =
   | "customize_click"
   | "free_sample_click"
   | "partner_click"
-  | "faq_submit";
+  | "faq_submit"
+  | "whatsapp_click";

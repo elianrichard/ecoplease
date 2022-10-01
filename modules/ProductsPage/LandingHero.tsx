@@ -11,7 +11,11 @@ const LandingHero = () => {
   return (
     <>
       <a
-        href="#"
+        href={
+          "https://wa.me/6287888199947?text=Halo%20Ecoplease%2C%20mau%20request%20free%20sample%20dong%21"
+        }
+        target="_blank"
+        rel="noreferrer noopener"
         className="flex h-12 w-screen items-center justify-center bg-black text-lg font-bold uppercase text-skinCream xs:text-xl lg:text-2xl"
         onClick={() => trackEvents("free_sample_click", "products")}
       >
@@ -39,11 +43,13 @@ const LandingHero = () => {
           </h1>
           <div className="flex flex-col gap-5 md:flex-row">
             {[
-              ["Our Catalog", "#"],
-              ["Customize Product", "#"],
+              ["Our Catalog", "https://wa.me/6287888199947?text=Halo%20Ecoplease%2C%20mau%20request%20catalog%20dong%21"],
+              ["Customize Product", "https://wa.me/6287888199947?text=Halo%20Ecoplease%2C%20mau%20request%20custom%20design%20produk%20dong%21"],
             ].map((el, i) => (
               <a
                 href={el[1]}
+                target="_blank"
+                rel="noreferrer noopener"
                 className="w-fit rounded-md bg-white px-5 py-1 text-xl font-bold uppercase text-ecoRed transition-all duration-200 ease-out hover:scale-105 hover:bg-ecoRed hover:text-white hover:shadow-[0px_0px_20px_0px_rgba(0,0,0,0.5)] lg:text-2xl"
                 key={i}
                 onClick={() => {
