@@ -16,6 +16,7 @@ import useMediaQueries from "../../../../modules/_common/queries/useMediaQueries
 
 import PaperTextureImg from "../../../../asset/pictures/paper-texture-3.webp";
 import LoadingIcon from "../../../../components/LoadingIcon";
+import trackEvents from "../../../../modules/_common/hooks/trackEvents";
 
 interface Props {
   product: ProductsType;
@@ -191,10 +192,23 @@ const Layout: NextPage<Props> = ({ product }: Props) => {
               <div className="flex flex-col items-center gap-2 text-white xs:items-start md:text-xl">
                 <IconContext.Provider value={{ className: "w-10" }}>
                   <a
-                    href="#"
+                    href={
+                      `https://wa.me/6287888199947?text=` +
+                      encodeURIComponent(
+                        `Halo Ecoplease, mau request free sample produk ${product.title.rendered} - ${product.acf.code}`
+                      )
+                    }
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center rounded-xl bg-black px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-black"
+                    onClick={() =>
+                      trackEvents(
+                        "sample_request",
+                        product.title.rendered
+                          .toLowerCase()
+                          .replaceAll(" ", "_")
+                      )
+                    }
                   >
                     Request Sample <IoIosArrowForward />
                   </a>
@@ -206,6 +220,14 @@ const Layout: NextPage<Props> = ({ product }: Props) => {
                       target="_blank"
                       rel="noreferrer"
                       className="inline rounded-xl bg-green-700 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-green-700"
+                      onClick={() =>
+                        trackEvents(
+                          "tokopedia_click",
+                          product.title.rendered
+                            .toLowerCase()
+                            .replaceAll(" ", "_")
+                        )
+                      }
                     >
                       Buy at Tokopedia
                     </a>
@@ -217,6 +239,14 @@ const Layout: NextPage<Props> = ({ product }: Props) => {
                       target="_blank"
                       rel="noreferrer"
                       className="inline rounded-xl bg-orange-500 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-orange-500"
+                      onClick={() =>
+                        trackEvents(
+                          "tokopedia_click",
+                          product.title.rendered
+                            .toLowerCase()
+                            .replaceAll(" ", "_")
+                        )
+                      }
                     >
                       Buy at Shopee
                     </a>
