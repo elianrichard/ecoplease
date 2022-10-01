@@ -5,6 +5,7 @@ import { IconContext } from "react-icons";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 import LandingBgImg from "../../asset/pictures/products/landing-bg.webp";
+import trackEvents from "../_common/hooks/trackEvents";
 
 const LandingHero = () => {
   return (
@@ -12,6 +13,7 @@ const LandingHero = () => {
       <a
         href="#"
         className="flex h-12 w-screen items-center justify-center bg-black text-lg font-bold uppercase text-skinCream xs:text-xl lg:text-2xl"
+        onClick={() => trackEvents("free_sample_click", "products")}
       >
         Request Sample Now
         <span>
@@ -44,6 +46,10 @@ const LandingHero = () => {
                 href={el[1]}
                 className="w-fit rounded-md bg-white px-5 py-1 text-xl font-bold uppercase text-ecoRed transition-all duration-200 ease-out hover:scale-105 hover:bg-ecoRed hover:text-white hover:shadow-[0px_0px_20px_0px_rgba(0,0,0,0.5)] lg:text-2xl"
                 key={i}
+                onClick={() => {
+                  if (i === 0) trackEvents("catalog_click", "products");
+                  else if (i === 1) trackEvents("customize_click", "products");
+                }}
               >
                 {el[0]}
               </a>

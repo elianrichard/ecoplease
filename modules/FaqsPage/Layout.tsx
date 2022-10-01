@@ -7,6 +7,7 @@ import PaperTextureImg from "../../asset/pictures/paper-texture-3.webp";
 
 import FaqContent from "../_common/FaqContent";
 import { AnimatePresence, motion } from "framer-motion";
+import trackEvents from "../_common/hooks/trackEvents";
 
 interface FormInputType {
   name: string;
@@ -22,14 +23,16 @@ const Layout = () => {
   });
 
   const onSubmit = () => {
-    if (formInput.name && formInput.question)
+    if (formInput.name && formInput.question) {
       window.open(
         `https://wa.me/6287888199947?text=Nama%3A%20${encodeURI(
           formInput.name
         )}%0APertanyaan%3A${encodeURI(formInput.question)}`,
         "_blank"
       );
-    else alert("Please input all field!");
+      trackEvents("faq_submit", "name", formInput.name);
+      trackEvents("faq_submit", "question", formInput.question);
+    } else alert("Please input all field!");
   };
 
   return (

@@ -86,7 +86,7 @@ const LandingHero = () => {
             variants={childrenVar}
             href="#"
             className="clip-path-triangle relative mb-5 bg-skinCream py-2 px-10 text-center text-xl font-bold text-darkRed transition-all duration-200 ease-out hover:px-14 lg:bg-ecoRed lg:text-3xl lg:text-skinCream lg:hover:pl-16 lg:hover:text-white"
-            onClick={() => trackEvents("catalog_click")}
+            onClick={() => trackEvents("catalog_click", "home")}
           >
             OUR CATALOG
           </motion.a>
@@ -94,7 +94,7 @@ const LandingHero = () => {
             variants={childrenVar}
             href="#"
             className="clip-path-triangle relative mb-5 bg-skinCream py-2 px-10 text-center text-xl font-bold text-darkRed transition-all duration-200 ease-out hover:px-14 lg:bg-ecoRed lg:text-3xl lg:text-skinCream lg:hover:pl-16 lg:hover:text-white"
-            onClick={() => trackEvents("costumize_click")}
+            onClick={() => trackEvents("customize_click", "home")}
           >
             COSTUMIZE PRODUCT
           </motion.a>
@@ -132,6 +132,7 @@ const LandingHero = () => {
         transition={{ type: "spring", stiffness: 80 }}
         href="#"
         className="absolute top-0 right-0 z-20 flex w-full items-center justify-center bg-black py-5 pl-5 pr-5 text-center text-xl font-bold text-skinCream shadow-[0px_0px_20px_0px_rgba(0,0,0,0.8)] lg:top-10 lg:w-auto lg:justify-start lg:rounded-l-lg lg:py-1 lg:pr-20"
+        onClick={() => trackEvents("free_sample_click", "home")}
       >
         GET YOUR FREE SAMPLE NOW!
       </motion.a>

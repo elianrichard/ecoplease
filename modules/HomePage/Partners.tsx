@@ -14,6 +14,8 @@ import AnthologyLogo from "../../asset/pictures/home/partners/Anthology.webp";
 import HauseLogo from "../../asset/pictures/home/partners/Hause.webp";
 import WilliamsLogo from "../../asset/pictures/home/partners/Williams.webp";
 
+import trackEvents from "../_common/hooks/trackEvents";
+
 const Partners = () => {
   const logoList = [
     BottegaLogo,
@@ -53,6 +55,7 @@ const Partners = () => {
       <a
         href="#"
         className="rounded-lg bg-darkRed px-6 py-2 text-lg text-white transition-all duration-200 ease-out hover:scale-110 hover:bg-white hover:text-darkRed hover:shadow-[0px_0px_20px_0px_rgba(0,0,0,0.5)] xs:text-xl"
+        onClick={() => trackEvents("partner_click", "home")}
       >
         Become Our Partner <span className="font-bold">NOW!</span>
       </a>
