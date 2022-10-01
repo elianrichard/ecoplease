@@ -200,22 +200,27 @@ const Layout: NextPage<Props> = ({ product }: Props) => {
                   </a>
                 </IconContext.Provider>
                 <div className="flex flex-col gap-2 xs:flex-row xs:gap-5">
-                  <a
-                    href={"https://tokopedia.com"}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline rounded-xl bg-green-700 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-green-700"
-                  >
-                    Buy at Tokopedia
-                  </a>
-                  <a
-                    href={"https://shopee.com"}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline rounded-xl bg-orange-500 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-orange-500"
-                  >
-                    Buy at Shopee
-                  </a>
+                  {product.acf.link_tokopedia && (
+                    <a
+                      href={product.acf.link_tokopedia}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline rounded-xl bg-green-700 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-green-700"
+                    >
+                      Buy at Tokopedia
+                    </a>
+                  )}
+
+                  {product.acf.link_shopee && (
+                    <a
+                      href={product.acf.link_shopee}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline rounded-xl bg-orange-500 px-3 py-2 text-white transition-all duration-200 ease-out hover:bg-white hover:text-orange-500"
+                    >
+                      Buy at Shopee
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
