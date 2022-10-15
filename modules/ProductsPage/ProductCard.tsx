@@ -37,7 +37,8 @@ const ProductCard = ({ product }: Props) => {
             <Image
               src={imageLink}
               layout="fill"
-              alt={`ECOPLEASE ${imageData.data.title} product image`}
+              objectFit="cover"
+              alt={`ECOPLEASE ${imageData.data.title.rendered} product image`}
             />
           ) : (
             <LoadingIcon />
