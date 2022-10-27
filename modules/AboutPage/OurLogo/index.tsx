@@ -13,9 +13,18 @@ const OurLogo = () => {
   const [selectedTitle, setSelectedTitle] = useState<number>(NaN);
 
   const logoTitleDesc = [
-    { name: "The World.", desc: "This is description of the world" },
-    { name: "Children.", desc: "This is description of the children" },
-    { name: "Blood.", desc: "This is description of the blood" },
+    {
+      name: "The World.",
+      desc: "The logo is based on the idea of a hurting earth and a sincere gesture from a young generation asking politely with hope for the future.",
+    },
+    {
+      name: "Children.",
+      desc: "The logo is based on the idea of a hurting earth and a sincere gesture from a young generation asking politely with hope for the future.",
+    },
+    {
+      name: "Blood.",
+      desc: "The logo is based on the idea of a hurting earth and a sincere gesture from a young generation asking politely with hope for the future.",
+    },
   ];
 
   return (
@@ -78,7 +87,7 @@ const OurLogo = () => {
               <p className="text-lg">
                 {!Number.isNaN(selectedTitle)
                   ? logoTitleDesc[selectedTitle].desc
-                  : "Click on one of the text to see the description."}
+                  : "The logo is based on the idea of a hurting earth and a sincere gesture from a young generation asking politely with hope for the future."}
               </p>
             </motion.div>
           </div>

@@ -2,8 +2,8 @@ import React, { Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 
 import paperTextureImg from "../../../asset/pictures/paper-texture-2.webp";
-import VideoThumbnailImg from "../../../asset/pictures/home/landing-hero.webp";
-import VideoRippedPaper from "../../../asset/svgs/ripped/VideoRippedPaper";
+// import VideoThumbnailImg from "../../../asset/pictures/home/landing-hero.webp";
+// import VideoRippedPaper from "../../../asset/svgs/ripped/VideoRippedPaper";
 import Counter from "./Counter";
 
 interface Props {
@@ -22,7 +22,7 @@ const VideoCounter = ({ setVideoModal }: Props) => {
           className="mix-blend-multiply"
         />
       </div>
-      <div className="z-10 flex h-full w-full flex-col justify-center gap-20 px-10 py-24 lg:flex-row lg:py-0 xl:w-4/5 xl:px-0">
+      <div className="z-10 flex h-full w-full flex-col-reverse justify-center gap-20 px-10 py-24 lg:flex-row lg:py-0 xl:w-4/5 xl:px-0">
         <div className="flex h-full w-full flex-1 items-center justify-center">
           {/* <div
             className="group relative aspect-video w-full cursor-pointer"
@@ -50,7 +50,7 @@ const VideoCounter = ({ setVideoModal }: Props) => {
           <div className="aspect-video w-full bg-black px-5 xs:px-0">
             <iframe
               className="h-full w-full"
-              src="https://www.youtube.com/embed/1fueZCTYkpA?autoplay=1&mute=1"
+              src="https://www.youtube.com/embed/XT6M2xSCNF8?autoplay=1&mute=1"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
