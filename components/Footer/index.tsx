@@ -84,7 +84,7 @@ const Footer = () => {
             href="https://hrefid.com/linktree"
             target="_blank"
             rel="noreferrer"
-            className="transition-colors duration-300 ease-out hover:text-skinCream"
+            className="text-lightYellow transition-colors duration-300 ease-out hover:text-skinCream"
           >
             href.id
           </a>
