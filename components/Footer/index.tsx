@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import LogoLightSVG from "../../asset/svgs/logo/LogoLight";
 import TextureImg from "../../asset/pictures/paper-texture-3.webp";
+import whatsappHref from "../../modules/_common/constant/whatsappHref";
 
 const Footer = () => {
   return (
@@ -36,7 +37,7 @@ const Footer = () => {
                 Our Materials
               </a>
             </Link>
-            <Link href={"/"}>
+            <Link href={whatsappHref("partner")}>
               <a className="transition-all duration-200 ease-out hover:text-paleGreen">
                 Become a Partner
               </a>
@@ -46,12 +47,12 @@ const Footer = () => {
             <p className="mb-2 bg-skinCream px-3 py-1 text-lg font-black text-black">
               MARKETPLACE
             </p>
-            <Link href={"/"}>
+            <Link href={"https://tokopedia.link/ecoplease"}>
               <a className="transition-all duration-200 ease-out hover:text-paleGreen">
                 Tokopedia
               </a>
             </Link>
-            <Link href={"/"}>
+            <Link href={"https://shopee.co.id/ecoplease"}>
               <a className="transition-all duration-200 ease-out hover:text-paleGreen">
                 Shopee
               </a>
