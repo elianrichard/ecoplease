@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://ecoplease.vercel.app
+Host: https://ecoplease.id
 
 # Sitemaps
-Sitemap: https://ecoplease.vercel.app/sitemap.xml
+Sitemap: https://ecoplease.id/sitemap.xml

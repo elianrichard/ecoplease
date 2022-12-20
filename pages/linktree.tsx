@@ -7,10 +7,11 @@ import paperTextureImg from "../asset/pictures/paper-texture.webp";
 
 const Linktree = () => {
   const links = [
-    ["Google", "https://google.com"],
-    ["Google", "https://google.com"],
-    ["Google", "https://google.com"],
-    ["Google", "https://google.com"],
+    ["Whatsapp", "https://wa.me/6287888199947"],
+    ["Tokopedia", "https://tokopedia.link/ecoplease"],
+    ["Shopee", "http://shopee.co.id/ecoplease"],
+    ["Website", "https://ecoplease.id/"],
+    ["About", "https://ecoplease.id/about"],
   ];
 
   const containerVar = {

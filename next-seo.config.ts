@@ -6,8 +6,6 @@ import { domain } from "./config";
 
 const seo: DefaultSeoProps = {
   titleTemplate: "ECOPLEASE | %s",
-  dangerouslySetAllPagesToNoFollow: true, //TO DO
-  dangerouslySetAllPagesToNoIndex: true, //TO DO
   defaultTitle: "ECOPLEASE | The Best Eco-Packaging in Indonesia",
   description:
     "ECOPLEASE, the best eco-friendly, sustainable, degradable, recyclable and home compostable food packaging, cups, and straw in Indonesia",

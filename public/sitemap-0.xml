@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://ecoplease.vercel.app</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/about</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/econews</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/faqs</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/materials</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/products</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/products/100/Eating Spoon</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/products/99/Eating Fork</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/products/92/Eating Knife</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/products/91/Boba Straw</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/products/90/Juice Straw</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/products/79/Tea Straw</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/econews/60/Why-Plastic-is-Dangerous</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/econews/53/Hello-World-6</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/econews/52/Hello-World-5</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/econews/51/Hello-World-4</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/econews/50/Hello-World-3</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/econews/49/Hello-World-2</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ecoplease.vercel.app/econews/46/Hello-World</loc><lastmod>2022-09-22T17:36:01.429Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/about</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/econews</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/faqs</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/linktree</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/materials</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/products</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/products/104/Garpu Makan</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/products/100/Eating Spoon</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/products/99/Eating Fork</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/products/92/Eating Knife</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/products/91/Boba Straw</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/products/90/Juice Straw</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/products/79/Tea Straw</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/econews/60/Why-Plastic-is-Dangerous</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/econews/53/Hello-World-6</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/econews/52/Hello-World-5</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/econews/51/Hello-World-4</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/econews/50/Hello-World-3</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/econews/49/Hello-World-2</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ecoplease.id/econews/46/Hello-World</loc><lastmod>2022-12-20T15:05:58.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
