@@ -1,13 +1,14 @@
 import { motion, useAnimationControls } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import LogoPrimaryWhite from "../asset/svgs/logo/LogoPrimaryWhite";
 
+import whatsappHref from "../modules/_common/constant/whatsappHref";
+import LogoPrimaryWhite from "../asset/svgs/logo/LogoPrimaryWhite";
 import paperTextureImg from "../asset/pictures/paper-texture.webp";
 
 const Linktree = () => {
   const links = [
-    ["Whatsapp", "https://wa.me/6287888199947"],
+    ["Ask for Catalog", whatsappHref("catalog")],
     ["Tokopedia", "https://tokopedia.link/ecoplease"],
     ["Shopee", "http://shopee.co.id/ecoplease"],
     ["Website", "https://ecoplease.id/"],
