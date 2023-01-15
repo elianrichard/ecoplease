@@ -69,7 +69,7 @@ const Counter = () => {
       ref={counterRefDiv}
     >
       <div className="col-span-2 flex w-full justify-center bg-darkRed py-3 text-3xl font-bold text-white sm:text-4xl">
-        DO YOU KNOW?
+        DID YOU KNOW?
       </div>
       {counterPlaceholder.map((el, i) => (
         <div

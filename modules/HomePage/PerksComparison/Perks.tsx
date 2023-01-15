@@ -18,7 +18,7 @@ const Perks = () => {
             title="Free Delivery"
             description="with minimum order applied"
           >
-            <DeliveryIcon className="w-20" />
+            <DeliveryIcon className="mb-3 w-20" />
           </ItemsCard>
           <ItemsCard
             title="Customize Logo"
@@ -34,7 +34,7 @@ const Perks = () => {
           </ItemsCard>
           <ItemsCard
             title="Certification"
-            description="with worldwide certification"
+            description="with worldwide accreditaion / license"
           >
             <AiOutlineSafetyCertificate className="w-[70px]" />
           </ItemsCard>
