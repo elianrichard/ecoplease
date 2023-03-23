@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["www.ecoplease.hrefid.com"], //TO DO
+    domains: ["www.ecoplease-edit.site"],
   },
 };
 
